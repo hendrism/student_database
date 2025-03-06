@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Session List</title>  
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%; /* Make table take up full width */
+            }
+            th, td {
+                border: 1px solid black;
+                padding: 8px; /* Add some padding inside cells for better spacing */
+                text-align: left; /* Align text to the left within cells */
+            }
+            th {
+                background-color: #f2f2f2; /* Light gray background for header cells */
+            }
+        </style>
+    </head>
+<body>
+    <p><a href="/"><strong>Home</strong></a></p>
+    <p><a href="{{ url_for('routes.schedule_session') }}"><strong>Schedule Another Session</strong></a></p>
+    <h1>Scheduled Sessions</h1>
+    <form method="GET" action="/sessions">
+        <div>
+            <label for="filter_date">Filter Sessions by Date:</label>
+            <input type="date" id="filter_date" name="filter_date">
+            <button type="submit">Filter</button>
+        </div>
+    </form>
+    <p>
+        <a href="{{ url_for('routes.session_list_route') }}">View All Sessions</a>
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>Session ID</th>
+                <th>Student</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Objectives</th>
+                <th>Plan Notes</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for session in sessions %}
+            <tr>
+                <td>{{ session.session_id }}</td>
+                <td>{{ session.student.first_name }} {{ session.student.last_name }}</td>
+                <td>{{ session.date_of_session }}</td>
+                <td>{{ session.time_of_session }}</td>
+                <td>{{ session.status }}</td>
+                <td>
+                    {% if session.objectives %}
+                    <ul>
+                        {% for objective in session.objectives %}
+                        <li>{{ objective.objective_description }} (Accuracy: {{ objective.with_accuracy }})</li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    No Objectives
+                    {% endif %}
+                </td>
+                <td>{{ session.plan_notes }}</td>
+                <td>
+                    <a href="{{ url_for('routes.edit_session_route', session_id=session.session_id) }}">Edit</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>    </table>
+</body>
+</html>

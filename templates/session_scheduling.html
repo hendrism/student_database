@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schedule Session</title>
+</head>
+<body>
+    <p><a href="/"><strong>Home</strong></a></p>
+    <h1>Schedule a New Session</h1>
+
+    <form method="POST" action="/schedule_session">
+        <div>
+            <label for="student_id">Student:</label>
+            <select id="student_id" name="student_id" required>
+                <option value="">-- Select Student --</option>
+                {% for student in students %}
+                    <option value="{{ student.student_id }}" {% if student.student_id == selected_student_id|int %}selected{% endif %}>
+                        {{ student.first_name }} {{ student.last_name }}
+                    </option>
+                {% endfor %}
+            </select>
+            <button type="button" name="action" value="view_goals" onclick="viewGoalsObjectives()">View Goals/Objectives</button>
+        </div>
+
+        <div id="goals-objectives-section">
+            {% if selected_student_goals %}
+                <h3>Goals and Objectives for {{ selected_student.first_name }} {{ selected_student.last_name }}:</h3>
+                {% for goal in selected_student_goals %}
+                    <div>
+                        <strong>Goal:</strong> {{ goal.goal_description }}
+                        {% if goal.objectives %}
+                            <ul>
+                                {% for objective in goal.objectives %}
+                                    <li>
+                                        <input type="checkbox" id="objective_{{ objective.objective_id }}" name="selected_objectives" value="{{ objective.objective_id }}">
+                                        <label for="objective_{{ objective.objective_id }}">{{ objective.objective_description }} (Accuracy: {{ objective.with_accuracy }})</label>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p>No objectives defined for this goal.</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% elif selected_student_id %}
+                <p>No goals defined for the selected student.</p>
+            {% else %}
+                <p>Select a student to see their goals and objectives.</p>
+            {% endif %}
+        </div>
+
+        <div>
+            <label for="date_of_session">Date of Session:</label>
+            <input type="date" id="date_of_session" name="date_of_session">
+        </div>
+
+        <div>
+            <label for="time_of_session">Time of Session:</label>
+            <input type="time" id="time_of_session" name="time_of_session">
+        </div>
+
+        <div>
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+                <option value="Scheduled" selected>Scheduled</option>
+                <option value="Completed">Completed</option>
+                <option value="Makeup Needed">Makeup Needed</option>
+                <option value="Excused Absence">Excused Absence</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="plan_notes">Plan Notes:</label>
+            <textarea id="plan_notes" name="plan_notes" rows="4" cols="50"></textarea>
+        </div>
+
+        <div>
+            <button type="submit">Schedule Session</button>
+        </div>
+    </form>
+    <script>
+        function viewGoalsObjectives() {
+            var studentId = document.getElementById('student_id').value;
+            if (studentId) {
+                window.location.href = '/schedule_session?action=view_goals&student_id=' + studentId;
+            } else {
+                alert('Please select a student first.');
+            }
+        }
+    </script>
+</body>
+</html>
