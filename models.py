@@ -2,18 +2,13 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-session_objectives_association = db.Table('session_objectives',  # Database table name is 'session_objectives' (can stay as is)
-    db.Column('session_id', db.Integer, db.ForeignKey('sessions.session_id'), primary_key=True),
-    db.Column('objective_id', db.Integer, db.ForeignKey('objectives.objective_id'), primary_key=True)
-)
-
-class Goal(db.Model):
+class Goal(db.Model): # 1. Goal model FIRST
     goal_id = db.Column(db.Integer, primary_key=True)
     student_id = db.Column(db.Integer, db.ForeignKey('student.student_id'), nullable=False)
     goal_description = db.Column(db.String(255), nullable=False)
     objectives = db.relationship('Objective', backref='goal')
 
-class Objective(db.Model):
+class Objective(db.Model): # 2. Objective model SECOND
     objective_id = db.Column(db.Integer, primary_key=True)
     goal_id = db.Column(db.Integer, db.ForeignKey('goal.goal_id'), nullable=False)
     objective_description = db.Column(db.String(255), nullable=False)
@@ -22,10 +17,10 @@ class Objective(db.Model):
     sessions = db.relationship('Session',
                                secondary=session_objectives_association,
                                primaryjoin=('Objective.objective_id == session_objectives_association.c.objective_id'),
-                               secondaryjoin=('Session.session_id == session_objectives_association.c.session_id'), # CORRECTED: session_objectives_association
+                               secondaryjoin=('Session.session_id == session_objectives_association.c.session_id'),
                                backref=db.backref('objectives', lazy='dynamic'))
 
-class Session(db.Model):
+class Session(db.Model): # 3. Session model THIRD
     session_id = db.Column(db.Integer, primary_key=True)
     student_id = db.Column(db.Integer, db.ForeignKey('student.student_id'), nullable=False)
     date_of_session = db.Column(db.Date, nullable=False)
@@ -34,7 +29,12 @@ class Session(db.Model):
     plan_notes = db.Column(db.Text)
     objectives = db.relationship('Objective', secondary=session_objectives_association, backref=db.backref('sessions'))
 
-class Student(db.Model):
+session_objectives_association = db.Table('session_objectives', # 4. Association table AFTER Objective and Session
+    db.Column('session_id', db.Integer, db.ForeignKey('sessions.session_id'), primary_key=True),
+    db.Column('objective_id', db.Integer, db.ForeignKey('objectives.objective_id'), primary_key=True)
+)
+
+class Student(db.Model): # 5. Student model LAST
     student_id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(255), nullable=False)
     last_name = db.Column(db.String(255), nullable=False)

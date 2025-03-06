@@ -1,27 +1,21 @@
 from flask import Flask
-from routes import routes_bp  # Change back to absolute import (remove .)
-from models import db, Student, Session, Goal, Objective, session_objectives_association # Change back to absolute import (remove .)
-from flask_migrate import Migrate  # Import Migrate
-from datetime import datetime
+from routes import routes_bp
+from models import db, Student, Session, Goal, Objective, session_objectives_association
+# No Flask-Migrate import here for now
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = 'your_secret_key'
 
-app.jinja_env.filters['strftime'] = datetime.strftime  # Register strftime as a Jinja filter - ADD THIS LINE HERE
-
-# Database Configuration - SQLite (adjust path if needed)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/Sean-Work/Databases/student_database/database.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Disable modification tracking
-
-# Initialize SQLAlchemy with the app
 db.init_app(app)
 
-# Initialize Flask-Migrate with the app and database
-migrate = Migrate(app, db)
+app.register_blueprint(routes_bp, app=app, db=db)
 
-# Register the routes blueprint
-app.register_blueprint(routes_bp)
+with app.app_context():
+    print("--- Before db.create_all() ---")  # ADD THIS PRINT STATEMENT BEFORE
+    db.create_all()
+    print("--- After db.create_all() ---")   # ADD THIS PRINT STATEMENT AFTER
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()  # Create database tables if they don't exist (for initial setup, not migrations)
     app.run(debug=True)
