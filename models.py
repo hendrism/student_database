@@ -22,7 +22,7 @@ class Objective(db.Model):
     sessions = db.relationship('Session',
                                secondary=session_objectives_association,
                                primaryjoin=('Objective.objective_id == session_objectives_association.c.objective_id'),
-                               secondaryjoin=('Session.session_id == session_objectives_association.c.session_id'),
+                               secondaryjoin=('Session.session_id == session_objectives_association.c.session_id'), # CORRECTED: session_objectives_association
                                backref=db.backref('objectives', lazy='dynamic'))
 
 class Session(db.Model):
@@ -32,7 +32,6 @@ class Session(db.Model):
     time_of_session = db.Column(db.Time, nullable=False)
     status = db.Column(db.String(255))
     plan_notes = db.Column(db.Text)
-
     objectives = db.relationship('Objective', secondary=session_objectives_association, backref=db.backref('sessions'))
 
 class Student(db.Model):
@@ -41,6 +40,5 @@ class Student(db.Model):
     last_name = db.Column(db.String(255), nullable=False)
     grade_level = db.Column(db.String(255))
     iep_goals = db.Column(db.Text)
-
     sessions = db.relationship('Session', backref='student')
     goals = db.relationship('Goal', backref='student')

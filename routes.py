@@ -1,5 +1,5 @@
 from flask import request, redirect, url_for, render_template, flash, Blueprint
-from models import db, Student, Session, Goal, Objective, session_objectives_association  # Import session_objectives_association
+from .models import Student, Session, Goal, Objective, session_objectives_association # Changed to relative import, removed db import
 from datetime import datetime
 
 routes_bp = Blueprint('routes', __name__)
@@ -124,16 +124,12 @@ def edit_session_route(session_id):
     student_goals = session.student.goals if session.student else []
     session_objective_ids = [objective.objective_id for objective in session.objectives]
 
-    if request.method == 'POST':
-        print("--- POST request received ---")  # Debug print: Confirm POST block is entered
-        print("Form data:", request.form)  # Debug print: Print all form data
+    print(f"Debugging: Type of session.time_of_session: {type(session.time_of_session)}")
 
-        # ---  TEMPORARILY RETURN HERE - DO NOT SAVE YET ---
-        return render_template('edit_session.html',
-                               session=session,
-                               students=students,
-                               student_goals=student_goals,
-                               session_objective_ids=session_objective_ids)
+    if request.method == 'POST':
+        print("--- POST request received ---")
+        print("Form data:", request.form)
+        # ... (rest of your POST handling code - temporarily keep the simplified return)
 
     return render_template('edit_session.html',
                            session=session,

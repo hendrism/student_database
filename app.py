@@ -1,6 +1,6 @@
 from flask import Flask
-from models import db, Student, Session, Goal, Objective, session_objectives_association
-from routes import routes_bp
+from .routes import routes_bp  # Changed to relative import
+from .models import db, Student, Session, Goal, Objective, session_objectives_association # Changed to relative import and import models directly here
 from flask_migrate import Migrate  # Import Migrate
 from datetime import datetime
 
