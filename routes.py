@@ -1,5 +1,5 @@
 from flask import request, redirect, url_for, render_template, flash, Blueprint
-from .models import Student, Session, Goal, Objective, session_objectives_association # Changed to relative import, removed db import
+from models import Student, Session, Goal, Objective, session_objectives_association # Change back to absolute import (remove .)
 from datetime import datetime
 
 routes_bp = Blueprint('routes', __name__)
