@@ -2,13 +2,31 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-class Goal(db.Model): # 1. Goal model FIRST
+session_objectives_association = db.Table('session_objectives',
+    db.Column('session_id', db.Integer, db.ForeignKey('session.session_id'), primary_key=True),
+    db.Column('objective_id', db.Integer, db.ForeignKey('objective.objective_id'), primary_key=True)
+)
+
+class Goal(db.Model):
+    __tablename__ = 'goal'
     goal_id = db.Column(db.Integer, primary_key=True)
     student_id = db.Column(db.Integer, db.ForeignKey('student.student_id'), nullable=False)
     goal_description = db.Column(db.String(255), nullable=False)
     objectives = db.relationship('Objective', backref='goal')
 
-class Objective(db.Model): # 2. Objective model SECOND
+class Session(db.Model):
+    __tablename__ = 'session'
+    session_id = db.Column(db.Integer, primary_key=True)
+    student_id = db.Column(db.Integer, db.ForeignKey('student.student_id'), nullable=False)
+    date_of_session = db.Column(db.Date, nullable=False)
+    time_of_session = db.Column(db.Time, nullable=False)
+    status = db.Column(db.String(255))
+    plan_notes = db.Column(db.Text)
+    objectives = db.relationship('Objective', secondary=session_objectives_association, back_populates='sessions')
+
+
+class Objective(db.Model):
+    __tablename__ = 'objective'
     objective_id = db.Column(db.Integer, primary_key=True)
     goal_id = db.Column(db.Integer, db.ForeignKey('goal.goal_id'), nullable=False)
     objective_description = db.Column(db.String(255), nullable=False)
@@ -16,25 +34,13 @@ class Objective(db.Model): # 2. Objective model SECOND
 
     sessions = db.relationship('Session',
                                secondary=session_objectives_association,
-                               primaryjoin=('Objective.objective_id == session_objectives_association.c.objective_id'),
-                               secondaryjoin=('Session.session_id == session_objectives_association.c.session_id'),
-                               backref=db.backref('objectives', lazy='dynamic'))
+                               primaryjoin=(objective_id == session_objectives_association.c.objective_id),
+                               secondaryjoin=(session_objectives_association.c.session_id == Session.session_id),
+                               back_populates='objectives'
+                               )
 
-class Session(db.Model): # 3. Session model THIRD
-    session_id = db.Column(db.Integer, primary_key=True)
-    student_id = db.Column(db.Integer, db.ForeignKey('student.student_id'), nullable=False)
-    date_of_session = db.Column(db.Date, nullable=False)
-    time_of_session = db.Column(db.Time, nullable=False)
-    status = db.Column(db.String(255))
-    plan_notes = db.Column(db.Text)
-    objectives = db.relationship('Objective', secondary=session_objectives_association, backref=db.backref('sessions'))
-
-session_objectives_association = db.Table('session_objectives', # 4. Association table AFTER Objective and Session
-    db.Column('session_id', db.Integer, db.ForeignKey('sessions.session_id'), primary_key=True),
-    db.Column('objective_id', db.Integer, db.ForeignKey('objectives.objective_id'), primary_key=True)
-)
-
-class Student(db.Model): # 5. Student model LAST
+class Student(db.Model):
+    __tablename__ = 'student'
     student_id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(255), nullable=False)
     last_name = db.Column(db.String(255), nullable=False)

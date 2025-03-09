@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Sessions</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Student</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Status</th>
+        <th>Plan Notes</th>
+        <th>Objectives</th>
+        <th>Actions</th>  </tr>
+    </thead>
+    <tbody>
+      {% for session in sessions %}
+        <tr>
+          <td>{{ session.session_id }}</td>
+          <td>{{ session.student.first_name }} {{ session.student.last_name }}</td>
+          <td>{{ session.date_of_session.strftime('%Y-%m-%d') }}</td>
+          <td>{{ session.time_of_session.strftime('%H:%M') }}</td>
+          <td>{{ session.status }}</td>
+          <td>{{ session.plan_notes }}</td>
+        <td>
+            <ul>
+            {% for objective in session.objectives %}
+                <li>{{ objective.objective_description }}</li>
+            {% endfor %}
+            </ul>
+        </td>
+
+          <td>
+            <a href="{{ url_for('routes.edit_session', session_id=session.session_id) }}" class="btn btn-primary btn-sm">Edit</a>
+              <a href="{{ url_for('routes.delete_session', session_id=session.session_id) }}" class="btn btn-danger btn-sm">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+    <a href="{{ url_for('routes.add_session') }}" class="btn btn-success">Add New Session</a>
+{% endblock %}
