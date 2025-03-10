@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Add New Session</h2>
+  
+  <form action="{{ url_for('routes.add_session') }}" method="POST">
+    <div class="mb-3">
+      <label for="student_id" class="form-label">Student:</label>
+      <select id="student_id" name="student_id" class="form-select" required>
+        {% for student in students %}
+          <option value="{{ student.id }}">{{ student.first_name }} {{ student.last_name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="date_of_session" class="form-label">Date:</label>
+      <input type="date" id="date_of_session" name="date_of_session" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="time_of_session" class="form-label">Time:</label>
+      <input type="time" id="time_of_session" name="time_of_session" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="status" class="form-label">Status:</label>
+      <select id="status" name="status" class="form-select" required>
+        <option value="Scheduled">Scheduled</option>
+        <option value="Completed">Completed</option>
+        <option value="Makeup Needed">Makeup Needed</option>
+        <option value="Excused Absence">Excused Absence</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="plan_notes" class="form-label">Plan Notes:</label>
+      <textarea id="plan_notes" name="plan_notes" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="objectives" class="form-label">Objectives:</label>
+      <select id="objectives" name="objectives" class="form-select" multiple>
+        {% for objective in objectives %}
+          <option value="{{ objective.id }}">{{ objective.objective_description }}</option>
+        {% endfor %}
+      </select>
+      <small class="text-muted">Hold CTRL (or CMD on Mac) to select multiple objectives.</small>
+    </div>
+
+    <button type="submit" class="btn btn-success">Add Session</button>
+  </form>
+
+  <br>
+  <a href="{{ url_for('routes.sessions') }}" class="btn btn-secondary">Back to Sessions</a>
+
+{% endblock %}

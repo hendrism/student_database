@@ -112,15 +112,31 @@ def delete_session(session_id):
 @routes_bp.route('/edit_student/<int:student_id>', methods=['GET', 'POST'])
 def edit_student(student_id):
     student = Student.query.get_or_404(student_id)
+    goals = Goal.query.filter_by(student_id=student_id).all()
+    
+    # Fetch objectives linked to those goals
+    objectives = Objective.query.filter(Objective.goal_id.in_([goal.goal_id for goal in goals])).all()
+
     if request.method == 'POST':
         student.first_name = request.form['first_name']
         student.last_name = request.form['last_name']
         student.grade_level = request.form['grade_level']
-        student.iep_goals = request.form['iep_goals']
+
+        # Update goals
+        for goal in goals:
+            goal_desc = request.form.get(f'goal_{goal.goal_id}', goal.goal_description)
+            goal.goal_description = goal_desc
+
+        # Update objectives
+        for objective in objectives:
+            obj_desc = request.form.get(f'objective_{objective.objective_id}', objective.objective_description)
+            objective.objective_description = obj_desc
+
         db.session.commit()
         flash('Student updated successfully!', 'success')
         return redirect(url_for('routes.index'))
-    return render_template('edit_student.html', student=student)
+
+    return render_template('edit_student.html', student=student, goals=goals, objectives=objectives)
 
 @routes_bp.route('/delete_student/<int:student_id>')
 def delete_student(student_id):
