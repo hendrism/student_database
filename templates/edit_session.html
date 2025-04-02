@@ -1,94 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Edit Session</title>
-</head>
-<body>
-    <p><a href="/"><strong>Home</strong></a></p>
-    <h1>Edit Session</h1>
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit Session</h2>
 
-    <form method="POST" action="/sessions/{{ session.session_id }}/edit">
-        <div>
-            <label for="student_id">Student:</label>
-            <select id="student_id" name="student_id" required>
-                <option value="">-- Select Student --</option>
-                {% for student in students %}
-                    <option value="{{ student.student_id }}" {% if student.student_id == session.student.student_id %}selected{% endif %}>
-                        {{ student.first_name }} {{ student.last_name }}
-                    </option>
-                {% endfor %}
-            </select>
-             <button type="button" name="action" value="view_goals" onclick="viewGoalsObjectives()">View Goals/Objectives</button>
-        </div>
+<form method="POST" action="{{ url_for('routes.edit_session', session_id=session_obj.session_id) }}">
+  {% include "_session_form_fields.html" %}
+  
+  <!-- Save Changes & Cancel Buttons -->
+  <button type="submit" class="btn btn-success">Save Changes</button>
+  <a href="{{ url_for('routes.sessions', filter_date=filter_date, status_filter=status_filter) }}" class="btn btn-secondary ml-2">Cancel</a>
+</form>
 
-        <div id="goals-objectives-section">
-            {% if student_goals %}
-                <h3>Goals and Objectives for {{ session.student.first_name }} {{ session.student.last_name }}:</h3>
-                {% for goal in student_goals %}
-                    <div>
-                        <strong>Goal:</strong> {{ goal.goal_description }}
-                        {% if goal.objectives %}
-                            <ul>
-                                {% for objective in goal.objectives %}
-                                    <li>
-                                        <input type="checkbox" id="objective_{{ objective.objective_id }}" name="selected_objectives" value="{{ objective.objective_id }}" {% if objective.objective_id in session_objective_ids %}checked{% endif %}>
-                                        <label for="objective_{{ objective.objective_id }}">{{ objective.objective_description }} (Accuracy: {{ objective.with_accuracy }})</label>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        {% else %}
-                            <p>No objectives defined for this goal.</p>
-                        {% endif %}
-                    </div>
-                {% endfor %}
-            {% elif session.student %}
-                <p>No goals defined for the selected student.</p>
-            {% else %}
-                <p>Select a student to see their goals and objectives.</p>
-            {% endif %}
-        </div>
+<!-- Archive Button (Outside the Form) -->
+<form action="{{ url_for('routes.archive_session', session_id=session_obj.session_id) }}" method="POST" style="display:inline;" onsubmit="return confirmArchive();">
+  <button type="submit" class="btn btn-secondary">Archive</button>
+</form>
 
-        <div>
-            <label for="status">Status:</label>
-            <select id="status" name="status">
-                <option value="Scheduled" {% if session.status == 'Scheduled' %} selected {% endif %}>Scheduled</option>
-                <option value="Completed" {% if session.status == 'Completed' %} selected {% endif %}>Completed</option>
-                <option value="Makeup Needed" {% if session.status == 'Makeup Needed' %} selected {% endif %}>Makeup Needed</option>
-                <option value="Excused Absence" {% if session.status == 'Excused Absence' %} selected {% endif %}>Excused Absence</option>
-            </select>
-        </div>
+<script>
+function viewGoalsObjectives() {
+  var studentId = document.getElementById('student_id').value;
+  var currentFilterDate = "{{ request.args.get('filter_date', '') }}";
+  if (studentId) {
+    var url = "{{ url_for('routes.edit_session', session_id=session_obj.session_id) }}?action=view_goals&student_id=" + studentId;
+    if (currentFilterDate) {
+      url += "&filter_date=" + currentFilterDate;
+    }
+    window.location.href = url;
+  } else {
+    alert('Please select a student first.');
+  }
+}
 
-        <div>
-            <label for="plan_notes">Plan Notes:</label>
-            <textarea id="plan_notes" name="plan_notes" rows="4" cols="50">{{ session.plan_notes }}</textarea>
-        </div>
+function setToday(fieldId) {
+  var today = new Date().toISOString().split('T')[0];
+  document.getElementById(fieldId).value = today;
+}
 
-        <div>
-            <button type="submit">Save Changes</button>
-        </div>
-
-        <div>
-            <label for="date_of_session">Date of Session:</label>
-            <input type="date" id="date_of_session" name="date_of_session" value="{{ session.date_of_session|strftime('%Y-%m-%d') }}">  
-        </div>
-        
-        <div>
-            <label for="time_of_session">Time of Session:</label>
-            <input type="time" id="time_of_session" name="time_of_session" value="{{ session.time_of_session.strftime('%H:%M') }}">  
-        </div>
-         </form>
-
-    <script>
-        function viewGoalsObjectives() {
-            var studentId = document.getElementById('student_id').value;
-            if (studentId) {
-                window.location.href = '/sessions/{{ session.session_id }}/edit?action=view_goals&student_id=' + studentId;
-            } else {
-                alert('Please select a student first.');
-            }
-        }
-    </script>
-
-</body>
-</html>
+function confirmArchive() {
+  return confirm("Are you sure you want to archive this session? This action cannot be undone.");
+}
+</script>
+{% endblock %}

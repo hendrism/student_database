@@ -1,43 +1,67 @@
 {% extends "base.html" %}
-
 {% block content %}
   <h2>Sessions</h2>
-  <table class="table">
+
+  <!-- Optional Filter Form -->
+  <form method="GET" action="{{ url_for('routes.sessions') }}">
+    <div class="input-group mb-3" style="max-width: 250px;">
+      <input type="date" id="filter_date" name="filter_date" class="form-control" value="{{ request.args.get('filter_date', '') }}">
+      <div class="input-group-append">
+        <button type="button" class="btn btn-secondary" onclick="setToday('filter_date')">Today</button>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-secondary">Filter</button>
+    <a href="{{ url_for('routes.sessions') }}" class="btn btn-light">Clear Filter</a>
+  </form>
+
+  <a href="{{ url_for('routes.add_session', filter_date=request.args.get('filter_date', '')) }}" class="btn btn-success">
+    Add New Session
+  </a>
+  <table class="table table-bordered">
     <thead>
       <tr>
-        <th>ID</th>
         <th>Student</th>
         <th>Date</th>
         <th>Time</th>
         <th>Status</th>
         <th>Plan Notes</th>
         <th>Objectives</th>
-        <th>Actions</th>  </tr>
+        <th>Actions</th>
+      </tr>
     </thead>
     <tbody>
-      {% for session in sessions %}
-        <tr>
-          <td>{{ session.session_id }}</td>
-          <td>{{ session.student.first_name }} {{ session.student.last_name }}</td>
-          <td>{{ session.date_of_session.strftime('%Y-%m-%d') }}</td>
-          <td>{{ session.time_of_session.strftime('%H:%M') }}</td>
-          <td>{{ session.status }}</td>
-          <td>{{ session.plan_notes }}</td>
+      {% for sess in sessions %}
+      <tr>
+        <td>{{ sess.student.first_name }} {{ sess.student.last_name }}</td>
+        <td>{{ sess.date_of_session.isoformat() }}</td>
+        <td>{{ sess.time_of_session.isoformat()[:5] }}</td>
+        <td>{{ sess.status }}</td>
+        <td>{{ sess.plan_notes }}</td>
         <td>
+          {% if sess.objectives %}
             <ul>
-            {% for objective in session.objectives %}
-                <li>{{ objective.objective_description }}</li>
-            {% endfor %}
+              {% for objective in sess.objectives %}
+                <li>{{ objective.objective_description }} ({{ objective.with_accuracy }})</li>
+              {% endfor %}
             </ul>
+          {% else %}
+            No Objectives
+          {% endif %}
         </td>
-
-          <td>
-            <a href="{{ url_for('routes.edit_session', session_id=session.session_id) }}" class="btn btn-primary btn-sm">Edit</a>
-              <a href="{{ url_for('routes.delete_session', session_id=session.session_id) }}" class="btn btn-danger btn-sm">Delete</a>
-          </td>
-        </tr>
+        <td>
+          <a href="{{ url_for('routes.edit_session', session_id=sess.session_id, filter_date=request.args.get('filter_date', '')) }}" class="btn btn-primary btn-sm">Edit</a>
+          <a href="{{ url_for('routes.session_action', session_id=sess.session_id, filter_date=request.args.get('filter_date', '')) }}" class="btn btn-warning btn-sm">Manage</a>
+          <form action="{{ url_for('routes.delete_session', session_id=sess.session_id, filter_date=request.args.get('filter_date', '')) }}" method="POST" style="display:inline;" onsubmit="return confirmDelete();">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+          <!-- Archive Button with next parameter preserved -->
+          <form action="{{ url_for('routes.archive_session', session_id=sess.session_id) }}" method="POST" style="display:inline;" onsubmit="return confirmArchive();">
+            <input type="hidden" name="next" value="{{ request.url }}">
+            <button type="submit" class="btn btn-secondary">Archive</button>
+          </form>
+        </td>
+      </tr>
       {% endfor %}
     </tbody>
   </table>
-    <a href="{{ url_for('routes.add_session') }}" class="btn btn-success">Add New Session</a>
 {% endblock %}

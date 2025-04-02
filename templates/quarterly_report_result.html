@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Quarterly Report Result{% endblock %}
+{% block content %}
+<h2>Generated Quarterly Report</h2>
+{% for paragraph in report_paragraphs %}
+  <div class="goal-report mb-3">
+    <div id="reportContainer{{ loop.index }}">
+      <p style="white-space: pre-wrap;">{{ paragraph }}</p>
+      <div class="signature mt-2">
+        <p> - Sean Hendricks, MA CCC-SLP MD License #07304</p>
+      </div>
+    </div>
+    <button class="btn btn-secondary btn-sm" onclick="copyParagraph({{ loop.index }})">Copy Goal {{ loop.index }}</button>
+  </div>
+{% endfor %}
+<a href="{{ url_for('routes.quarterly_report') }}" class="btn btn-outline-primary mt-3">Generate Another Report</a>
+
+<script>
+  function copyParagraph(index) {
+    var text = document.getElementById("reportContainer" + index).innerText;
+    navigator.clipboard.writeText(text).then(function() {
+      alert("Goal " + index + " copied to clipboard!");
+    }, function(err) {
+      alert("Failed to copy: " + err);
+    });
+  }
+</script>
+{% endblock %}

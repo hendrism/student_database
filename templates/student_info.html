@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Student Info: {{ student.first_name }} {{ student.last_name }}</h2>
+  <p><strong>Grade:</strong> {{ student.grade }}</p>
+
+  <h3>Goals & Objectives</h3>
+  {% if student.goals %}
+    <ul>
+      {% for goal in student.goals %}
+        <li>
+          <strong>Goal:</strong> {{ goal.goal_description }}
+          {% if goal.objectives %}
+            <ul>
+              {% for objective in goal.objectives %}
+                <li>{{ objective.objective_description }} (Accuracy: {{ objective.with_accuracy }})</li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p>No objectives.</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No goals found.</p>
+  {% endif %}
+
+  <h3>Recent Sessions</h3>
+  {% if recent_sessions %}
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Status</th>
+          <th>Plan Notes</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for session in recent_sessions %}
+          <tr>
+            <td>{{ session.date_of_session.isoformat() }}</td>
+            <td>{{ session.time_of_session.isoformat()[:5] }}</td>
+            <td>{{ session.status }}</td>
+            <td>{{ session.plan_notes }}</td>
+            <td>
+              <a href="{{ url_for('routes.edit_session', session_id=session.session_id) }}" class="btn btn-primary btn-sm">Edit</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No sessions found.</p>
+  {% endif %}
+
+  <!-- Optionally, add a link to edit student info or view full session history -->
+  <p>
+    <a href="{{ url_for('routes.edit_student', student_id=student.student_id) }}" class="btn btn-secondary">Edit Student Info</a>
+    <a href="{{ url_for('routes.student_trial_logs', student_id=student.student_id) }}" class="btn btn-primary">View Trial Logs</a>
+  </p>
+{% endblock %}

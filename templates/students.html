@@ -1,51 +1,45 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Student List with Goals & Objectives</title>
-</head>
-<body>
-    <p><a href="/"><strong>Home</strong></a></p>
-    <h1>Student Lookup</h1>
+{% extends "base.html" %}
+{% block content %}
+  <p><a href="{{ url_for('routes.index') }}"><strong>Home</strong></a></p>
+  <h1>Student Lookup</h1>
 
-    <form action="{{ url_for('routes.student_list') }}" method="GET"> 
-        <input type="text" name="search" placeholder="Search students">
-        <button type="submit">Search</button>
-    </form>
+  <form action="{{ url_for('routes.student_list') }}" method="GET"> 
+      <input type="text" name="search" placeholder="Search students">
+      <button type="submit">Search</button>
+  </form>
 
-    <h2>Student Results</h2>
-    {% if students %}
-        <ul>
-            {% for student in students %}
-                <li>
-                    <strong>{{ student.first_name }} {{ student.last_name }}</strong> (Grade: {{ student.grade }})
-                    {% if student.goals %}
-                        <ul>
-                            {% for goal in student.goals %}
-                                <li>
-                                    <strong>Goal:</strong> {{ goal.goal_description }}
-                                    {% if goal.objectives %}
-                                        <ul>
-                                            {% for objective in goal.objectives %}
-                                                <li>
-                                                    <strong>Objective:</strong> {{ objective.objective_description }} (Accuracy: {{ objective.with_accuracy }})
-                                                </li>
-                                            {% endfor %}
-                                        </ul>
-                                    {% else %}
-                                        <p>No objectives defined for this goal.</p>
-                                    {% endif %}
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    {% else %}
-                        <p>No goals defined for this student.</p>
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No students found matching your search criteria.</p>
-    {% endif %}
-
-</body>
-</html>
+  <h2>Student Results</h2>
+  {% if students %}
+      <ul>
+          {% for student in students %}
+              <li>
+                  <strong>{{ student.first_name }} {{ student.last_name }}</strong> (Grade: {{ student.grade }})
+                  {% if student.goals %}
+                      <ul>
+                          {% for goal in student.goals %}
+                              <li>
+                                  <strong>Goal:</strong> {{ goal.goal_description }}
+                                  {% if goal.objectives %}
+                                      <ul>
+                                          {% for objective in goal.objectives %}
+                                              <li>
+                                                  <strong>Objective:</strong> {{ objective.objective_description }} (Accuracy: {{ objective.with_accuracy }})
+                                              </li>
+                                          {% endfor %}
+                                      </ul>
+                                  {% else %}
+                                      <p>No objectives defined for this goal.</p>
+                                  {% endif %}
+                              </li>
+                          {% endfor %}
+                      </ul>
+                  {% else %}
+                      <p>No goals defined for this student.</p>
+                  {% endif %}
+              </li>
+          {% endfor %}
+      </ul>
+  {% else %}
+      <p>No students found matching your search criteria.</p>
+  {% endif %}
+{% endblock %}

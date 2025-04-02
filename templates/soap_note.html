@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>SOAP Note Generator</h2>
+
+<!-- Student Selector -->
+<form method="GET" action="{{ url_for('routes.soap_note') }}">
+  <div class="form-group">
+    <label for="student_id">Student:</label>
+    <select name="student_id" id="student_id" class="form-control" onchange="this.form.submit()">
+      <option value="">Select Student</option>
+      {% for student in students %}
+        <option value="{{ student.student_id }}" {% if selected_student and selected_student.student_id == student.student_id %}selected{% endif %}>
+          {{ student.first_name }} {{ student.last_name }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+</form>
+
+<!-- Display Monthly Services & Sessions Count -->
+{% if selected_student %}
+  <p><strong>Monthly Sessions Expected:</strong> {{ monthly_services or 'N/A' }}</p>
+  <p><strong>Sessions Logged This Month:</strong> {{ session_count }}</p>
+{% endif %}
+
+<!-- Main SOAP Note Form -->
+<form method="POST">
+  <input type="hidden" name="student_id" value="{{ selected_student.student_id }}">
+  
+  <!-- Month Dropdown -->
+  <div class="form-group">
+    <label for="month">Month:</label>
+    <select name="month" id="month" class="form-control">
+      {% for month in months %}
+        <option value="{{ month }}" {% if month == current_month %}selected{% endif %}>{{ month }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <!-- Session Number -->
+  <div class="form-group">
+    <label>Session Number:</label>
+    <input type="number" name="session_number" class="form-control" placeholder="e.g., 1" required>
+  </div>
+
+  <!-- Total Sessions -->
+  <div class="form-group">
+    <label>Total Sessions for Month:</label>
+    <input type="number" name="total_sessions" class="form-control" placeholder="e.g., 4" required>
+  </div>
+  
+  <!-- Session Type -->
+  <div class="form-group">
+    <label for="session_type">Session Type:</label>
+    <select name="session_type" id="session_type" class="form-control">
+      <option value="Individual" selected>Individual</option>
+      <option value="Group">Group</option>
+    </select>
+  </div>
+
+  <!-- Performance -->
+  <div class="form-group">
+    <label>Performance:</label>
+    <select name="performance" class="form-control">
+      <option value="engaged and focused on all tasks with minimal redirection needed">Attentive</option>
+      <option value="somewhat distracted during the session but was able to be redirected back to the task">Slightly Distracted</option>
+      <option value="easily distracted and required frequent redirection to stay on task">Distracted</option>
+      <option value="highly motivated and enthusiastic, showing strong interest in tasks">Motivated</option>
+      <option value="visibly tired, showing reduced enthusiasm for tasks and needing support to stay focused">Tired</option>
+      <option value="not consistently engaged and needed multiple prompts to participate in tasks">Minimal Participation</option>
+    </select>
+  </div>
+
+  <!-- Additional S Notes -->
+  <div class="form-group">
+    <label>Additional Notes (S):</label>
+    <textarea name="additional_S" class="form-control" placeholder="Any extra details for S section..."></textarea>
+  </div>
+
+  <!-- Activity Dropdown -->
+  <div class="form-group">
+    <label>Activity:</label>
+    <select name="activity" class="form-control">
+      <option value="">Select Activity</option>
+      <option value="Short Story">Short Story</option>
+      <option value="Pictures">Pictures</option>
+      <option value="Other">Other (describe below)</option>
+    </select>
+    <input type="text" name="activity_other" class="form-control mt-2" placeholder="If other, describe here (e.g., a set of pictures)">
+  </div>
+
+  <!-- Objective -->
+  <div class="form-group">
+    <label>Objective:</label>
+    <select name="objective" class="form-control">
+      {% if objectives %}
+        {% for obj in objectives %}
+          <option value="{{ obj.objective_description }}">{{ obj.objective_description }}</option>
+        {% endfor %}
+      {% else %}
+        <option value="">No active objectives for this student</option>
+      {% endif %}
+      <option value="Other">Other (write below)</option>
+    </select>
+    <input type="text" name="objective_other" class="form-control mt-2" placeholder="If other, write here (e.g., label pictures)">
+  </div>
+
+  <!-- Accuracy -->
+  <div class="form-group">
+    <label>Accuracy (without % sign):</label>
+    <input type="number" name="accuracy" class="form-control" placeholder="e.g., 80" required>
+  </div>
+
+  <!-- Support Level -->
+  <div class="form-group">
+    <label>Support Level:</label>
+    <select name="support_level" class="form-control">
+      <option value="independently">Independently</option>
+      <option value="given visual cues">Given visual cues</option>
+      <option value="given verbal cues">Given verbal cues</option>
+      <option value="given visual and verbal cues">Given visual and verbal cues</option>
+      <option value="given visual and verbal cues plus models">Given visual and verbal cues plus models</option>
+      <option value="Other">Other (write below)</option>
+    </select>
+    <input type="text" name="support_level_other" class="form-control mt-2" placeholder="If other, write here">
+  </div>
+
+  <!-- Additional O Notes -->
+  <div class="form-group">
+    <label>Additional Notes (O):</label>
+    <textarea name="additional_O" class="form-control" placeholder="Any extra details for O section..."></textarea>
+  </div>
+
+  <!-- Visual Cues -->
+  <div class="form-group">
+    <label>Visual Cues (Select all that apply):</label><br>
+    {% for cue in ['graphic organizer', 'written answer choices', 'written clues', 'picture choices', 'sentence starters', 'sentence starters with pictures', 'pictures for each word in sentence', 'written instructions', 'visual to support instructions', 'word bank', 'highlighted text excerpts'] %}
+      <input type="checkbox" name="visual_cues" value="{{ cue }}"> {{ cue }}<br>
+    {% endfor %}
+    <input type="text" name="visual_cues_other" class="form-control mt-2" placeholder="Other (if applicable)">
+  </div>
+  
+  <!-- Verbal Cues -->
+  <div class="form-group">
+    <label>Verbal Cues (Select all that apply):</label><br>
+    {% for cue in ['leading questions', 'verbal hints', 'verbally presented choices', 'verbally presented instructions', 'verbal reminders', 'repetition of text/excerpt from text'] %}
+      <input type="checkbox" name="verbal_cues" value="{{ cue }}"> {{ cue }}<br>
+    {% endfor %}
+    <input type="text" name="verbal_cues_other" class="form-control mt-2" placeholder="Other (if applicable)">
+  </div>
+  
+  <button type="submit" class="btn btn-success">Generate SOAP Note</button>
+</form>
+{% endblock %}

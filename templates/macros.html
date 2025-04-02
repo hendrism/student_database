@@ -1,0 +1,14 @@
+{# macros.html #}
+{% macro render_textarea(field_id, label, required=False, rows=3, placeholder="") %}
+<div class="form-group">
+  <label for="{{ field_id }}"><strong>{{ label }}</strong></label>
+  <textarea class="form-control" id="{{ field_id }}" name="{{ field_id }}" rows="{{ rows }}" placeholder="{{ placeholder }}" {% if required %}required{% endif %}></textarea>
+</div>
+{% endmacro %}
+
+{% macro render_input(field_id, label, type="text", required=False, placeholder="") %}
+<div class="form-group">
+  <label for="{{ field_id }}"><strong>{{ label }}</strong></label>
+  <input type="{{ type }}" class="form-control" id="{{ field_id }}" name="{{ field_id }}" placeholder="{{ placeholder }}" {% if required %}required{% endif %}>
+</div>
+{% endmacro %}

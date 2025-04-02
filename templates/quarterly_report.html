@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block title %}Quarterly Progress Report{% endblock %}
+{% block content %}
+<h2>Quarterly Progress Report</h2>
+
+{% if not selected_student %}
+  <!-- Stage 1: Student Selection -->
+  <form method="POST">
+    <input type="hidden" name="form_stage" value="start">
+    <div class="form-group">
+      <label for="student_id">Select Student:</label>
+      <select name="student_id" id="student_id" class="form-control">
+        <option value="">-- Select Student --</option>
+        {% for student in students %}
+          <option value="{{ student.student_id }}">{{ student.first_name }} {{ student.last_name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Start Progress Report</button>
+  </form>
+{% else %}
+  <!-- Stage 2: Full Progress Report Form -->
+  <form method="POST">
+    <input type="hidden" name="form_stage" value="generate">
+    <input type="hidden" name="student_id" value="{{ selected_student.student_id }}">
+    
+    <h3>Student: {{ selected_student.first_name }} {{ selected_student.last_name }}</h3>
+    <p>Pronouns: {{ selected_student.pronouns }}</p>
+    
+    <!-- Quarter Selection -->
+    <div class="form-group">
+      <label for="quarter">Select Quarter:</label>
+      <select class="form-control" id="quarter" name="quarter">
+        {% for q in quarters %}
+          <option value="{{ q }}" {% if selected_quarter and selected_quarter == q %}selected{% endif %}>{{ q }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    
+    <!-- Overall Progress -->
+    <div class="form-group">
+      <label for="overall_progress">Overall Progress:</label>
+      <select class="form-control" id="overall_progress" name="overall_progress" onchange="toggleCustomProgress()">
+        {% for option in overall_progress_options %}
+          <option value="{{ option }}" {% if selected_overall_progress and selected_overall_progress == option %}selected{% endif %}>{{ option }}</option>
+        {% endfor %}
+      </select>
+      <input type="text" class="form-control mt-2" id="overall_progress_custom" name="overall_progress_custom" placeholder="Enter custom progress" style="display:none;">
+    </div>
+    
+    <!-- Goals and Objectives -->
+    {% for goal in selected_student.goals %}
+      <div class="card mb-3">
+        <div class="card-header">
+          {{ goal.goal_description }}
+        </div>
+        <div class="card-body">
+          {% for obj in goal.objectives %}
+            <div class="form-group" id="objective_{{ obj.objective_id }}">
+              <label>{{ obj.objective_description }} Performance:</label>
+              <div class="performance-notes">
+                <input type="number" class="form-control mb-2" name="performance_{{ obj.objective_id }}" placeholder="Enter accuracy percentage (number only)">
+                <select class="form-control mb-2" name="support_{{ obj.objective_id }}">
+                  <option value="independently">independently</option>
+                  <option value="given visual cues">given visual cues</option>
+                  <option value="given verbal cues">given verbal cues</option>
+                  <option value="given visual and verbal cues">given visual and verbal cues</option>
+                  <option value="given visual and verbal cues plus models">given visual and verbal cues plus models</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="addPerformanceNote({{ obj.objective_id }})">Add More</button>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+    
+    <!-- Closing Sentence -->
+    <div class="form-group">
+      <label for="closing_sentence">Closing Sentence:</label>
+      <select class="form-control" id="closing_sentence" name="closing_sentence" onchange="toggleCustomClosing()">
+        {% for option in closing_sentence_options %}
+          <option value="{{ option }}">{{ option }}</option>
+        {% endfor %}
+      </select>
+      <input type="text" class="form-control mt-2" id="closing_sentence_custom" name="closing_sentence_custom" placeholder="Enter custom closing sentence" style="display:none;">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Generate Report</button>
+  </form>
+{% endif %}
+
+<!-- JavaScript functions loaded for all stages -->
+<script>
+  function toggleCustomProgress() {
+    var overallProgress = document.getElementById("overall_progress");
+    var customInput = document.getElementById("overall_progress_custom");
+    customInput.style.display = overallProgress.value === "Other" ? "block" : "none";
+  }
+  function toggleCustomClosing() {
+    var closingSentence = document.getElementById("closing_sentence");
+    var customInput = document.getElementById("closing_sentence_custom");
+    customInput.style.display = closingSentence.value === "Other" ? "block" : "none";
+  }
+  function addPerformanceNote(objectiveId) {
+    var container = document.querySelector("#objective_" + objectiveId + " .performance-notes");
+    var newInput = document.createElement("input");
+    newInput.type = "number";
+    newInput.className = "form-control mb-2";
+    newInput.name = "performance_" + objectiveId;
+    newInput.placeholder = "Enter additional accuracy percentage";
+    container.appendChild(newInput);
+    
+    var newSelect = document.createElement("select");
+    newSelect.className = "form-control mb-2";
+    newSelect.name = "support_" + objectiveId;
+    var options = ["independently", "given visual cues", "given verbal cues", "given visual and verbal cues", "given visual and verbal cues plus models"];
+    options.forEach(function(option) {
+      var opt = document.createElement("option");
+      opt.value = option;
+      opt.text = option;
+      newSelect.appendChild(opt);
+    });
+    container.appendChild(newSelect);
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Student Search</h2>
+<form method="GET" action="{{ url_for('routes.student_search') }}">
+    <div class="mb-3">
+        <label for="q" class="form-label">Search for a student:</label>
+        <input type="text" id="q" name="q" class="form-control" placeholder="Enter student name..." value="{{ query or '' }}">
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+{% if query %}
+    <h3>Results for "{{ query }}":</h3>
+    {% if students %}
+        <ul>
+        {% for student in students %}
+            <li>
+                <a href="{{ url_for('routes.student_info', student_id=student.student_id) }}">
+                    {{ student.first_name }} {{ student.last_name }} - Grade: {{ student.grade }}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No students found matching "{{ query }}".</p>
+    {% endif %}
+{% endif %}
+{% endblock %}

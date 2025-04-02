@@ -1,43 +1,35 @@
 {% extends "base.html" %}
-
 {% block content %}
-  <h2>Edit Student</h2>
+<h2>Edit Student</h2>
+
+<form action="{{ url_for('routes.edit_student', student_id=student.student_id) }}" method="POST">
+  {% include "_student_form_fields.html" %}
   
-  <form action="" method="POST">
+  <!-- Add Preferred Name field -->
+  <div class="mb-3">
+    <label for="preferred_name" class="form-label">Preferred Name:</label>
+    <input type="text" id="preferred_name" name="preferred_name" class="form-control" value="{{ student.preferred_name or '' }}">
+  </div>
+  
+  <h3>Goals & Objectives</h3>
+  {% for goal in goals %}
     <div class="mb-3">
-      <label for="first_name" class="form-label">First Name:</label>
-      <input type="text" id="first_name" name="first_name" class="form-control" value="{{ student.first_name }}" required>
+      <label for="goal_{{ goal.goal_id }}" class="form-label">Goal:</label>
+      <input type="text" id="goal_{{ goal.goal_id }}" name="goal_{{ goal.goal_id }}" class="form-control" value="{{ goal.goal_description }}">
     </div>
 
-    <div class="mb-3">
-      <label for="last_name" class="form-label">Last Name:</label>
-      <input type="text" id="last_name" name="last_name" class="form-control" value="{{ student.last_name }}" required>
-    </div>
-
-    <div class="mb-3">
-      <label for="grade_level" class="form-label">Grade Level:</label>
-      <input type="text" id="grade_level" name="grade_level" class="form-control" value="{{ student.grade_level }}">
-    </div>
-
-    <h3>Goals & Objectives</h3>
-    {% for goal in goals %}
-      <div class="mb-3">
-        <label for="goal_{{ goal.goal_id }}" class="form-label">Goal:</label>
-        <input type="text" id="goal_{{ goal.goal_id }}" name="goal_{{ goal.goal_id }}" class="form-control" value="{{ goal.goal_description }}">
-      </div>
-
-      <h4>Objectives</h4>
-      {% for objective in objectives %}
-        {% if objective.goal_id == goal.goal_id %}
-          <div class="mb-3">
-            <label for="objective_{{ objective.objective_id }}" class="form-label">Objective:</label>
-            <input type="text" id="objective_{{ objective.objective_id }}" name="objective_{{ objective.objective_id }}" class="form-control" value="{{ objective.objective_description }}">
-          </div>
-        {% endif %}
-      {% endfor %}
+    <h4>Objectives</h4>
+    {% for objective in objectives %}
+      {% if objective.goal_id == goal.goal_id %}
+        <div class="mb-3">
+          <label for="objective_{{ objective.objective_id }}" class="form-label">Objective:</label>
+          <input type="text" id="objective_{{ objective.objective_id }}" name="objective_{{ objective.objective_id }}" class="form-control" value="{{ objective.objective_description }}">
+        </div>
+      {% endif %}
     {% endfor %}
-
-    <button type="submit" class="btn btn-success">Update Student</button>
-    <a href="{{ url_for('routes.students') }}" class="btn btn-secondary">Cancel</a>
-  </form>
+  {% endfor %}
+  
+  <button type="submit" class="btn btn-success">Update Student</button>
+  <a href="{{ url_for('routes.index') }}" class="btn btn-secondary">Cancel</a>
+</form>
 {% endblock %}

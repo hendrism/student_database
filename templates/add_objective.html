@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+
+{% block content %}
+  <h2>Add Objective for Goal</h2>
+  
+  <form method="POST">
+    {{ macros.render_textarea("objective_description", "Objective Description", required=True, rows=3) }}
+    
+    {{ macros.render_input("with_accuracy", "Expected Accuracy (Optional)", placeholder="e.g., 80% accuracy over 3 sessions") }}
+    
+    <button type="submit" class="btn btn-primary">Add Objective</button>
+    <a href="{{ url_for('routes.student_info', student_id=goal.student.student_id) }}" class="btn btn-secondary">Cancel</a>
+  </form>
+{% endblock %}

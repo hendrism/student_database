@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Trial Logs for {{ student.first_name }} {{ student.last_name }}</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Objective</th>
+            <th>Total Trials</th>
+            <th>% No Support</th>
+            <th>% With 1 Cue</th>
+            <th>% Visual + Verbal Cues</th>
+            <th>% With Modeling</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for log in trial_logs %}
+        <tr>
+            <td>{{ log.date_of_session.strftime('%Y-%m-%d') }}</td>
+            <td>{{ log.objective.objective_description if log.objective else 'N/A' }}</td>
+            <td>{{ log.total_trials() }}</td>
+            <td>{{ log.percent_no_support() }}%</td>
+            <td>{{ log.percent_with_1_cue() }}%</td>
+            <td>{{ log.percent_visual_verbal_cues() }}%</td>
+            <td>{{ log.percent_with_modeling() }}%</td>
+            <td>{{ log.notes or '' }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{{ url_for('routes.student_info', student_id=student.student_id) }}" class="btn btn-secondary">Back to Profile</a>
+{% endblock %}

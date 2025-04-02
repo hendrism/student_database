@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Trial Logs for {{ selected_date }}</h2>
+
+<form method="GET" action="{{ url_for('routes.trial_logs_by_date') }}">
+  <div class="input-group mb-3" style="max-width: 250px;">
+    <input type="date" id="date" name="date" class="form-control small-input" value="{{ selected_date }}">
+    <div class="input-group-append">
+      <button type="button" class="btn btn-outline-secondary" onclick="setToday('date')">Today</button>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">View Trial Logs</button>
+</form>
+
+<table class="table table-striped mt-4">
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Date</th>
+      <th>Objective</th>
+      <th>Total Trials</th>
+      <th>% No Support</th>
+      <th>% With 1 Cue</th>
+      <th>% Visual + Verbal Cues</th>
+      <th>% With Modeling</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for log in trial_logs %}
+    <tr>
+      <td>{{ log.student.first_name }} {{ log.student.last_name }}</td>
+      <td>{{ log.date_of_session.strftime('%Y-%m-%d') }}</td>
+      <td>{{ log.objective.objective_description if log.objective else 'N/A' }}</td>
+      <td>{{ log.total_trials() }}</td>
+      <td>{{ log.percent_no_support() }}%</td>
+      <td>{{ log.percent_with_1_cue() }}%</td>
+      <td>{{ log.percent_visual_verbal_cues() }}%</td>
+      <td>{{ log.percent_with_modeling() }}%</td>
+      <td>{{ log.notes or '' }}</td>
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan="9">No trial logs found for this date.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<script>
+function setToday(fieldId) {
+  var today = new Date().toISOString().split('T')[0];
+  document.getElementById(fieldId).value = today;
+}
+</script>
+
+{% endblock %}

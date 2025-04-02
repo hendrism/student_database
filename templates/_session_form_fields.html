@@ -1,0 +1,89 @@
+<!-- _session_form_fields.html -->
+
+<!-- Student Selection & "View Goals/Objectives" Button -->
+<div class="mb-3">
+  <label for="student_id" class="form-label">Student:</label>
+  <select id="student_id" name="student_id" class="form-control" required>
+    <option value="">-- Select Student --</option>
+    {% for student in students %}
+      <option value="{{ student.student_id }}" {% if selected_student_id and student.student_id == selected_student_id|int %}selected{% endif %}>
+        {{ student.first_name }} {{ student.last_name }}
+      </option>
+    {% endfor %}
+  </select>
+  <button type="button" class="btn btn-info" onclick="viewGoalsObjectives()">View Goals/Objectives</button>
+</div>
+
+<!-- Goals & Objectives Section -->
+<div id="goals-objectives-section" class="mb-3">
+  {% if selected_student_goals %}
+    <h3>Goals and Objectives for {{ selected_student.first_name }} {{ selected_student.last_name }}:</h3>
+    {% for goal in selected_student_goals %}
+      <div class="mb-3">
+        <strong>Goal:</strong> {{ goal.goal_description }}
+        {% if goal.objectives %}
+          <ul>
+            {% for objective in goal.objectives %}
+              <li>
+                <input type="checkbox" id="objective_{{ objective.objective_id }}" name="objectives" value="{{ objective.objective_id }}"
+                  {% if selected_objective_ids is defined and (objective.objective_id in selected_objective_ids) %}checked{% endif %}>
+                <label for="objective_{{ objective.objective_id }}">{{ objective.objective_description }} (Accuracy: {{ objective.with_accuracy }})</label>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p>No objectives defined for this goal.</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  {% elif selected_student_id %}
+    <p>No goals defined for the selected student.</p>
+  {% else %}
+    <p>Select a student to see their goals and objectives.</p>
+  {% endif %}
+</div>
+
+<!-- Date of Session -->
+<div class="mb-3">
+  <label for="date_of_session" class="form-label">Date of Session:</label>
+  <div class="input-group" style="max-width: 250px;">
+    <input type="date" id="date_of_session" name="date_of_session" class="form-control small-input"
+      value="{{ session_obj.date_of_session.isoformat() if session_obj is defined else request.form.get('date_of_session', today) }}">
+    <div class="input-group-append">
+      <button type="button" class="btn btn-outline-secondary" onclick="setToday('date_of_session')">Today</button>
+    </div>
+  </div>
+</div>
+
+<!-- Time of Session -->
+<div class="mb-3">
+  <label for="time_of_session" class="form-label">Time of Session:</label>
+  <div class="input-group" style="max-width: 200px;">
+    <input type="time" id="time_of_session" name="time_of_session" class="form-control small-input"
+      value="{{ session_obj.time_of_session.isoformat()[:5] if session_obj is defined else request.form.get('time_of_session', '09:00') }}">
+  </div>
+</div>
+
+<!-- Status -->
+<div class="mb-3">
+  <label for="status" class="form-label">Status:</label>
+  <select id="status" name="status" class="form-control">
+    {% if session_obj is defined %}
+      <option value="Scheduled" {% if session_obj.status == 'Scheduled' %}selected{% endif %}>Scheduled</option>
+      <option value="Completed" {% if session_obj.status == 'Completed' %}selected{% endif %}>Completed</option>
+      <option value="Makeup Needed" {% if session_obj.status == 'Makeup Needed' %}selected{% endif %}>Makeup Needed</option>
+      <option value="Excused Absence" {% if session_obj.status == 'Excused Absence' %}selected{% endif %}>Excused Absence</option>
+    {% else %}
+      <option value="Scheduled" selected>Scheduled</option>
+      <option value="Completed">Completed</option>
+      <option value="Makeup Needed">Makeup Needed</option>
+      <option value="Excused Absence">Excused Absence</option>
+    {% endif %}
+  </select>
+</div>
+
+<!-- Plan Notes -->
+<div class="mb-3">
+  <label for="plan_notes" class="form-label">Plan Notes:</label>
+  <textarea id="plan_notes" name="plan_notes" rows="4" class="form-control">{{ session_obj.plan_notes if session_obj is defined else '' }}</textarea>
+</div>

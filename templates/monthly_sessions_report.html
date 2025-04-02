@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Monthly Session Tracking Report</h2>
+
+{% include "_session_report_filter.html" %}
+
+<!-- Table of Sessions -->
+<table class="table table-bordered table-sm">
+  <thead class="thead-light" style="position: sticky; top: 0; background-color: #fff; z-index: 100;">
+    <tr>
+      <th>Student</th>
+      <th>Expected Sessions</th>
+      <th>Completed + Excused</th>
+      <th>Makeup Needed (This Month)</th>
+      <th>Remaining Sessions</th>
+      <th>Total Outstanding Makeups</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in report_data %}
+    <tr>
+      <td>{{ item.student_name }}</td>
+      <td>{{ item.expected_sessions }}</td>
+      <td>{{ item.completed_sessions }}</td>
+      <td>{{ item.makeup_needed }}</td>
+      <td>{{ item.remaining_sessions }}</td>
+      <td>{{ item.total_makeups }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<a href="{{ url_for('routes.reports') }}" class="btn btn-secondary mt-3">Back to Reports</a>
+{% endblock %}

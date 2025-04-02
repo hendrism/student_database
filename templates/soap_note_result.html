@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Generated SOAP Note</h2>
+
+<!-- S Section -->
+<h4>S:</h4>
+<p id="s_note">{{ s_note }}</p>
+<button id="copy_s" onclick="copyToClipboard('s_note', 'copy_s')" class="btn btn-sm btn-outline-primary">Copy S</button>
+
+<!-- O Section -->
+<h4>O:</h4>
+<p id="o_note">{{ o_note }}</p>
+<button id="copy_o" onclick="copyToClipboard('o_note', 'copy_o')" class="btn btn-sm btn-outline-primary">Copy O</button>
+
+<!-- A Section -->
+<h4>A:</h4>
+<p id="a_note">{{ a_note }}</p>
+<button id="copy_a" onclick="copyToClipboard('a_note', 'copy_a')" class="btn btn-sm btn-outline-primary">Copy A</button>
+
+<!-- P Section -->
+<h4>P:</h4>
+<p id="p_note">{{ p_note }}</p>
+<button id="copy_p" onclick="copyToClipboard('p_note', 'copy_p')" class="btn btn-sm btn-outline-primary">Copy P</button>
+
+<!-- Back Button -->
+<a href="{{ url_for('routes.soap_note') }}" class="btn btn-secondary mt-4">Generate Another Note</a>
+
+<script>
+    function copyToClipboard(elementId, buttonId) {
+        const text = document.getElementById(elementId).innerText;
+        navigator.clipboard.writeText(text).then(function() {
+            // Show "Copied!" message next to button
+            const button = document.getElementById(buttonId);
+            const msg = document.createElement('span');
+            msg.innerText = ' Copied!';
+            msg.style.color = 'green';
+            msg.style.marginLeft = '10px';
+            button.parentNode.appendChild(msg);
+            
+            // Remove message after 2 seconds
+            setTimeout(() => msg.remove(), 2000);
+        }, function(err) {
+            console.error('Failed to copy: ', err);
+        });
+    }
+</script>
+{% endblock %}
