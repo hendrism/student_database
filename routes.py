@@ -787,7 +787,7 @@ def quarterly_report():
       closing_sentence = request.form.get('closing_sentence')
       if closing_sentence == 'Other':
         closing_sentence = request.form.get('closing_sentence_custom')
-        
+      
       # Map quarter codes to full text.
       quarter_map = {
         "Q1": "the first quarter",
@@ -796,46 +796,67 @@ def quarterly_report():
         "Q4": "the fourth quarter"
       }
       first_name = selected_student.first_name
-      # Use the first part of the pronouns field as the subject pronoun (default to first name if missing).
       subject_pronoun = (selected_student.pronouns.split('/')[0].capitalize()
-                if selected_student.pronouns else first_name)
+                         if selected_student.pronouns else first_name)
       overall_progress_text = overall_progress.lower()
       quarter_text = quarter_map.get(quarter, quarter)
       
       report_paragraphs = []
-
       # Process each goal separately.
       for goal in selected_student.goals:
           paragraph_lines = []
-          # Intro sentence (without goal number).
+          # Intro sentence for the goal.
           intro_sentence = f"{first_name} demonstrated {overall_progress_text} in {quarter_text}."
           paragraph_lines.append(intro_sentence)
-        
+          
           # Process each objective in this goal.
           for obj in goal.objectives:
+              # Create a dictionary to group performance values by support level.
+              support_groups = {}
               performances = request.form.getlist(f'performance_{obj.objective_id}')
               supports = request.form.getlist(f'support_{obj.objective_id}')
-              entries = []
               for perf, supp in zip(performances, supports):
                   if perf.strip():
-                      entries.append(f"with {perf}% accuracy {supp.lower()}")
-              if entries:
-                  if len(entries) == 1:
-                      performance_text = entries[0]
-                  elif len(entries) == 2:
-                      performance_text = " and ".join(entries)
-                  else:
-                      performance_text = ", ".join(entries[:-1]) + ", and " + entries[-1]
-                  sentence = f"{subject_pronoun} was able to {obj.objective_description} {performance_text}."
-                  paragraph_lines.append(sentence)
+                      try:
+                          value = float(perf)
+                      except ValueError:
+                          continue
+                      supp_lower = supp.lower()
+                      support_groups.setdefault(supp_lower, []).append(value)
+              
+              if support_groups:
+                  # Define the desired order from most support to least support.
+                  support_order = [
+                      "given visual and verbal cues plus models",
+                      "given visual and verbal cues",
+                      "given visual cues",
+                      "given verbal cues",
+                      "independently"
+                  ]
+                  # Sort the support groups based on the order (unknown support types come last).
+                  sorted_groups = sorted(
+                      support_groups.items(),
+                      key=lambda x: support_order.index(x[0]) if x[0] in support_order else 999
+                  )
+                  
+                  # Build the narrative for this objective.
+                  objective_text = f"{first_name} was expected to {obj.objective_description}."
+                  for supp, values in sorted_groups:
+                      min_val = min(values)
+                      max_val = max(values)
+                      objective_text += f" With {supp}, his accuracy ranged from {min_val:.0f}% to {max_val:.0f}% across multiple sessions."
+                  
+                  paragraph_lines.append(objective_text)
+          
+          # Append the closing sentence for this goal.
           paragraph_lines.append(closing_sentence)
-          # Join the lines into one paragraph (space-separated, no line breaks).
+          # Join the lines into one paragraph (space-separated).
           report_paragraphs.append(" ".join(paragraph_lines))
-        
-      # Instead of joining report_paragraphs into one string, pass the list directly:
+      
+      # Now, pass the list of paragraphs to the result template.
       return render_template('quarterly_report_result.html',
-                report_paragraphs=report_paragraphs,
-                selected_student=selected_student)
+                             report_paragraphs=report_paragraphs,
+                             selected_student=selected_student)
     
     
   # GET request: show only the student selection form.
