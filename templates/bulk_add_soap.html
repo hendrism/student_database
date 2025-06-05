@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h2>Bulk Add SOAP Notes</h2>
+
+    <form method="POST" action="{{ url_for('routes.bulk_add_soap') }}">
+      <div class="form-group">
+        <label for="studentSelect">Student</label>
+        <select id="studentSelect" name="student_id" class="form-control" required>
+          <option value="">-- Select Student --</option>
+          {% for stu in students %}
+            <option value="{{ stu.student_id }}">
+              {{ stu.first_name }} {{ stu.last_name }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="noteDate">Date</label>
+        <input
+          type="date"
+          id="noteDate"
+          name="note_date"
+          class="form-control"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="noteText">SOAP Note Text</label>
+        <textarea id="noteText" name="note_text" class="form-control" rows="8" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Save & Add Another</button>
+      <a href="{{ url_for('routes.view_soap_notes') }}" class="btn btn-secondary">Cancel</a>
+    </form>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const dateInput = document.getElementById('noteDate');
+        const today = new Date().toISOString().slice(0, 10);
+        dateInput.value = today;
+      });
+    </script>
+  </div>
+</div>
+{% endblock %}

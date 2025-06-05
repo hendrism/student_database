@@ -1,0 +1,15 @@
+
+
+{% extends "base.html" %}
+{% block title %}Add Activity{% endblock %}
+{% block content %}
+  <h2>Add New Activity</h2>
+  <form method="POST">
+    <div class="form-group">
+      <label for="name">Activity Name</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Activity</button>
+    <a href="{{ url_for('routes.activities') }}" class="btn btn-secondary">Cancel</a>
+  </form>
+{% endblock %}

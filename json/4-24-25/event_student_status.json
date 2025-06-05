@@ -1,0 +1,56 @@
+[
+  {
+    "status" : "Scheduled",
+    "id" : 1,
+    "event_id" : 311,
+    "student_id" : 24
+  },
+  {
+    "status" : "Scheduled",
+    "id" : 2,
+    "event_id" : 312,
+    "student_id" : 6
+  },
+  {
+    "status" : "Scheduled",
+    "id" : 3,
+    "event_id" : 312,
+    "student_id" : 33
+  },
+  {
+    "status" : "Scheduled",
+    "id" : 4,
+    "event_id" : 313,
+    "student_id" : 5
+  },
+  {
+    "status" : "Scheduled",
+    "id" : 5,
+    "event_id" : 314,
+    "student_id" : 3
+  },
+  {
+    "status" : "Scheduled",
+    "id" : 6,
+    "event_id" : 314,
+    "student_id" : 8
+  },
+  {
+    "status" : "Scheduled",
+    "id" : 7,
+    "event_id" : 315,
+    "student_id" : 21
+  },
+  {
+    "status" : "Scheduled",
+    "id" : 8,
+    "event_id" : 315,
+    "student_id" : 30
+  },
+  {
+    "status" : "Scheduled",
+    "id" : 9,
+    "event_id" : 315,
+    "student_id" : 35
+  }
+]

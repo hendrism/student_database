@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+<!-- Trial log page for recording and submitting session trial data for selected objectives. -->
 {% block content %}
 <h2>Trial Log</h2>
 
@@ -46,28 +47,24 @@
       <!-- Trial Counts -->
       <h4>Trial Counts</h4>
       <div class="form-group">
-        <label>Correct - No Support:</label>
-        <input type="number" name="correct_no_support" class="form-control" min="0" value="0">
+        <label>Independent:</label>
+        <input type="number" name="independent" class="form-control" min="0" value="0">
       </div>
       <div class="form-group">
-        <label>Correct - Visual Cue:</label>
-        <input type="number" name="correct_visual_cue" class="form-control" min="0" value="0">
+        <label>Minimal Support:</label>
+        <input type="number" name="minimal_support" class="form-control" min="0" value="0">
       </div>
       <div class="form-group">
-        <label>Correct - Verbal Cue:</label>
-        <input type="number" name="correct_verbal_cue" class="form-control" min="0" value="0">
+        <label>Moderate Support:</label>
+        <input type="number" name="moderate_support" class="form-control" min="0" value="0">
       </div>
       <div class="form-group">
-        <label>Correct - Visual + Verbal Cue:</label>
-        <input type="number" name="correct_visual_verbal_cue" class="form-control" min="0" value="0">
-      </div>
-      <div class="form-group">
-        <label>Correct - Modeling:</label>
-        <input type="number" name="correct_modeling" class="form-control" min="0" value="0">
+        <label>Maximal Support:</label>
+        <input type="number" name="maximal_support" class="form-control" min="0" value="0">
       </div>
       <div class="form-group">
         <label>Incorrect:</label>
-        <input type="number" name="incorrect" class="form-control" min="0" value="0">
+        <input type="number" name="incorrect_new" class="form-control" min="0" value="0">
       </div>
 
       <!-- Notes -->

@@ -10,6 +10,6 @@
     {{ macros.render_input("first_objective", "First Objective (Optional)", placeholder="Add an objective if you want") }}
     
     <button type="submit" class="btn btn-primary">Add Goal</button>
-    <a href="{{ url_for('routes.student_info', student_id=student.student_id) }}" class="btn btn-secondary">Cancel</a>
+    <a href="{{ url_for('routes.edit_student', student_id=student.student_id) }}" class="btn btn-secondary">Cancel</a>
   </form>
 {% endblock %}

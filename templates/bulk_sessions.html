@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}Bulk Session Entry{% endblock %}
+
+{% block content %}
+<h2>Bulk Session Entry</h2>
+
+<form method="POST">
+  <div class="form-row align-items-end">
+    <div class="form-group col-md-3">
+      <label for="session_date">Date</label>
+      <input type="date" id="session_date" name="session_date"
+             class="form-control" required>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="bulk_status">Bulk Status</label>
+      <select id="bulk_status" class="form-control">
+        <option value="Scheduled" selected>Scheduled</option>
+        <option value="Completed">Completed</option>
+        <option value="Makeup Needed">Makeup Needed</option>
+        <option value="Excused Absence">Excused Absence</option>
+      </select>
+      <button type="button" id="apply_status_all" class="btn btn-secondary btn-sm mt-2">
+        Apply to All
+      </button>
+    </div>
+  </div>
+
+  <table class="table table-striped mt-4">
+    <thead>
+      <tr>
+        <th>Student</th>
+        <th>Start Time</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in students %}
+      <tr>
+        <td>{{ student.first_name }} {{ student.last_name }}</td>
+        <td>
+          <input type="time"
+                 name="time_{{ student.student_id }}"
+                 class="form-control">
+   <!-- no 'required' here, so you can leave it blank -->
+        </td>
+        <td>
+          <select name="status_{{ student.student_id }}"
+                  class="form-control status-select">
+            <option value="Scheduled" selected>Scheduled</option>
+            <option value="Completed">Completed</option>
+            <option value="Makeup Needed">Makeup Needed</option>
+            <option value="Excused Absence">Excused Absence</option>
+          </select>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <button type="submit" class="btn btn-primary">Create Sessions</button>
+  <a href="{{ url_for('routes.sessions') }}" class="btn btn-secondary ml-2">Cancel</a>
+</form>
+
+<script>
+  // Bulk‐apply status dropdown
+  document.getElementById('apply_status_all').addEventListener('click', function() {
+    var bulk = document.getElementById('bulk_status').value;
+    document.querySelectorAll('.status-select').forEach(function(sel) {
+      sel.value = bulk;
+    });
+  });
+</script>
+{% endblock %}

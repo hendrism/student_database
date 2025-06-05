@@ -1,35 +1,224 @@
 {% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
 {% block content %}
-  <h2>Students</h2>
-  
-  <!-- Grade Filter Form -->
-  <form method="GET" action="{{ url_for('routes.index') }}">
-    <div class="form-group">
-      <label for="grade">Filter by Grade:</label>
-      <select name="grade" id="grade" class="form-control">
-         <option value="">All Grades</option>
-         <option value="Grade 9" {% if grade_filter == 'Grade 9' %}selected{% endif %}>Grade 9</option>
-         <option value="Grade 10" {% if grade_filter == 'Grade 10' %}selected{% endif %}>Grade 10</option>
-         <option value="Grade 11" {% if grade_filter == 'Grade 11' %}selected{% endif %}>Grade 11</option>
-         <option value="Grade 12" {% if grade_filter == 'Grade 12' %}selected{% endif %}>Grade 12</option>
-      </select>
+<h2>Dashboard</h2>
+
+<!-- Full Menu Section -->
+<h3 class="mt-5">Full Menu</h3>
+<div class="row">
+  <!-- Student Management Card -->
+  <div class="col-md-6 mb-4">
+    <div class="card border-primary">
+      <div class="card-header bg-primary text-white">
+        <i class="fas fa-user-graduate mr-2"></i>Student Management
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-6 mb-2">
+            <a href="{{ url_for('routes.students') }}"
+               class="btn btn-outline-primary btn-block">
+              <i class="fas fa-users mr-1"></i>View All Students
+            </a>
+          </div>
+          <div class="col-sm-6 mb-2">
+            <a href="{{ url_for('routes.add_student') }}"
+               class="btn btn-outline-primary btn-block">
+              <i class="fas fa-user-plus mr-1"></i>Add New Student
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <button type="submit" class="btn btn-primary">Filter</button>
-  </form>
-  
-  <!-- Existing student table -->
-  <table class="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Grade</th>
-        <th>Preferred Name</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    {% include "_student_table.html" %}
-  </table>
-  <a href="{{ url_for('routes.add_student') }}" class="btn btn-success">Add New Student</a>
+  </div>
+
+  <!-- Sessions Card -->
+  <div class="col-md-6 mb-4">
+    <div class="card border-success">
+      <div class="card-header bg-success text-white">
+        <i class="fas fa-calendar-alt mr-2"></i>Sessions
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-6 mb-2">
+            <a href="{{ url_for('routes.sessions') }}"
+               class="btn btn-outline-success btn-block">
+              <i class="fas fa-list-alt mr-1"></i>All Sessions
+            </a>
+          </div>
+          <div class="col-sm-6 mb-2">
+            <a href="{{ url_for('routes.bulk_sessions') }}"
+               class="btn btn-outline-success btn-block">
+              <i class="fas fa-copy mr-1"></i>Bulk Session Entry
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trial Logs Card -->
+  <div class="col-md-6 mb-4">
+    <div class="card border-warning">
+      <div class="card-header bg-warning text-dark">
+        <i class="fas fa-tasks mr-2"></i>Trial Logs
+      </div>
+      <div class="card-body">
+        <a href="{{ url_for('routes.trial_logs_by_date') }}"
+           class="btn btn-outline-warning btn-block mb-2">
+          <i class="fas fa-calendar-day mr-1"></i>View Logs by Date
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOAP Notes Card -->
+  <div class="col-md-6 mb-4">
+    <div class="card border-info">
+      <div class="card-header bg-info text-white">
+        <i class="fas fa-sticky-note mr-2"></i>SOAP Notes
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-6 mb-2">
+            <a href="{{ url_for('routes.bulk_add_soap') }}"
+               class="btn btn-outline-info btn-block">
+              <i class="fas fa-file-medical mr-1"></i>Bulk Add SOAP Notes
+            </a>
+          </div>
+          <div class="col-sm-6 mb-2">
+            <a href="{{ url_for('routes.view_soap_notes') }}"
+               class="btn btn-outline-info btn-block">
+              <i class="fas fa-eye mr-1"></i>View All SOAP Notes
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reports Card -->
+  <div class="col-md-6 mb-4">
+    <div class="card border-secondary">
+      <div class="card-header bg-secondary text-white">
+        <i class="fas fa-chart-bar mr-2"></i>Reports
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-6 mb-2">
+            <a href="{{ url_for('routes.monthly_sessions_report') }}"
+               class="btn btn-outline-secondary btn-block">
+              <i class="fas fa-calendar-check mr-1"></i>Monthly Sessions
+            </a>
+          </div>
+          <div class="col-sm-6 mb-2">
+            <a href="{{ url_for('routes.makeup_needed_report') }}"
+               class="btn btn-outline-secondary btn-block">
+              <i class="fas fa-exclamation-circle mr-1"></i>Missed/Makeup
+            </a>
+          </div>
+          <div class="col-sm-6 mb-2">
+            <a href="{{ url_for('routes.quarterly_report') }}"
+               class="btn btn-outline-secondary btn-block">
+              <i class="fas fa-file-alt mr-1"></i>Quarterly Progress
+            </a>
+          </div>
+          <div class="col-sm-6 mb-2">
+            <a href="{{ url_for('routes.quarterly_report_history') }}"
+               class="btn btn-outline-secondary btn-block">
+              <i class="fas fa-history mr-1"></i>Quarterly Report History
+            </a>
+          </div>
+          <div class="col-sm-6 mb-2">
+            <a href="{{ url_for('routes.makeups_by_month') }}"
+               class="btn btn-outline-secondary btn-block">
+              <i class="fas fa-calendar-plus mr-1"></i>Makeups by Month
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Utilities & Admin Card -->
+  <div class="col-md-6 mb-4">
+    <div class="card border-dark">
+      <div class="card-header bg-dark text-white">
+        <i class="fas fa-cogs mr-2"></i>Utilities & Admin
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-6 mb-2">
+            <a href="{{ url_for('routes.activities') }}"
+               class="btn btn-outline-dark btn-block">
+              <i class="fas fa-tools mr-1"></i>Manage Activities
+            </a>
+          </div>
+          <div class="col-sm-6 mb-2">
+            <a href="{{ url_for('routes.calendar') }}"
+               class="btn btn-outline-dark btn-block">
+              <i class="fas fa-calendar-alt mr-1"></i>Full Calendar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Summary cards -->
+<h3 class="mt-5">Caseload Summary</h3>
+<div class="row text-center">
+  <div class="col-md-4 mb-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Active Students</h5>
+        <p class="card-text display-4">{{ total_students }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Active Goals</h5>
+        <p class="card-text display-4">{{ total_goals }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Upcoming Sessions</h5>
+        <p class="card-text display-4">{{ upcoming_sessions|length }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Upcoming Sessions table -->
+<h3 class="mt-4">Next 5 Sessions</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Student</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for ev in upcoming_sessions %}
+    <tr>
+      <td>{{ ev.date_of_session.strftime('%Y-%m-%d') }}</td>
+      <td>{{ ev.time_of_start.strftime('%H:%M') }}</td>
+      <td>{{ ev.student.first_name }} {{ ev.student.last_name }}</td>
+      <td>{{ ev.status }}</td>
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan="4" class="text-center">No upcoming sessions.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
 {% endblock %}

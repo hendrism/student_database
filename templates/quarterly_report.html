@@ -1,3 +1,4 @@
+<!-- Quarterly progress report form for selecting student, entering performance and support levels, and generating report text. -->
 {% extends "base.html" %}
 {% block title %}Quarterly Progress Report{% endblock %}
 {% block content %}
@@ -32,9 +33,9 @@
       <label for="quarter">Select Quarter:</label>
       <select class="form-control" id="quarter" name="quarter">
         {% for q in quarters %}
-          <option value="{{ q }}" {% if selected_quarter and selected_quarter == q %}selected{% endif %}>{{ q }}</option>
+        <option value="{{ q }}" {% if (selected_quarter is not defined or selected_quarter == '') and q == 'Q4' or (selected_quarter and selected_quarter == q) %}selected{% endif %}>{{ q }}</option>
         {% endfor %}
-      </select>
+      </select>    
     </div>
     
     <!-- Overall Progress -->
@@ -42,7 +43,7 @@
       <label for="overall_progress">Overall Progress:</label>
       <select class="form-control" id="overall_progress" name="overall_progress" onchange="toggleCustomProgress()">
         {% for option in overall_progress_options %}
-          <option value="{{ option }}" {% if selected_overall_progress and selected_overall_progress == option %}selected{% endif %}>{{ option }}</option>
+        <option value="{{ option }}" {% if (selected_overall_progress is not defined or selected_overall_progress == '') and option == 'Steady Progress' or (selected_overall_progress and selected_overall_progress == option) %}selected{% endif %}>{{ option }}</option>
         {% endfor %}
       </select>
       <input type="text" class="form-control mt-2" id="overall_progress_custom" name="overall_progress_custom" placeholder="Enter custom progress" style="display:none;">
@@ -62,10 +63,9 @@
                 <input type="number" class="form-control mb-2" name="performance_{{ obj.objective_id }}" placeholder="Enter accuracy percentage (number only)">
                 <select class="form-control mb-2" name="support_{{ obj.objective_id }}">
                   <option value="independently">independently</option>
-                  <option value="given visual cues">given visual cues</option>
-                  <option value="given verbal cues">given verbal cues</option>
-                  <option value="given visual and verbal cues">given visual and verbal cues</option>
-                  <option value="given visual and verbal cues plus models">given visual and verbal cues plus models</option>
+                  <option value="given minimal support">given minimal support</option>
+                  <option value="given moderate support">given moderate support</option>
+                  <option value="given maximal support">given maximal support</option>
                   <option value="Other">Other</option>
                 </select>
               </div>
@@ -115,7 +115,7 @@
     var newSelect = document.createElement("select");
     newSelect.className = "form-control mb-2";
     newSelect.name = "support_" + objectiveId;
-    var options = ["independently", "given visual cues", "given verbal cues", "given visual and verbal cues", "given visual and verbal cues plus models"];
+    var options = ["independently", "given minimal support", "given moderate support", "given maximal support"];
     options.forEach(function(option) {
       var opt = document.createElement("option");
       opt.value = option;

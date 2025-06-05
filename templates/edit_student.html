@@ -1,35 +1,67 @@
 {% extends "base.html" %}
+{% block title %}Edit Student{% endblock %}
 {% block content %}
-<h2>Edit Student</h2>
+<h2>Edit Student: {{ student.first_name }} {{ student.last_name }}</h2>
 
-<form action="{{ url_for('routes.edit_student', student_id=student.student_id) }}" method="POST">
+<form method="POST">
+  <!-- Student Personal Info -->
   {% include "_student_form_fields.html" %}
+  <a href="{{ url_for('routes.add_goal', student_id=student.student_id) }}"
+     class="btn btn-success mb-3">
+    Add New Goal
+  </a>
   
-  <!-- Add Preferred Name field -->
-  <div class="mb-3">
-    <label for="preferred_name" class="form-label">Preferred Name:</label>
-    <input type="text" id="preferred_name" name="preferred_name" class="form-control" value="{{ student.preferred_name or '' }}">
-  </div>
+  <!-- Goals & Objectives Table -->
+  <h3 class="mt-5">Goals &amp; Objectives</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Goal</th>
+        <th>Objectives</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for goal in student.goals if goal.active %}
+      <tr>
+        <td>{{ goal.goal_description }}</td>
+        <td>
+          <ul class="mb-0">
+            {% for obj in goal.objectives if obj.active %}
+            <li>{{ obj.objective_description }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+        <td>
+          <!-- Edit Goal -->
+          <a href="{{ url_for('routes.edit_goal', goal_id=goal.goal_id) }}"
+             class="btn btn-sm btn-outline-primary mb-1">Edit Goal</a>
+          <!-- Archive Goal -->
+          <form method="POST"
+                action="{{ url_for('routes.archive_goal', goal_id=goal.goal_id) }}"
+                style="display:inline;"
+                onsubmit="return confirm('Archive this goal and its objectives?');">
+            <button class="btn btn-sm btn-warning mb-1">Archive</button>
+          </form>
+          <!-- Delete Goal -->
+          <form method="POST"
+                action="{{ url_for('routes.delete_goal', goal_id=goal.goal_id) }}"
+                style="display:inline;"
+                onsubmit="return confirm('Delete this goal and its objectives?');">
+            <button class="btn btn-sm btn-danger mb-1">Delete</button>
+          </form>
+          <br/>
+          <!-- Add Objective -->
+          <a href="{{ url_for('routes.add_objective', goal_id=goal.goal_id) }}"
+             class="btn btn-sm btn-outline-success">Add Objective</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
   
-  <h3>Goals & Objectives</h3>
-  {% for goal in goals %}
-    <div class="mb-3">
-      <label for="goal_{{ goal.goal_id }}" class="form-label">Goal:</label>
-      <input type="text" id="goal_{{ goal.goal_id }}" name="goal_{{ goal.goal_id }}" class="form-control" value="{{ goal.goal_description }}">
-    </div>
-
-    <h4>Objectives</h4>
-    {% for objective in objectives %}
-      {% if objective.goal_id == goal.goal_id %}
-        <div class="mb-3">
-          <label for="objective_{{ objective.objective_id }}" class="form-label">Objective:</label>
-          <input type="text" id="objective_{{ objective.objective_id }}" name="objective_{{ objective.objective_id }}" class="form-control" value="{{ objective.objective_description }}">
-        </div>
-      {% endif %}
-    {% endfor %}
-  {% endfor %}
-  
-  <button type="submit" class="btn btn-success">Update Student</button>
-  <a href="{{ url_for('routes.index') }}" class="btn btn-secondary">Cancel</a>
+  <!-- Form Actions -->
+  <button type="submit" class="btn btn-primary mt-3">Save Changes</button>
+  <a href="{{ url_for('routes.index') }}" class="btn btn-secondary mt-3 ml-2">Cancel</a>
 </form>
 {% endblock %}

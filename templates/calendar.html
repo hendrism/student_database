@@ -1,0 +1,260 @@
+{% extends "base.html" %}
+{% block title %}Calendar{% endblock %}
+
+{% block content %}
+<div id="calendar" style="max-width: 900px; margin: 0 auto;"></div>
+
+<!-- Create Event Modal -->
+<div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <form id="eventForm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Event</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <!-- Title -->
+          <div class="form-group">
+            <label for="eventTitle">Title</label>
+            <input type="text" id="eventTitle" name="title" class="form-control">
+          </div>
+          <!-- Type -->
+          <div class="form-group">
+            <label for="eventType">Type</label>
+            <select id="eventType" name="event_type" class="form-control" required>
+              <option value="Session">Session</option>
+              <option value="Meeting">Meeting</option>
+              <option value="Assessment">Assessment</option>
+              <option value="Reminder">Reminder</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <!-- Date -->
+          <div class="form-group">
+            <label for="eventDate">Date</label>
+            <input type="date" id="eventDate" name="date_of_session" class="form-control" required>
+          </div>
+          <!-- Start Time -->
+          <div class="form-group">
+            <label for="eventStartTime">Start Time</label>
+            <input type="time" id="eventStartTime" name="time_of_start" class="form-control" required>
+          </div>
+          <!-- End Time -->
+          <div class="form-group">
+            <label for="eventEndTime">End Time</label>
+            <input type="time" id="eventEndTime" name="time_of_end" class="form-control" required>
+          </div>
+          <!-- Status -->
+          <div class="form-group">
+            <label for="eventStatus">Status</label>
+            <select id="eventStatus" name="status" class="form-control">
+              <option value="Scheduled" selected>Scheduled</option>
+              <option value="Completed">Completed</option>
+              <option value="Makeup Needed">Makeup Needed</option>
+              <option value="Excused Absence">Excused Absence</option>
+            </select>
+          </div>
+          <!-- Notes -->
+          <div class="form-group">
+            <label for="eventPlanNotes">Plan Notes</label>
+            <textarea id="eventPlanNotes" name="plan_notes" class="form-control"></textarea>
+          </div>
+          <!-- Students: this will be shown/hidden dynamically -->
+          <div class="form-group" id="eventStudentField">
+            <label id="eventStudentLabel" for="eventStudents">Student(s)</label>
+            <select id="eventStudents" name="student_ids" class="form-control" multiple size="8" required>
+              {% for student in students %}
+                <option value="{{ student.student_id }}">
+                  {{ student.first_name }} {{ student.last_name }}
+                </option>
+              {% endfor %}
+            </select>
+            <small class="form-text text-muted" id="studentHelpText">Hold ⌘/Ctrl to select multiple</small>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Save Event</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Edit Event Modal (left unchanged for now) -->
+
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+
+  <!-- FullCalendar -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
+
+  <script>
+    function updateStudentField() {
+      const type = document.getElementById('eventType').value;
+      const field = document.getElementById('eventStudentField');
+      const label = document.getElementById('eventStudentLabel');
+      const select = document.getElementById('eventStudents');
+      const help = document.getElementById('studentHelpText');
+
+      // Clear name and selection
+      select.name = "";
+      select.selectedIndex = -1;
+
+      // Reset attributes and UI
+      select.required = false;
+      select.multiple = false;
+      help.style.display = 'none';
+      label.innerText = "Student";
+
+      if (type === "Session") {
+        field.style.display = "";
+        select.name = "student_ids";
+        select.required = true;
+        select.multiple = true;
+        help.style.display = "";
+        label.innerText = "Students";
+      } else if (type === "Meeting" || type === "Assessment") {
+        field.style.display = "";
+        select.name = "student_id";
+        select.required = true;
+        select.multiple = false;
+        help.style.display = "none";
+        label.innerText = "Student";
+      } else if (type === "Other") {
+        field.style.display = "";
+        select.name = "student_id";
+        select.required = false;
+        select.multiple = false;
+        help.style.display = "none";
+        label.innerText = "Student (optional)";
+      } else {
+        // Reminder
+        field.style.display = "none";
+        select.name = "";
+      }
+
+      // Clear selection again after changes
+      select.selectedIndex = -1;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Existing FullCalendar and modal code...
+
+      // Update student field logic on type change
+      document.getElementById('eventType').addEventListener('change', updateStudentField);
+      // Also run on modal open to set defaults
+      $('#eventModal').on('show.bs.modal', function () {
+        updateStudentField();
+      });
+
+      // Run on page load
+      updateStudentField();
+
+      // Rest of your FullCalendar code (unchanged)
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'timeGridWeek',
+        {% if filter_date %}
+        initialDate: '{{ filter_date }}',
+        {% endif %}
+        headerToolbar: {
+          left:  'prev,next today',
+          center:'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        selectable: true,
+        slotDuration: '00:15:00',
+        snapDuration: '00:15:00',
+        events: {
+          url: "{{ url_for('routes.api_events') }}",
+          method: 'GET',
+          failure: function() {
+            alert('Error fetching events from server.');
+          }
+        },
+        dateClick: function(info) {
+          // clear any prior student selections
+          document.getElementById('eventStudents').selectedIndex = -1;
+          // reset status to Scheduled
+          document.getElementById('eventStatus').value = 'Scheduled';
+          // extract date and time from the clicked slot
+          const dt = info.date;
+          const iso = dt.toISOString();
+          // set date (YYYY-MM-DD)
+          document.getElementById('eventDate').value = iso.split('T')[0];
+          // set start time (HH:MM)
+          document.getElementById('eventStartTime').value = dt.toTimeString().slice(0,5);
+          // set end time 30 minutes later
+          const end = new Date(dt.getTime() + 30 * 60000);
+          document.getElementById('eventEndTime').value = end.toTimeString().slice(0,5);
+          // show the modal
+          $('#eventModal').modal('show');
+        },
+        eventClick: function(info) {
+          document.getElementById('editEventId').value = info.event.id;
+          document.getElementById('editEventTitle').value = info.event.title;
+          const start = info.event.start;
+          const end = info.event.end || start;
+          document.getElementById('editEventDate').value = start.toISOString().split('T')[0];
+          document.getElementById('editEventStartTime').value = start.toTimeString().slice(0,5);
+          document.getElementById('editEventEndTime').value = end.toTimeString().slice(0,5);
+          document.getElementById('editEventStatus').value = info.event.extendedProps.status || '';
+          document.getElementById('editEventPlanNotes').value = info.event.extendedProps.plan_notes || '';
+          $('#editEventModal').modal('show');
+        }
+      });
+
+      calendar.render();
+
+      // CREATE
+      var createForm = document.getElementById('eventForm');
+      if (createForm) {
+        createForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          fetch("{{ url_for('routes.api_events') }}", {
+            method: 'POST',
+            body: new FormData(this)
+          })
+          .then(r => {
+            if (r.ok) {
+              $('#eventModal').modal('hide');
+              calendar.refetchEvents();
+            } else {
+              alert('Error creating event');
+            }
+          })
+          .catch(console.error);
+        });
+      }
+
+      // UPDATE
+      var editForm = document.getElementById('editEventForm');
+      if (editForm) {
+        editForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var id = this.event_id.value;
+          fetch("/api/events/" + id, {
+            method: 'POST',
+            body: new FormData(this)
+          })
+          .then(r => {
+            if (r.ok) {
+              $('#editEventModal').modal('hide');
+              calendar.refetchEvents();
+            } else {
+              alert('Error updating event');
+            }
+          })
+          .catch(console.error);
+        });
+      }
+    });
+  </script>
+{% endblock %}

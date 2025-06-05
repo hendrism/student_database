@@ -1,45 +1,26 @@
 {% extends "base.html" %}
+{% block title %}Students{% endblock %}
 {% block content %}
-  <p><a href="{{ url_for('routes.index') }}"><strong>Home</strong></a></p>
-  <h1>Student Lookup</h1>
+  <h2>Students</h2>
 
-  <form action="{{ url_for('routes.student_list') }}" method="GET"> 
-      <input type="text" name="search" placeholder="Search students">
-      <button type="submit">Search</button>
+  <!-- Grade Filter Form -->
+  <form method="GET" action="{{ url_for('routes.students') }}">
+    <div class="form-group">
+      <label for="grade">Filter by Grade:</label>
+      <select name="grade" id="grade" class="form-control">
+        <option value="">All Grades</option>
+        <option value="Grade 9" {% if grade_filter == 'Grade 9' %}selected{% endif %}>Grade 9</option>
+        <option value="Grade 10" {% if grade_filter == 'Grade 10' %}selected{% endif %}>Grade 10</option>
+        <option value="Grade 11" {% if grade_filter == 'Grade 11' %}selected{% endif %}>Grade 11</option>
+        <option value="Grade 12" {% if grade_filter == 'Grade 12' %}selected{% endif %}>Grade 12</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Filter</button>
   </form>
 
-  <h2>Student Results</h2>
-  {% if students %}
-      <ul>
-          {% for student in students %}
-              <li>
-                  <strong>{{ student.first_name }} {{ student.last_name }}</strong> (Grade: {{ student.grade }})
-                  {% if student.goals %}
-                      <ul>
-                          {% for goal in student.goals %}
-                              <li>
-                                  <strong>Goal:</strong> {{ goal.goal_description }}
-                                  {% if goal.objectives %}
-                                      <ul>
-                                          {% for objective in goal.objectives %}
-                                              <li>
-                                                  <strong>Objective:</strong> {{ objective.objective_description }} (Accuracy: {{ objective.with_accuracy }})
-                                              </li>
-                                          {% endfor %}
-                                      </ul>
-                                  {% else %}
-                                      <p>No objectives defined for this goal.</p>
-                                  {% endif %}
-                              </li>
-                          {% endfor %}
-                      </ul>
-                  {% else %}
-                      <p>No goals defined for this student.</p>
-                  {% endif %}
-              </li>
-          {% endfor %}
-      </ul>
-  {% else %}
-      <p>No students found matching your search criteria.</p>
-  {% endif %}
+  {% include "_student_table.html" %}
+
+  <a href="{{ url_for('routes.add_student') }}" class="btn btn-success mt-3">
+    Add New Student
+  </a>
 {% endblock %}

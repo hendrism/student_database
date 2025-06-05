@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>All SOAP Notes</h2>
+
+<!-- Filter form -->
+<form method="GET" action="{{ url_for('routes.view_soap_notes') }}" class="mb-4">
+  <div class="form-row align-items-end">
+    <!-- Student dropdown -->
+    <div class="form-group mr-2">
+      <label for="filterStudent" class="mr-1">Student</label>
+      <select id="filterStudent" name="filter_student" class="form-control">
+        <option value="">All Students</option>
+        {% for stu in students %}
+          <option value="{{ stu.student_id }}"
+                  {% if filter_student == stu.student_id %}selected{% endif %}>
+            {{ stu.first_name }} {{ stu.last_name }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <!-- Start date -->
+    <div class="form-group mr-2">
+      <label for="startDate" class="mr-1">From</label>
+      <input
+        type="date"
+        id="startDate"
+        name="start_date"
+        class="form-control"
+        value="{{ filter_start_date or '' }}"
+      >
+    </div>
+
+    <!-- End date -->
+    <div class="form-group mr-2">
+      <label for="endDate" class="mr-1">To</label>
+      <input
+        type="date"
+        id="endDate"
+        name="end_date"
+        class="form-control"
+        value="{{ filter_end_date or '' }}"
+      >
+    </div>
+
+    <button type="submit" class="btn btn-secondary mr-2">Filter</button>
+    <a href="{{ url_for('routes.view_soap_notes') }}" class="btn btn-light">Clear</a>
+
+    <!-- CSV Download link -->
+    <a
+      href="{{ url_for('routes.export_soap_notes_csv',
+                        filter_student=filter_student,
+                        start_date=filter_start_date,
+                        end_date=filter_end_date) }}"
+      class="btn btn-primary ml-2"
+    >
+      Download CSV
+    </a>
+  </div>
+</form>
+
+<!-- Notes table -->
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Student</th>
+      <th>Note (first 100 chars)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for note in soap_notes %}
+      <tr>
+        <td>{{ note.note_date.strftime('%Y-%m-%d') }}</td>
+        <td>{{ note.student.first_name }} {{ note.student.last_name }}</td>
+        <td>
+          {{ note.note_text[:100] ~ ( '…' if note.note_text|length > 100 else '' ) }}
+        </td>
+      </tr>
+    {% endfor %}
+    {% if soap_notes|length == 0 %}
+      <tr>
+        <td colspan="3" class="text-center">No SOAP notes found for these filters.</td>
+      </tr>
+    {% endif %}
+  </tbody>
+</table>
+{% endblock %}

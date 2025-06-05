@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Makeups by Month{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Makeups by Month</h2>
+<div class="table-responsive">
+  <table class="table table-bordered table-sm align-middle">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Student</th>
+        {% for month in months %}
+          <th scope="col">{{ month }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in students %}
+        <tr>
+          <td><strong>{{ student.last_name }}, {{ student.first_name }}</strong></td>
+          {% for month in months %}
+            {% set count = makeups_matrix[student.student_id][month] %}
+            <td class="text-center">{{ count if count else '' }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

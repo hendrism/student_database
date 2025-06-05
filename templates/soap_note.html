@@ -23,9 +23,37 @@
   <p><strong>Sessions Logged This Month:</strong> {{ session_count }}</p>
 {% endif %}
 
-<!-- Main SOAP Note Form -->
+{% if selected_student %}
 <form method="POST">
   <input type="hidden" name="student_id" value="{{ selected_student.student_id }}">
+  
+  <!-- Session Date -->
+  <div class="form-group">
+    <label for="noteDate">Date:</label>
+    <div class="input-group">
+      <input
+        type="date"
+        id="noteDate"
+        name="note_date"
+        class="form-control"
+        required
+      >
+      <div class="input-group-append">
+        <button type="button" class="btn btn-outline-secondary"
+                onclick="document.getElementById('noteDate').value = new Date().toISOString().substr(0,10)">
+          Today
+        </button>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dateInput = document.getElementById('noteDate');
+      if (!dateInput.value) {
+        dateInput.value = new Date().toISOString().substr(0,10);
+      }
+    });
+  </script>
   
   <!-- Month Dropdown -->
   <div class="form-group">
@@ -79,14 +107,24 @@
 
   <!-- Activity Dropdown -->
   <div class="form-group">
-    <label>Activity:</label>
-    <select name="activity" class="form-control">
-      <option value="">Select Activity</option>
-      <option value="Short Story">Short Story</option>
-      <option value="Pictures">Pictures</option>
-      <option value="Other">Other (describe below)</option>
+    <label for="activity">Activity:</label>
+    <select name="activity" id="activity" class="form-control">
+      <option value="" disabled selected>Select Activity</option>
+      {% for act in activities %}
+        <option value="{{ act.name }}"
+          {% if act.name == request.form.get('activity', '') %}selected{% endif %}>
+          {{ act.name }}
+        </option>
+      {% endfor %}
+      <option value="Other"
+        {% if request.form.get('activity') == 'Other' %}selected{% endif %}>
+        Other (describe below)
+      </option>
     </select>
-    <input type="text" name="activity_other" class="form-control mt-2" placeholder="If other, describe here (e.g., a set of pictures)">
+    <input type="text" name="activity_other" id="activity_other"
+           class="form-control mt-2"
+           placeholder="If other, describe here (e.g., a set of pictures)"
+           value="{{ request.form.get('activity_other', '') }}">
   </div>
 
   <!-- Objective -->
@@ -116,13 +154,12 @@
     <label>Support Level:</label>
     <select name="support_level" class="form-control">
       <option value="independently">Independently</option>
-      <option value="given visual cues">Given visual cues</option>
-      <option value="given verbal cues">Given verbal cues</option>
-      <option value="given visual and verbal cues">Given visual and verbal cues</option>
-      <option value="given visual and verbal cues plus models">Given visual and verbal cues plus models</option>
+      <option value="given minimal support">Minimal Support</option>
+      <option value="given moderate support">Moderate Support</option>
+      <option value="given maximal support">Maximal Support</option>
       <option value="Other">Other (write below)</option>
     </select>
-    <input type="text" name="support_level_other" class="form-control mt-2" placeholder="If other, write here">
+    <input type="text" name="support_level_other" class="form-control mt-2" placeholder="If other, write here (e.g., prompt details)">
   </div>
 
   <!-- Additional O Notes -->
@@ -134,7 +171,25 @@
   <!-- Visual Cues -->
   <div class="form-group">
     <label>Visual Cues (Select all that apply):</label><br>
-    {% for cue in ['graphic organizer', 'written answer choices', 'written clues', 'picture choices', 'sentence starters', 'sentence starters with pictures', 'pictures for each word in sentence', 'written instructions', 'visual to support instructions', 'word bank', 'highlighted text excerpts'] %}
+    {% for cue in [
+      'graphic organizer',
+      'written answer choices',
+      'written clues',
+      'picture choices',
+      'sentence starters',
+      'sentence starters with pictures',
+      'pictures for each word in sentence',
+      'written instructions',
+      'visual to support instructions',
+      'word bank',
+      'highlighted text excerpts',
+      'color-coded text',
+      'step-by-step diagrams',
+      'flowcharts',
+      'video demonstrations',
+      'timers/visual timers',
+      'manipulatives'
+    ] %}
       <input type="checkbox" name="visual_cues" value="{{ cue }}"> {{ cue }}<br>
     {% endfor %}
     <input type="text" name="visual_cues_other" class="form-control mt-2" placeholder="Other (if applicable)">
@@ -143,7 +198,20 @@
   <!-- Verbal Cues -->
   <div class="form-group">
     <label>Verbal Cues (Select all that apply):</label><br>
-    {% for cue in ['leading questions', 'verbal hints', 'verbally presented choices', 'verbally presented instructions', 'verbal reminders', 'repetition of text/excerpt from text'] %}
+    {% for cue in [
+      'leading questions',
+      'verbal hints',
+      'verbally presented choices',
+      'verbally presented instructions',
+      'verbal reminders',
+      'repetition of text/excerpt from text',
+      'modeling',
+      'echo modeling',
+      'peer modeling',
+      'intonation emphasis',
+      'self-monitoring prompts',
+      'cloze prompts'
+    ] %}
       <input type="checkbox" name="verbal_cues" value="{{ cue }}"> {{ cue }}<br>
     {% endfor %}
     <input type="text" name="verbal_cues_other" class="form-control mt-2" placeholder="Other (if applicable)">
@@ -151,4 +219,5 @@
   
   <button type="submit" class="btn btn-success">Generate SOAP Note</button>
 </form>
+{% endif %}
 {% endblock %}

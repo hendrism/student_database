@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+  <p><a href="{{ url_for('routes.index') }}"><strong>Home</strong></a></p>
+  <h1>Event Created Successfully!</h1>
+  <p>Your event has been successfully created.</p>
+  <p><a href="{{ url_for('routes.calendar') }}" class="btn btn-primary">Create another event</a></p>
+{% endblock %}

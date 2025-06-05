@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Quarterly Report History{% endblock %}
+{% block content %}
+  <h2>Quarterly Report History</h2>
+
+  <!-- Student Selection Form -->
+  <form method="GET" action="{{ url_for('routes.quarterly_report_history') }}" class="form-inline mb-3">
+    <label for="studentSelect" class="mr-2">Select Student:</label>
+    <select id="studentSelect" name="student_id" class="form-control mr-2" required>
+      <option value="">-- Choose a student --</option>
+      {% for student in students %}
+        <option value="{{ student.student_id }}"
+          {% if selected_student and student.student_id == selected_student.student_id %}selected{% endif %}>
+          {{ student.first_name }} {{ student.last_name }}
+        </option>
+      {% endfor %}
+    </select>
+    <button type="submit" class="btn btn-primary">View Reports</button>
+  </form>
+
+  {% if selected_student %}
+    <h4>Reports for {{ selected_student.first_name }} {{ selected_student.last_name }}</h4>
+    {% if reports %}
+      <table class="table table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th>Quarter</th>
+            <th>Date Created</th>
+            <th>Report Text</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for report in reports %}
+            <tr>
+              <td>{{ report.quarter }}</td>
+              <td>{{ report.date_created.strftime('%Y-%m-%d') }}</td>
+              <td style="white-space: pre-wrap;">{{ report.report_text }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No quarterly reports found for this student.</p>
+    {% endif %}
+  {% else %}
+    <p>Please select a student to view their quarterly reports.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,3102 @@
+[
+  {
+    "end" : "2025-03-10 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-10 12:00:00.000000",
+    "id" : 6,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2025-03-10",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-10 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-10 12:00:00.000000",
+    "id" : 7,
+    "event_type" : "Session",
+    "title" : "Session with Nicholai Garrick-Isebor on 2025-03-10",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-10 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-10 09:00:00.000000",
+    "id" : 8,
+    "event_type" : "Session",
+    "title" : "Session with Kelvin OrellanaRuiz on 2025-03-10",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-10 11:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-10 10:00:00.000000",
+    "id" : 9,
+    "event_type" : "Session",
+    "title" : "Session with Henry Lucero on 2025-03-10",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-10 11:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-10 10:00:00.000000",
+    "id" : 10,
+    "event_type" : "Session",
+    "title" : "Session with Omarri Mcmillan on 2025-03-10",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-10 15:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-03-10 14:00:00.000000",
+    "id" : 11,
+    "event_type" : "Session",
+    "title" : "Session with Savion Williams on 2025-03-10",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-10 15:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-10 14:00:00.000000",
+    "id" : 12,
+    "event_type" : "Session",
+    "title" : "Session with Jada Germain on 2025-03-10",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-11 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-03-11 09:00:00.000000",
+    "id" : 13,
+    "event_type" : "Session",
+    "title" : "Session with Coleton Alexander on 2025-03-11",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-11 11:30:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-03-11 10:30:00.000000",
+    "id" : 14,
+    "event_type" : "Session",
+    "title" : "Session with Trevor Ekosso on 2025-03-11",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-11 12:30:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-11 11:30:00.000000",
+    "id" : 15,
+    "event_type" : "Session",
+    "title" : "Session with Henry Richardson on 2025-03-11",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-11 12:30:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-03-11 11:30:00.000000",
+    "id" : 16,
+    "event_type" : "Session",
+    "title" : "Session with Khalil Booker on 2025-03-11",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-11 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-11 12:00:00.000000",
+    "id" : 17,
+    "event_type" : "Session",
+    "title" : "Session with Dawn Knox on 2025-03-11",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-11 13:30:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-11 12:30:00.000000",
+    "id" : 18,
+    "event_type" : "Session",
+    "title" : "Session with Juelz Wurie on 2025-03-11",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-11 15:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-03-11 14:00:00.000000",
+    "id" : 19,
+    "event_type" : "Session",
+    "title" : "Session with Kaili Payton on 2025-03-11",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-11 15:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-03-11 14:00:00.000000",
+    "id" : 20,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Hinton on 2025-03-11",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-12 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-12 09:00:00.000000",
+    "id" : 21,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Presson on 2025-03-12",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-12 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-12 09:00:00.000000",
+    "id" : 22,
+    "event_type" : "Session",
+    "title" : "Session with Joshua Taylor on 2025-03-12",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-12 11:45:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-12 10:45:00.000000",
+    "id" : 23,
+    "event_type" : "Session",
+    "title" : "Session with Henry Lucero on 2025-03-12",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-12 11:45:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-12 10:45:00.000000",
+    "id" : 24,
+    "event_type" : "Session",
+    "title" : "Session with Omarri Mcmillan on 2025-03-12",
+    "active" : 1,
+    "plan_notes" : "find context clues to support a definition"
+  },
+  {
+    "end" : "2025-03-12 12:30:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-12 11:30:00.000000",
+    "id" : 25,
+    "event_type" : "Session",
+    "title" : "Session with Carlito Harris on 2025-03-12",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-12 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-12 12:00:00.000000",
+    "id" : 26,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2025-03-12",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-12 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-12 12:00:00.000000",
+    "id" : 27,
+    "event_type" : "Session",
+    "title" : "Session with Tyler Manning on 2025-03-12",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-12 14:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-12 13:15:00.000000",
+    "id" : 28,
+    "event_type" : "Session",
+    "title" : "Session with Tionne Embrack on 2025-03-12",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-12 14:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-12 13:15:00.000000",
+    "id" : 29,
+    "event_type" : "Session",
+    "title" : "Session with Donovan Thomas on 2025-03-12",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-13 10:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-13 09:15:00.000000",
+    "id" : 30,
+    "event_type" : "Session",
+    "title" : "Session with Kevin OrellanaRuiz on 2025-03-13",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-13 10:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-13 09:15:00.000000",
+    "id" : 31,
+    "event_type" : "Session",
+    "title" : "Session with Khamari Hall on 2025-03-13",
+    "active" : 1,
+    "plan_notes" : "identifying antonyms of a given vocabulary word"
+  },
+  {
+    "end" : "2025-03-13 11:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-13 10:00:00.000000",
+    "id" : 32,
+    "event_type" : "Session",
+    "title" : "Session with Kimberly LopezCruz on 2025-03-13",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-13 11:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-13 10:00:00.000000",
+    "id" : 33,
+    "event_type" : "Session",
+    "title" : "Session with Arlene Folk on 2025-03-13",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-13 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-13 12:00:00.000000",
+    "id" : 34,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2025-03-13",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-13 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-13 12:00:00.000000",
+    "id" : 35,
+    "event_type" : "Session",
+    "title" : "Session with Nicholai Garrick-Isebor on 2025-03-13",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-13 14:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-13 13:15:00.000000",
+    "id" : 36,
+    "event_type" : "Session",
+    "title" : "Session with Sherita Dent on 2025-03-13",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-13 14:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-13 13:15:00.000000",
+    "id" : 37,
+    "event_type" : "Session",
+    "title" : "Session with Christian Woodlin on 2025-03-13",
+    "active" : 1,
+    "plan_notes" : "make up for september"
+  },
+  {
+    "end" : "2024-09-09 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-09 09:00:00.000000",
+    "id" : 38,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2024-09-09",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-17 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-17 09:00:00.000000",
+    "id" : 39,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2024-09-17",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-18 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-18 09:00:00.000000",
+    "id" : 40,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2024-09-18",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-23 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-23 09:00:00.000000",
+    "id" : 41,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2024-09-23",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-25 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-25 09:00:00.000000",
+    "id" : 42,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2024-09-25",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 43,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-11-25 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-11-25 09:00:00.000000",
+    "id" : 44,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2024-11-25",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 45,
+    "event_type" : "Session",
+    "title" : "Session with Avery Perry on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-23 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-23 09:00:00.000000",
+    "id" : 46,
+    "event_type" : "Session",
+    "title" : "Session with Bryce Taylor on 2024-09-23",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 47,
+    "event_type" : "Session",
+    "title" : "Session with Bryce Taylor on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 48,
+    "event_type" : "Session",
+    "title" : "Session with Christopher Harrison on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 49,
+    "event_type" : "Session",
+    "title" : "Session with Coleton Alexander on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-23 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-23 09:00:00.000000",
+    "id" : 50,
+    "event_type" : "Session",
+    "title" : "Session with Dawn Knox on 2024-09-23",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 51,
+    "event_type" : "Session",
+    "title" : "Session with Dawn Knox on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 52,
+    "event_type" : "Session",
+    "title" : "Session with Donovan Thomas on 2024-09-30",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-23 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-23 09:00:00.000000",
+    "id" : 53,
+    "event_type" : "Session",
+    "title" : "Session with Henry Lucero on 2024-09-23",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 54,
+    "event_type" : "Session",
+    "title" : "Session with Henry Lucero on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-23 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-23 09:00:00.000000",
+    "id" : 55,
+    "event_type" : "Session",
+    "title" : "Session with Henry Richardson on 2024-09-23",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 56,
+    "event_type" : "Session",
+    "title" : "Session with Henry Richardson on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 57,
+    "event_type" : "Session",
+    "title" : "Session with Hosea Williams on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 58,
+    "event_type" : "Session",
+    "title" : "Session with Jada Germain on 2024-09-30",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 59,
+    "event_type" : "Session",
+    "title" : "Session with Jared Armstrong on 2024-09-30",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-23 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-23 09:00:00.000000",
+    "id" : 60,
+    "event_type" : "Session",
+    "title" : "Session with Jose Lemus-Santos on 2024-09-23",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 61,
+    "event_type" : "Session",
+    "title" : "Session with Jose Lemus-Santos on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-23 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-23 09:00:00.000000",
+    "id" : 62,
+    "event_type" : "Session",
+    "title" : "Session with Joshua Taylor on 2024-09-23",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 63,
+    "event_type" : "Session",
+    "title" : "Session with Joshua Taylor on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-23 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-23 09:00:00.000000",
+    "id" : 64,
+    "event_type" : "Session",
+    "title" : "Session with Juelz Wurie on 2024-09-23",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 65,
+    "event_type" : "Session",
+    "title" : "Session with Juelz Wurie on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-23 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-23 09:00:00.000000",
+    "id" : 66,
+    "event_type" : "Session",
+    "title" : "Session with Kaili Payton on 2024-09-23",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 67,
+    "event_type" : "Session",
+    "title" : "Session with Kaili Payton on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-17 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-17 09:00:00.000000",
+    "id" : 68,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Hinton on 2024-09-17",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-23 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-23 09:00:00.000000",
+    "id" : 69,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Hinton on 2024-09-23",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 70,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Hinton on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-23 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-23 09:00:00.000000",
+    "id" : 71,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Presson on 2024-09-23",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 72,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Presson on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-10-31 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-10-31 09:00:00.000000",
+    "id" : 73,
+    "event_type" : "Session",
+    "title" : "Session with Kelvin OrellanaRuiz on 2024-10-31",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 74,
+    "event_type" : "Session",
+    "title" : "Session with Kevin OrellanaRuiz on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-11-26 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-11-26 09:00:00.000000",
+    "id" : 75,
+    "event_type" : "Session",
+    "title" : "Session with Kevin OrellanaRuiz on 2024-11-26",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 76,
+    "event_type" : "Session",
+    "title" : "Session with Khalil Booker on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 77,
+    "event_type" : "Session",
+    "title" : "Session with Khamari Hall on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-10-31 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-10-31 09:00:00.000000",
+    "id" : 78,
+    "event_type" : "Session",
+    "title" : "Session with Khamari Hall on 2024-10-31",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-11-26 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-11-26 09:00:00.000000",
+    "id" : 79,
+    "event_type" : "Session",
+    "title" : "Session with Khamari Hall on 2024-11-26",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-17 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-17 09:00:00.000000",
+    "id" : 80,
+    "event_type" : "Session",
+    "title" : "Session with Kimberly LopezCruz on 2024-09-17",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-23 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-23 09:00:00.000000",
+    "id" : 81,
+    "event_type" : "Session",
+    "title" : "Session with Kimberly LopezCruz on 2024-09-23",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 82,
+    "event_type" : "Session",
+    "title" : "Session with Kimberly LopezCruz on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 83,
+    "event_type" : "Session",
+    "title" : "Session with Malachi Frederick on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 84,
+    "event_type" : "Session",
+    "title" : "Session with Martavious Coley on 2024-09-30",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-23 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-23 09:00:00.000000",
+    "id" : 85,
+    "event_type" : "Session",
+    "title" : "Session with Mayowa Asaolu on 2024-09-23",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 86,
+    "event_type" : "Session",
+    "title" : "Session with Mayowa Asaolu on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 87,
+    "event_type" : "Session",
+    "title" : "Session with Nathan Bryan on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-23 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-23 09:00:00.000000",
+    "id" : 88,
+    "event_type" : "Session",
+    "title" : "Session with Nicholai Garrick-Isebor on 2024-09-23",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 89,
+    "event_type" : "Session",
+    "title" : "Session with Nicholai Garrick-Isebor on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-23 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-23 09:00:00.000000",
+    "id" : 90,
+    "event_type" : "Session",
+    "title" : "Session with Omarri Mcmillan on 2024-09-23",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 91,
+    "event_type" : "Session",
+    "title" : "Session with Omarri Mcmillan on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 92,
+    "event_type" : "Session",
+    "title" : "Session with Savion Williams on 2024-09-30",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 93,
+    "event_type" : "Session",
+    "title" : "Session with Shane Duckett on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 94,
+    "event_type" : "Session",
+    "title" : "Session with Sherita Dent on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 95,
+    "event_type" : "Session",
+    "title" : "Session with Terry Garner on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-23 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-23 09:00:00.000000",
+    "id" : 96,
+    "event_type" : "Session",
+    "title" : "Session with Tionne Embrack on 2024-09-23",
+    "active" : 0,
+    "plan_notes" : "Completed makeup on 3\/19\/25"
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 97,
+    "event_type" : "Session",
+    "title" : "Session with Tionne Embrack on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 98,
+    "event_type" : "Session",
+    "title" : "Session with Trevor Ekosso on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-23 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-23 09:00:00.000000",
+    "id" : 99,
+    "event_type" : "Session",
+    "title" : "Session with Tyler Manning on 2024-09-23",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2024-09-30 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2024-09-30 09:00:00.000000",
+    "id" : 100,
+    "event_type" : "Session",
+    "title" : "Session with Tyler Manning on 2024-09-30",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-17 11:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-17 10:00:00.000000",
+    "id" : 101,
+    "event_type" : "Session",
+    "title" : "Session with Kimberly LopezCruz on 2025-03-17",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-17 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-17 12:00:00.000000",
+    "id" : 102,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2025-03-17",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-17 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-17 12:00:00.000000",
+    "id" : 103,
+    "event_type" : "Session",
+    "title" : "Session with Nicholai Garrick-Isebor on 2025-03-17",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-17 14:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-17 13:15:00.000000",
+    "id" : 104,
+    "event_type" : "Session",
+    "title" : "Session with Jada Germain on 2025-03-17",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-17 14:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-17 13:15:00.000000",
+    "id" : 105,
+    "event_type" : "Session",
+    "title" : "Session with Savion Williams on 2025-03-17",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-17 15:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-17 14:00:00.000000",
+    "id" : 106,
+    "event_type" : "Session",
+    "title" : "Session with Kaili Payton on 2025-03-17",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-17 15:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-17 14:00:00.000000",
+    "id" : 107,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Hinton on 2025-03-17",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-17 15:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-17 14:00:00.000000",
+    "id" : 108,
+    "event_type" : "Session",
+    "title" : "Session with Bryce Taylor on 2025-03-17",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-03 11:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-03 10:00:00.000000",
+    "id" : 109,
+    "event_type" : "Session",
+    "title" : "Session with Kimberly LopezCruz on 2025-03-03",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-03 13:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-03 12:00:00.000000",
+    "id" : 110,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2025-03-03",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-18 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-18 09:00:00.000000",
+    "id" : 111,
+    "event_type" : "Session",
+    "title" : "Session with Joshua Taylor on 2025-03-18",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-18 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-03-18 09:00:00.000000",
+    "id" : 112,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Presson on 2025-03-18",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-18 11:30:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-18 10:30:00.000000",
+    "id" : 113,
+    "event_type" : "Session",
+    "title" : "Session with Avery Perry on 2025-03-18",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-18 11:30:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-18 10:30:00.000000",
+    "id" : 114,
+    "event_type" : "Session",
+    "title" : "Session with Trevor Ekosso on 2025-03-18",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-18 12:30:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-18 11:30:00.000000",
+    "id" : 115,
+    "event_type" : "Session",
+    "title" : "Session with Jose Lemus-Santos on 2025-03-18",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-18 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-18 12:00:00.000000",
+    "id" : 116,
+    "event_type" : "Session",
+    "title" : "Session with Juelz Wurie on 2025-03-18",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-18 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-18 12:00:00.000000",
+    "id" : 117,
+    "event_type" : "Session",
+    "title" : "Session with Dawn Knox on 2025-03-18",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-19 10:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-19 09:15:00.000000",
+    "id" : 118,
+    "event_type" : "Session",
+    "title" : "Session with Kevin OrellanaRuiz on 2025-03-19",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-19 12:30:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-19 11:30:00.000000",
+    "id" : 119,
+    "event_type" : "Session",
+    "title" : "Session with Khalil Booker on 2025-03-19",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-19 11:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-19 10:00:00.000000",
+    "id" : 120,
+    "event_type" : "Session",
+    "title" : "Session with Kimberly LopezCruz on 2025-03-19",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-19 10:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-19 09:15:00.000000",
+    "id" : 121,
+    "event_type" : "Session",
+    "title" : "Session with Khamari Hall on 2025-03-19",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-19 12:30:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-19 11:30:00.000000",
+    "id" : 122,
+    "event_type" : "Session",
+    "title" : "Session with Henry Richardson on 2025-03-19",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-19 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-19 12:00:00.000000",
+    "id" : 123,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2025-03-19",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-19 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-19 12:00:00.000000",
+    "id" : 124,
+    "event_type" : "Session",
+    "title" : "Session with Hosea Williams on 2025-03-19",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-19 14:15:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-03-19 13:15:00.000000",
+    "id" : 125,
+    "event_type" : "Session",
+    "title" : "Session with Donovan Thomas on 2025-03-19",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-19 14:15:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-03-19 13:15:00.000000",
+    "id" : 126,
+    "event_type" : "Session",
+    "title" : "Session with Tionne Embrack on 2025-03-19",
+    "active" : 1,
+    "plan_notes" : "Make up for 9\/23\/24"
+  },
+  {
+    "end" : "2025-03-03 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-03 09:00:00.000000",
+    "id" : 127,
+    "event_type" : "Session",
+    "title" : "Session with Nicholai Garrick-Isebor on 2025-03-03",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-03 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-03 09:00:00.000000",
+    "id" : 128,
+    "event_type" : "Session",
+    "title" : "Session with Jada Germain on 2025-03-03",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-03 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-03 09:00:00.000000",
+    "id" : 129,
+    "event_type" : "Session",
+    "title" : "Session with Savion Williams on 2025-03-03",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-03 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-03 09:00:00.000000",
+    "id" : 130,
+    "event_type" : "Session",
+    "title" : "Session with Bryce Taylor on 2025-03-03",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-03 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-03 09:00:00.000000",
+    "id" : 131,
+    "event_type" : "Session",
+    "title" : "Session with Kaili Payton on 2025-03-03",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-03 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-03 09:00:00.000000",
+    "id" : 132,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Hinton on 2025-03-03",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-03 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-03 09:00:00.000000",
+    "id" : 133,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2025-02-03",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-03 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-03 09:00:00.000000",
+    "id" : 134,
+    "event_type" : "Session",
+    "title" : "Session with Jada Germain on 2025-02-03",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-03 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-03 09:00:00.000000",
+    "id" : 135,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Presson on 2025-02-03",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-03 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-03 09:00:00.000000",
+    "id" : 136,
+    "event_type" : "Session",
+    "title" : "Session with Nicholai Garrick-Isebor on 2025-02-03",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-03 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-03 09:00:00.000000",
+    "id" : 137,
+    "event_type" : "Session",
+    "title" : "Session with Savion Williams on 2025-02-03",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-04 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-04 09:00:00.000000",
+    "id" : 138,
+    "event_type" : "Session",
+    "title" : "Session with Bryce Taylor on 2025-02-04",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-04 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-04 09:00:00.000000",
+    "id" : 139,
+    "event_type" : "Session",
+    "title" : "Session with Dawn Knox on 2025-02-04",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-04 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-04 09:00:00.000000",
+    "id" : 140,
+    "event_type" : "Session",
+    "title" : "Session with Juelz Wurie on 2025-02-04",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-04 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-04 09:00:00.000000",
+    "id" : 141,
+    "event_type" : "Session",
+    "title" : "Session with Kaili Payton on 2025-02-04",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-05 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-05 09:00:00.000000",
+    "id" : 142,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2025-02-05",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-05 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-05 09:00:00.000000",
+    "id" : 143,
+    "event_type" : "Session",
+    "title" : "Session with Avery Perry on 2025-02-05",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-05 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-05 09:00:00.000000",
+    "id" : 144,
+    "event_type" : "Session",
+    "title" : "Session with Donovan Thomas on 2025-02-05",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-05 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-05 09:00:00.000000",
+    "id" : 145,
+    "event_type" : "Session",
+    "title" : "Session with Jose Lemus-Santos on 2025-02-05",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-05 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-05 09:00:00.000000",
+    "id" : 146,
+    "event_type" : "Session",
+    "title" : "Session with Tionne Embrack on 2025-02-05",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-05 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-05 09:00:00.000000",
+    "id" : 147,
+    "event_type" : "Session",
+    "title" : "Session with Trevor Ekosso on 2025-02-05",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-06 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-06 09:00:00.000000",
+    "id" : 148,
+    "event_type" : "Session",
+    "title" : "Session with Jared Armstrong on 2025-02-06",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-06 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-06 09:00:00.000000",
+    "id" : 149,
+    "event_type" : "Session",
+    "title" : "Session with Kevin OrellanaRuiz on 2025-02-06",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-06 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-06 09:00:00.000000",
+    "id" : 150,
+    "event_type" : "Session",
+    "title" : "Session with Khamari Hall on 2025-02-06",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-06 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-06 09:00:00.000000",
+    "id" : 151,
+    "event_type" : "Session",
+    "title" : "Session with Martavious Coley on 2025-02-06",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-06 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-06 09:00:00.000000",
+    "id" : 152,
+    "event_type" : "Session",
+    "title" : "Session with Mayowa Asaolu on 2025-02-06",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-06 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-06 09:00:00.000000",
+    "id" : 153,
+    "event_type" : "Session",
+    "title" : "Session with Tyler Manning on 2025-02-06",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-10 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-10 09:00:00.000000",
+    "id" : 154,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2025-02-10",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-10 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-10 09:00:00.000000",
+    "id" : 155,
+    "event_type" : "Session",
+    "title" : "Session with Henry Richardson on 2025-02-10",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-10 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-10 09:00:00.000000",
+    "id" : 156,
+    "event_type" : "Session",
+    "title" : "Session with Nicholai Garrick-Isebor on 2025-02-10",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-11 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-11 09:00:00.000000",
+    "id" : 157,
+    "event_type" : "Session",
+    "title" : "Session with Carlito Harris on 2025-02-11",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-11 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-11 09:00:00.000000",
+    "id" : 158,
+    "event_type" : "Session",
+    "title" : "Session with Dawn Knox on 2025-02-11",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-11 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-11 09:00:00.000000",
+    "id" : 159,
+    "event_type" : "Session",
+    "title" : "Session with Henry Lucero on 2025-02-11",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-11 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-11 09:00:00.000000",
+    "id" : 160,
+    "event_type" : "Session",
+    "title" : "Session with Juelz Wurie on 2025-02-11",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-11 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-11 09:00:00.000000",
+    "id" : 161,
+    "event_type" : "Session",
+    "title" : "Session with Omarri Mcmillan on 2025-02-11",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-11 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-11 09:00:00.000000",
+    "id" : 162,
+    "event_type" : "Session",
+    "title" : "Session with Trevor Ekosso on 2025-02-11",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-12 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-12 09:00:00.000000",
+    "id" : 163,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2025-02-12",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-12 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-12 09:00:00.000000",
+    "id" : 164,
+    "event_type" : "Session",
+    "title" : "Session with Kaili Payton on 2025-02-12",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-12 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-12 09:00:00.000000",
+    "id" : 165,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Hinton on 2025-02-12",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-12 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-12 09:00:00.000000",
+    "id" : 166,
+    "event_type" : "Session",
+    "title" : "Session with Kimberly LopezCruz on 2025-02-12",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-17 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-17 09:00:00.000000",
+    "id" : 167,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2025-02-17",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-17 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-17 09:00:00.000000",
+    "id" : 168,
+    "event_type" : "Session",
+    "title" : "Session with Jada Germain on 2025-02-17",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-17 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-17 09:00:00.000000",
+    "id" : 169,
+    "event_type" : "Session",
+    "title" : "Session with Nicholai Garrick-Isebor on 2025-02-17",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-17 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-17 09:00:00.000000",
+    "id" : 170,
+    "event_type" : "Session",
+    "title" : "Session with Savion Williams on 2025-02-17",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-19 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-19 09:00:00.000000",
+    "id" : 171,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2025-02-19",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-19 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-19 09:00:00.000000",
+    "id" : 172,
+    "event_type" : "Session",
+    "title" : "Session with Bryce Taylor on 2025-02-19",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-19 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-19 09:00:00.000000",
+    "id" : 173,
+    "event_type" : "Session",
+    "title" : "Session with Donovan Thomas on 2025-02-19",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-19 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-19 09:00:00.000000",
+    "id" : 174,
+    "event_type" : "Session",
+    "title" : "Session with Hosea Williams on 2025-02-19",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-19 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-19 09:00:00.000000",
+    "id" : 175,
+    "event_type" : "Session",
+    "title" : "Session with Kaili Payton on 2025-02-19",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-19 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-19 09:00:00.000000",
+    "id" : 176,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Hinton on 2025-02-19",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-19 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-19 09:00:00.000000",
+    "id" : 177,
+    "event_type" : "Session",
+    "title" : "Session with Khalil Booker on 2025-02-19",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-19 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-19 09:00:00.000000",
+    "id" : 178,
+    "event_type" : "Session",
+    "title" : "Session with Tionne Embrack on 2025-02-19",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-20 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-20 09:00:00.000000",
+    "id" : 179,
+    "event_type" : "Session",
+    "title" : "Session with Henry Lucero on 2025-02-20",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-20 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-20 09:00:00.000000",
+    "id" : 180,
+    "event_type" : "Session",
+    "title" : "Session with Jared Armstrong on 2025-02-20",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-20 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-20 09:00:00.000000",
+    "id" : 181,
+    "event_type" : "Session",
+    "title" : "Session with Jose Lemus-Santos on 2025-02-20",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-20 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-20 09:00:00.000000",
+    "id" : 182,
+    "event_type" : "Session",
+    "title" : "Session with Martavious Coley on 2025-02-20",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-20 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-20 09:00:00.000000",
+    "id" : 183,
+    "event_type" : "Session",
+    "title" : "Session with Mayowa Asaolu on 2025-02-20",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-25 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-25 09:00:00.000000",
+    "id" : 184,
+    "event_type" : "Session",
+    "title" : "Session with Arlene Folk on 2025-02-25",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-25 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-25 09:00:00.000000",
+    "id" : 185,
+    "event_type" : "Session",
+    "title" : "Session with Christian Woodlin on 2025-02-25",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-25 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-25 09:00:00.000000",
+    "id" : 186,
+    "event_type" : "Session",
+    "title" : "Session with Dawn Knox on 2025-02-25",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-25 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-25 09:00:00.000000",
+    "id" : 187,
+    "event_type" : "Session",
+    "title" : "Session with Henry Richardson on 2025-02-25",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-25 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-25 09:00:00.000000",
+    "id" : 188,
+    "event_type" : "Session",
+    "title" : "Session with Juelz Wurie on 2025-02-25",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-25 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-25 09:00:00.000000",
+    "id" : 189,
+    "event_type" : "Session",
+    "title" : "Session with Kaili Payton on 2025-02-25",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-25 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-25 09:00:00.000000",
+    "id" : 190,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Hinton on 2025-02-25",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-25 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-25 09:00:00.000000",
+    "id" : 191,
+    "event_type" : "Session",
+    "title" : "Session with Kevin OrellanaRuiz on 2025-02-25",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-25 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-25 09:00:00.000000",
+    "id" : 192,
+    "event_type" : "Session",
+    "title" : "Session with Khamari Hall on 2025-02-25",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-25 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-25 09:00:00.000000",
+    "id" : 193,
+    "event_type" : "Session",
+    "title" : "Session with Kimberly LopezCruz on 2025-02-25",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-25 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-25 09:00:00.000000",
+    "id" : 194,
+    "event_type" : "Session",
+    "title" : "Session with Tyler Manning on 2025-02-25",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-26 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-26 09:00:00.000000",
+    "id" : 195,
+    "event_type" : "Session",
+    "title" : "Session with Avery Perry on 2025-02-26",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-26 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-26 09:00:00.000000",
+    "id" : 196,
+    "event_type" : "Session",
+    "title" : "Session with Christopher Harrison on 2025-02-26",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-26 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-26 09:00:00.000000",
+    "id" : 197,
+    "event_type" : "Session",
+    "title" : "Session with Jada Germain on 2025-02-26",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-26 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-26 09:00:00.000000",
+    "id" : 198,
+    "event_type" : "Session",
+    "title" : "Session with Joshua Taylor on 2025-02-26",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-26 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-26 09:00:00.000000",
+    "id" : 199,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Presson on 2025-02-26",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-26 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-26 09:00:00.000000",
+    "id" : 200,
+    "event_type" : "Session",
+    "title" : "Session with Nicholai Garrick-Isebor on 2025-02-26",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-26 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-26 09:00:00.000000",
+    "id" : 201,
+    "event_type" : "Session",
+    "title" : "Session with Omarri Mcmillan on 2025-02-26",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-26 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-26 09:00:00.000000",
+    "id" : 202,
+    "event_type" : "Session",
+    "title" : "Session with Savion Williams on 2025-02-26",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-26 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-26 09:00:00.000000",
+    "id" : 203,
+    "event_type" : "Session",
+    "title" : "Session with Sherita Dent on 2025-02-26",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-26 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-26 09:00:00.000000",
+    "id" : 204,
+    "event_type" : "Session",
+    "title" : "Session with Trevor Ekosso on 2025-02-26",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-26 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-26 09:00:00.000000",
+    "id" : 205,
+    "event_type" : "Session",
+    "title" : "Session with Tyler Manning on 2025-02-26",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-27 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-27 09:00:00.000000",
+    "id" : 206,
+    "event_type" : "Session",
+    "title" : "Session with Coleton Alexander on 2025-02-27",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-27 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-27 09:00:00.000000",
+    "id" : 207,
+    "event_type" : "Session",
+    "title" : "Session with Henry Richardson on 2025-02-27",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-27 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-27 09:00:00.000000",
+    "id" : 208,
+    "event_type" : "Session",
+    "title" : "Session with Khalil Booker on 2025-02-27",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-27 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-02-27 09:00:00.000000",
+    "id" : 209,
+    "event_type" : "Session",
+    "title" : "Session with Kimberly LopezCruz on 2025-02-27",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-27 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-27 09:00:00.000000",
+    "id" : 210,
+    "event_type" : "Session",
+    "title" : "Session with Nathan Bryan on 2025-02-27",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-27 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-02-27 09:00:00.000000",
+    "id" : 211,
+    "event_type" : "Session",
+    "title" : "Session with Shane Duckett on 2025-02-27",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-02-27 10:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-02-27 09:00:00.000000",
+    "id" : 212,
+    "event_type" : "Session",
+    "title" : "Session with Tyler Manning on 2025-02-27",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-20 10:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-20 09:15:00.000000",
+    "id" : 213,
+    "event_type" : "Session",
+    "title" : "Session with Kelvin OrellanaRuiz on 2025-03-20",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-20 11:30:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-20 10:30:00.000000",
+    "id" : 214,
+    "event_type" : "Session",
+    "title" : "Session with Christopher Harrison on 2025-03-20",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-20 11:30:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-20 10:30:00.000000",
+    "id" : 215,
+    "event_type" : "Session",
+    "title" : "Session with Terry Garner on 2025-03-20",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-20 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-20 12:00:00.000000",
+    "id" : 216,
+    "event_type" : "Session",
+    "title" : "Session with Tyler Manning on 2025-03-20",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-20 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-20 12:00:00.000000",
+    "id" : 217,
+    "event_type" : "Session",
+    "title" : "Session with Mayowa Asaolu on 2025-03-20",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-20 14:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-20 13:15:00.000000",
+    "id" : 218,
+    "event_type" : "Session",
+    "title" : "Session with Jared Armstrong on 2025-03-20",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-20 14:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-20 13:15:00.000000",
+    "id" : 219,
+    "event_type" : "Session",
+    "title" : "Session with Martavious Coley on 2025-03-20",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-04 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-04 09:00:00.000000",
+    "id" : 220,
+    "event_type" : "Session",
+    "title" : "Session with Avery Perry on 2025-03-04",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-04 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-04 09:00:00.000000",
+    "id" : 221,
+    "event_type" : "Session",
+    "title" : "Session with Dawn Knox on 2025-03-04",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-04 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-04 09:00:00.000000",
+    "id" : 222,
+    "event_type" : "Session",
+    "title" : "Session with Jada Germain on 2025-03-04",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-04 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-04 09:00:00.000000",
+    "id" : 223,
+    "event_type" : "Session",
+    "title" : "Session with Jose Lemus-Santos on 2025-03-04",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-04 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-04 09:00:00.000000",
+    "id" : 224,
+    "event_type" : "Session",
+    "title" : "Session with Juelz Wurie on 2025-03-04",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-04 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-04 09:00:00.000000",
+    "id" : 225,
+    "event_type" : "Session",
+    "title" : "Session with Savion Williams on 2025-03-04",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-04 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-03-04 09:00:00.000000",
+    "id" : 226,
+    "event_type" : "Session",
+    "title" : "Session with Trevor Ekosso on 2025-03-04",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-06 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-06 09:00:00.000000",
+    "id" : 227,
+    "event_type" : "Session",
+    "title" : "Session with Christian Woodlin on 2025-03-06",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-06 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-03-06 09:00:00.000000",
+    "id" : 228,
+    "event_type" : "Session",
+    "title" : "Session with Donovan Thomas on 2025-03-06",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-06 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-06 09:00:00.000000",
+    "id" : 229,
+    "event_type" : "Session",
+    "title" : "Session with Jared Armstrong on 2025-03-06",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-06 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-06 09:00:00.000000",
+    "id" : 230,
+    "event_type" : "Session",
+    "title" : "Session with Martavious Coley on 2025-03-06",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-06 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-06 09:00:00.000000",
+    "id" : 231,
+    "event_type" : "Session",
+    "title" : "Session with Mayowa Asaolu on 2025-03-06",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-06 10:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-03-06 09:00:00.000000",
+    "id" : 232,
+    "event_type" : "Session",
+    "title" : "Session with Tionne Embrack on 2025-03-06",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-06 10:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-06 09:00:00.000000",
+    "id" : 233,
+    "event_type" : "Session",
+    "title" : "Session with Tyler Manning on 2025-03-06",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-24 10:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-24 09:15:00.000000",
+    "id" : 234,
+    "event_type" : "Session",
+    "title" : "Session with Joshua Taylor on 2025-03-24",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-24 10:15:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-03-24 09:15:00.000000",
+    "id" : 235,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Presson on 2025-03-24",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-24 11:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-24 10:00:00.000000",
+    "id" : 236,
+    "event_type" : "Session",
+    "title" : "Session with Henry Lucero on 2025-03-24",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-24 11:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-24 10:00:00.000000",
+    "id" : 237,
+    "event_type" : "Session",
+    "title" : "Session with Omarri Mcmillan on 2025-03-24",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-24 11:30:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-24 10:30:00.000000",
+    "id" : 238,
+    "event_type" : "Session",
+    "title" : "Session with Nathan Bryan on 2025-03-24",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-24 11:30:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-24 10:30:00.000000",
+    "id" : 239,
+    "event_type" : "Session",
+    "title" : "Session with Shane Duckett on 2025-03-24",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-24 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-24 12:00:00.000000",
+    "id" : 240,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2025-03-24",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-24 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-24 12:00:00.000000",
+    "id" : 241,
+    "event_type" : "Session",
+    "title" : "Session with Nicholai Garrick-Isebor on 2025-03-24",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-24 14:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-24 13:15:00.000000",
+    "id" : 242,
+    "event_type" : "Session",
+    "title" : "Session with Mayowa Asaolu on 2025-03-24",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-24 14:15:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-03-24 13:15:00.000000",
+    "id" : 243,
+    "event_type" : "Session",
+    "title" : "Session with Donovan Thomas on 2025-03-24",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-24 14:45:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-24 13:45:00.000000",
+    "id" : 244,
+    "event_type" : "Session",
+    "title" : "Session with Savion Williams on 2025-03-24",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-24 14:45:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-24 13:45:00.000000",
+    "id" : 245,
+    "event_type" : "Session",
+    "title" : "Session with Jada Germain on 2025-03-24",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-25 11:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-25 10:00:00.000000",
+    "id" : 246,
+    "event_type" : "Session",
+    "title" : "Session with Kimberly LopezCruz on 2025-03-25",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-25 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-25 12:00:00.000000",
+    "id" : 247,
+    "event_type" : "Session",
+    "title" : "Session with Dawn Knox on 2025-03-25",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-25 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-25 12:00:00.000000",
+    "id" : 248,
+    "event_type" : "Session",
+    "title" : "Session with Juelz Wurie on 2025-03-25",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-25 15:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-25 14:00:00.000000",
+    "id" : 249,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Hinton on 2025-03-25",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-25 15:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-25 14:00:00.000000",
+    "id" : 250,
+    "event_type" : "Session",
+    "title" : "Session with Kaili Payton on 2025-03-25",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-25 15:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-25 14:00:00.000000",
+    "id" : 251,
+    "event_type" : "Session",
+    "title" : "Session with Bryce Taylor on 2025-03-25",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-26 10:15:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-03-26 09:15:00.000000",
+    "id" : 252,
+    "event_type" : "Session",
+    "title" : "Session with Kelvin OrellanaRuiz on 2025-03-26",
+    "active" : 0,
+    "plan_notes" : "This was going to be a makeup session; facilitator unavailable"
+  },
+  {
+    "end" : "2025-03-26 11:00:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-03-26 10:00:00.000000",
+    "id" : 253,
+    "event_type" : "Session",
+    "title" : "Session with Omarri Mcmillan on 2025-03-26",
+    "active" : 0,
+    "plan_notes" : "facilitator unavailable, no additional make up needed"
+  },
+  {
+    "end" : "2025-03-26 11:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-26 10:00:00.000000",
+    "id" : 254,
+    "event_type" : "Session",
+    "title" : "Session with Henry Lucero on 2025-03-26",
+    "active" : 0,
+    "plan_notes" : "facilitator unavailable, no additional make up needed"
+  },
+  {
+    "end" : "2025-03-26 11:30:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-26 10:30:00.000000",
+    "id" : 255,
+    "event_type" : "Session",
+    "title" : "Session with Malachi Frederick on 2025-03-26",
+    "active" : 1,
+    "plan_notes" : "facilitator unavailable, no additional make up needed"
+  },
+  {
+    "end" : "2025-03-28 10:00:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-03-28 09:00:00.000000",
+    "id" : 256,
+    "event_type" : "Session",
+    "title" : "Session with Arlene Folk on 2025-03-28",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-27 10:15:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-27 09:15:00.000000",
+    "id" : 257,
+    "event_type" : "Session",
+    "title" : "Session with Kevin OrellanaRuiz on 2025-03-27",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-27 10:15:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-27 09:15:00.000000",
+    "id" : 258,
+    "event_type" : "Session",
+    "title" : "Session with Khamari Hall on 2025-03-27",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-27 11:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-27 10:00:00.000000",
+    "id" : 259,
+    "event_type" : "Session",
+    "title" : "Session with Kimberly LopezCruz on 2025-03-27",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-27 11:30:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-27 10:30:00.000000",
+    "id" : 260,
+    "event_type" : "Session",
+    "title" : "Session with Avery Perry on 2025-03-27",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-27 11:30:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-27 10:30:00.000000",
+    "id" : 261,
+    "event_type" : "Session",
+    "title" : "Session with Trevor Ekosso on 2025-03-27",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-27 12:30:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-03-27 11:30:00.000000",
+    "id" : 262,
+    "event_type" : "Session",
+    "title" : "Session with Henry Richardson on 2025-03-27",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-27 13:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-03-27 12:00:00.000000",
+    "id" : 263,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2025-03-27",
+    "active" : 0,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-27 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-27 12:00:00.000000",
+    "id" : 264,
+    "event_type" : "Session",
+    "title" : "Session with Tyler Manning on 2025-03-27",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-27 14:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-27 13:15:00.000000",
+    "id" : 265,
+    "event_type" : "Session",
+    "title" : "Session with Martavious Coley on 2025-03-27",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-27 14:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-27 13:15:00.000000",
+    "id" : 266,
+    "event_type" : "Session",
+    "title" : "Session with Jared Armstrong on 2025-03-27",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-27 15:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-03-27 14:00:00.000000",
+    "id" : 267,
+    "event_type" : "Session",
+    "title" : "Session with Bryce Taylor on 2025-03-27",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-27 15:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-27 14:00:00.000000",
+    "id" : 268,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Hinton on 2025-03-27",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-03-27 15:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-03-27 14:00:00.000000",
+    "id" : 269,
+    "event_type" : "Session",
+    "title" : "Session with Kaili Payton on 2025-03-27",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-01 11:30:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-01 10:30:00.000000",
+    "id" : 270,
+    "event_type" : "Session",
+    "title" : "Session with Trevor Ekosso on 2025-04-01",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-01 11:30:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-01 10:30:00.000000",
+    "id" : 271,
+    "event_type" : "Session",
+    "title" : "Session with Avery Perry on 2025-04-01",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-01 12:30:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-01 11:30:00.000000",
+    "id" : 272,
+    "event_type" : "Session",
+    "title" : "Session with Henry Richardson on 2025-04-01",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-01 12:30:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-01 11:30:00.000000",
+    "id" : 273,
+    "event_type" : "Session",
+    "title" : "Session with Khalil Booker on 2025-04-01",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-01 13:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-01 12:00:00.000000",
+    "id" : 274,
+    "event_type" : "Session",
+    "title" : "Session with Dawn Knox on 2025-04-01",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-01 13:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-01 12:00:00.000000",
+    "id" : 275,
+    "event_type" : "Session",
+    "title" : "Session with Juelz Wurie on 2025-04-01",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-07 10:15:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-07 09:15:00.000000",
+    "id" : 276,
+    "event_type" : "Session",
+    "title" : "Session with Kevin OrellanaRuiz on 2025-04-07",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-07 10:15:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-07 09:15:00.000000",
+    "id" : 277,
+    "event_type" : "Session",
+    "title" : "Session with Khamari Hall on 2025-04-07",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-07 11:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-04-07 10:00:00.000000",
+    "id" : 278,
+    "event_type" : "Session",
+    "title" : "Session with Arlene Folk on 2025-04-07",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-07 11:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-04-07 10:00:00.000000",
+    "id" : 279,
+    "event_type" : "Session",
+    "title" : "Session with Kimberly LopezCruz on 2025-04-07",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-07 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-04-07 12:00:00.000000",
+    "id" : 280,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2025-04-07",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-07 13:00:00.000000",
+    "status" : "Completed",
+    "start" : "2025-04-07 12:00:00.000000",
+    "id" : 281,
+    "event_type" : "Session",
+    "title" : "Session with Nicholai Garrick-Isebor on 2025-04-07",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-07 14:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-04-07 13:15:00.000000",
+    "id" : 282,
+    "event_type" : "Session",
+    "title" : "Session with Jada Germain on 2025-04-07",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-07 14:15:00.000000",
+    "status" : "Completed",
+    "start" : "2025-04-07 13:15:00.000000",
+    "id" : 283,
+    "event_type" : "Session",
+    "title" : "Session with Savion Williams on 2025-04-07",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-07 15:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-07 14:00:00.000000",
+    "id" : 284,
+    "event_type" : "Session",
+    "title" : "Session with Kaili Payton on 2025-04-07",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-07 15:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-07 14:00:00.000000",
+    "id" : 285,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Hinton on 2025-04-07",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-07 15:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-07 14:00:00.000000",
+    "id" : 286,
+    "event_type" : "Session",
+    "title" : "Session with Bryce Taylor on 2025-04-07",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-08 10:15:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-08 09:15:00.000000",
+    "id" : 287,
+    "event_type" : "Session",
+    "title" : "Session with Joshua Taylor on 2025-04-08",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-08 10:15:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-08 09:15:00.000000",
+    "id" : 288,
+    "event_type" : "Session",
+    "title" : "Session with Kayla Presson on 2025-04-08",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-08 11:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-08 10:00:00.000000",
+    "id" : 289,
+    "event_type" : "Session",
+    "title" : "Session with Malachi Frederick on 2025-04-08",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-08 11:30:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-08 10:30:00.000000",
+    "id" : 290,
+    "event_type" : "Session",
+    "title" : "Session with Trevor Ekosso on 2025-04-08",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-08 12:30:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-08 11:30:00.000000",
+    "id" : 291,
+    "event_type" : "Session",
+    "title" : "Session with Jose Lemus-Santos on 2025-04-08",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-08 13:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-08 12:00:00.000000",
+    "id" : 292,
+    "event_type" : "Session",
+    "title" : "Session with Dawn Knox on 2025-04-08",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-08 13:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-08 12:00:00.000000",
+    "id" : 293,
+    "event_type" : "Session",
+    "title" : "Session with Juelz Wurie on 2025-04-08",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-08 14:15:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-08 13:15:00.000000",
+    "id" : 294,
+    "event_type" : "Session",
+    "title" : "Session with Tionne Embrack on 2025-04-08",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-08 14:15:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-08 13:15:00.000000",
+    "id" : 295,
+    "event_type" : "Session",
+    "title" : "Session with Donovan Thomas on 2025-04-08",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-09 09:45:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-09 09:15:00.000000",
+    "id" : 296,
+    "event_type" : "Session",
+    "title" : "Group Session on 2025-04-09",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-09 11:00:00.000000",
+    "status" : "Makeup Needed",
+    "start" : "2025-04-09 10:30:00.000000",
+    "id" : 297,
+    "event_type" : "Session",
+    "title" : "Group Session on 2025-04-09",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-09 12:00:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-04-09 11:30:00.000000",
+    "id" : 298,
+    "event_type" : "Session",
+    "title" : "Group Session on 2025-04-09",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-09 12:30:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-04-09 12:00:00.000000",
+    "id" : 299,
+    "event_type" : "Session",
+    "title" : "Group Session on 2025-04-09",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-09 13:45:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-04-09 13:15:00.000000",
+    "id" : 300,
+    "event_type" : "Session",
+    "title" : "Group Session on 2025-04-09",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-09 15:30:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-04-09 15:00:00.000000",
+    "id" : 301,
+    "event_type" : "Session",
+    "title" : "Group Session on 2025-04-09",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-22 10:30:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-04-22 10:00:00.000000",
+    "id" : 302,
+    "event_type" : "Session",
+    "title" : "Group Session on 2025-04-22",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-22 11:00:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-04-22 10:30:00.000000",
+    "id" : 303,
+    "event_type" : "Session",
+    "title" : "Group Session on 2025-04-22",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-22 12:00:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-04-22 11:30:00.000000",
+    "id" : 304,
+    "event_type" : "Session",
+    "title" : "Session with Jose Lemus-Santos on 2025-04-22",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-22 12:30:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-04-22 12:00:00.000000",
+    "id" : 305,
+    "event_type" : "Session",
+    "title" : "Group Session on 2025-04-22",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-22 15:00:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-04-22 14:00:00.000000",
+    "id" : 306,
+    "event_type" : "Meeting",
+    "title" : "IEP Meeting - Kayla P",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-14 12:30:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-04-14 12:00:00.000000",
+    "id" : 307,
+    "event_type" : "Session",
+    "title" : "Group Session on 2025-04-14",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-15 12:30:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-04-15 12:00:00.000000",
+    "id" : 308,
+    "event_type" : "Session",
+    "title" : "Group Session on 2025-04-15",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-16 12:00:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-04-16 11:30:00.000000",
+    "id" : 309,
+    "event_type" : "Session",
+    "title" : "Group Session on 2025-04-16",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-17 12:30:00.000000",
+    "status" : "Excused Absence",
+    "start" : "2025-04-17 12:00:00.000000",
+    "id" : 310,
+    "event_type" : "Session",
+    "title" : "Group Session on 2025-04-17",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-23 10:30:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-04-23 10:00:00.000000",
+    "id" : 311,
+    "event_type" : "Session",
+    "title" : "Session with Kimberly LopezCruz on 2025-04-23",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-23 12:00:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-04-23 11:30:00.000000",
+    "id" : 312,
+    "event_type" : "Session",
+    "title" : "Group Session on 2025-04-23",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-23 12:30:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-04-23 12:00:00.000000",
+    "id" : 313,
+    "event_type" : "Session",
+    "title" : "Session with Adriel Awa on 2025-04-23",
+    "active" : 1,
+    "plan_notes" : "Assessment Session 1"
+  },
+  {
+    "end" : "2025-04-23 13:45:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-04-23 13:15:00.000000",
+    "id" : 314,
+    "event_type" : "Session",
+    "title" : "Group Session on 2025-04-23",
+    "active" : 1,
+    "plan_notes" : null
+  },
+  {
+    "end" : "2025-04-23 14:30:00.000000",
+    "status" : "Scheduled",
+    "start" : "2025-04-23 14:00:00.000000",
+    "id" : 315,
+    "event_type" : "Session",
+    "title" : "Group Session on 2025-04-23",
+    "active" : 1,
+    "plan_notes" : null
+  }
+]

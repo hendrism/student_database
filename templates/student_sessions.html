@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}Sessions for {{ student.first_name }}{% endblock %}
+{% block content %}
+  <!-- Student Objectives -->
+  <div class="mb-4">
+    <h5>Objectives for {{ student.first_name }} {{ student.last_name }}</h5>
+    <ul>
+      {% for obj in objectives %}
+        <li>{{ obj.objective_description }}</li>
+      {% else %}
+        <li>No active objectives found.</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <h2>Sessions for {{ student.first_name }} {{ student.last_name }}</h2>
+  <h3 class="mt-5">New System Trial Logs</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Objective</th>
+        <th>Total Trials</th>
+        <th>% Independent</th>
+        <th>% ≤ Minimal</th>
+        <th>% ≤ Moderate</th>
+        <th>% ≤ Maximal</th>
+        <th>System</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if new_logs %}
+        {% for log in new_logs %}
+          {% set ev = student.events 
+               | selectattr('date_of_session', 'equalto', log.date_of_session) 
+               | list 
+               | first %}
+          <tr>
+            <td>{{ log.date_of_session.strftime('%Y-%m-%d') }}</td>
+            <td>{{ ev.status if ev else '' }}</td>
+            <td>{{ log.objective.objective_description if log.objective else '' }}</td>
+            <td>{{ log.total_trials_new() }}</td>
+            <td>{{ log.percent_independent() }}%</td>
+            <td>{{ log.percent_correct_up_to('minimal_support') }}%</td>
+            <td>{{ log.percent_correct_up_to('moderate_support') }}%</td>
+            <td>{{ log.percent_correct_up_to('maximal_support') }}%</td>
+            <td>New</td>
+            <td>{{ log.notes or '' }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{ log.percent_minimal_support() }}%</td>
+            <td>{{ log.percent_moderate_support() }}%</td>
+            <td>{{ log.percent_maximal_support() }}%</td>
+            <td></td>
+            <td></td>
+          </tr>
+        {% endfor %}
+      {% else %}
+        <tr>
+          <td colspan="10" class="text-center">No new system trial logs found.</td>
+        </tr>
+      {% endif %}
+    </tbody>
+  </table>
+   <h3 class="mt-5">Legacy System Trial Logs</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Objective</th>
+        <th>No Support</th>
+        <th>1 Cue</th>
+        <th>Visual/Verbal Cues</th>
+        <th>Modeling</th>
+        <th>System</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+  <tbody>
+      {% if legacy_logs %}
+        {% for log in legacy_logs %}
+          {% set ev = student.events 
+               | selectattr('date_of_session', 'equalto', log.date_of_session) 
+               | list 
+               | first %}
+          <tr>
+            <td>{{ log.date_of_session.strftime('%Y-%m-%d') }}</td>
+            <td>{{ ev.status if ev else '' }}</td>
+            <td>{{ log.objective.objective_description if log.objective else '' }}</td>
+            <td>{{ log.percent_no_support() }}%</td>
+            <td>{{ log.percent_with_1_cue() }}%</td>
+            <td>{{ log.percent_visual_verbal_cues() }}%</td>
+            <td>{{ log.percent_with_modeling() }}%</td>
+            <td>Legacy</td>
+            <td>{{ log.notes or '' }}</td>
+          </tr>
+        {% endfor %}
+      {% else %}
+        <tr>
+          <td colspan="9" class="text-center">No legacy system trial logs found.</td>
+        </tr>
+      {% endif %}
+    </tbody>
+  </table>
+{% endblock %}

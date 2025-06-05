@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Edit Goal{% endblock %}
+{% block content %}
+  <h2>Edit Goal for {{ goal.student.first_name }} {{ goal.student.last_name }}</h2>
+  <form method="POST">
+    <div class="form-group">
+      <label for="goal_description">Goal Description</label>
+      <textarea id="goal_description" name="goal_description"
+                class="form-control" rows="3" required>{{ goal.goal_description }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a href="{{ url_for('routes.edit_student', student_id=goal.student_id) }}"
+       class="btn btn-secondary">Cancel</a>
+  </form>
+{% endblock %}

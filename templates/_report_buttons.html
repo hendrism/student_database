@@ -1,7 +1,9 @@
+<!-- Button links for navigating to different report views in the Student Database app. -->
+
 <h2>Reports</h2>
 
 <a href="{{ url_for('routes.monthly_sessions_report') }}" class="btn btn-outline-primary btn-block mb-2">Monthly Session Tracking Report</a>
 <a href="{{ url_for('routes.makeup_needed_report') }}" class="btn btn-outline-primary btn-block mb-2">Missed/Makeup Needed Sessions Report</a>
 <a href="{{ url_for('routes.trial_logs_by_date') }}" class="btn btn-outline-secondary btn-block mb-2">Trial Logs by Date</a>
-
+<a href="{{ url_for('routes.scheduled_sessions_pending') }}" class="btn btn-outline-secondary btn-block mb-2">View Unupdated Scheduled Sessions</a>
 <!-- Future report links can be added here -->

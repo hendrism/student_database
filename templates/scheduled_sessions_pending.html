@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Pending Sessions{% endblock %}
+
+{% block content %}
+  <h2>Sessions Pending Update</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Student(s)</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Update Status</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ev in sessions %}
+      <tr>
+        <td>{{ ev.student.first_name }} {{ ev.student.last_name }}</td>
+        <td>{{ ev.date_of_session.strftime('%Y-%m-%d') }}</td>
+        <td>{{ ev.time_of_start.strftime('%H:%M') }} – {{ ev.time_of_end.strftime('%H:%M') }}</td>
+        <td>
+          <form class="ajax-form" action="{{ url_for('routes.update_event', event_id=ev.event_id) }}" method="POST" style="display:inline-block;">
+            <select name="status" class="form-control form-control-sm status-select">
+              {% for option in ['Scheduled','Completed','Makeup Needed','Excused Absence'] %}
+                <option value="{{ option }}" {% if ev.status == option %}selected{% endif %}>
+                  {{ option }}
+                </option>
+              {% endfor %}
+            </select>
+          </form>
+        </td>
+        <td>
+          <a
+            href="{{ url_for('routes.calendar', filter_date=ev.date_of_session.strftime('%Y-%m-%d')) }}"
+            class="btn btn-primary btn-sm"
+          >View in Calendar</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

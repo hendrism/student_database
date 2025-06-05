@@ -10,6 +10,6 @@
     {{ macros.render_input("with_accuracy", "Expected Accuracy (Optional)", placeholder="e.g., 80% accuracy over 3 sessions") }}
     
     <button type="submit" class="btn btn-primary">Add Objective</button>
-    <a href="{{ url_for('routes.student_info', student_id=goal.student.student_id) }}" class="btn btn-secondary">Cancel</a>
+    <a href="{{ url_for('routes.edit_student', student_id=goal.student.student_id) }}" class="btn btn-secondary">Cancel</a>
   </form>
 {% endblock %}

@@ -1,0 +1,978 @@
+[
+  {
+    "notes" : "when provided visual and verbal supports",
+    "active" : 1,
+    "goal_id" : 5,
+    "objective_description" : "answer 'WH-' questions",
+    "objective_id" : 1,
+    "with_accuracy" : "80% accuracy over 3 consecutive sessions."
+  },
+  {
+    "notes" : "when provided visual and verbal support",
+    "active" : 1,
+    "goal_id" : 5,
+    "objective_description" : "use functional (e.g., comment, request, answer questions) phrases\/sentences",
+    "objective_id" : 2,
+    "with_accuracy" : "80% accuracy over 3 consecutive sessions."
+  },
+  {
+    "notes" : "when provided visual and verbal support",
+    "active" : 1,
+    "goal_id" : 5,
+    "objective_description" : "label nouns, verbs, adjectives, and categories",
+    "objective_id" : 3,
+    "with_accuracy" : "80% accuracy over 3 consecutive sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 13,
+    "objective_description" : "list the main events of a 5-sentence sequential story in any order",
+    "objective_id" : 4,
+    "with_accuracy" : "4\/5 story retells"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 13,
+    "objective_description" : "list the main events of a 5-sentence sequential story in sequential order",
+    "objective_id" : 5,
+    "with_accuracy" : "4\/5 story retells"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 13,
+    "objective_description" : "retell a 4-sentence sequential story in order",
+    "objective_id" : 6,
+    "with_accuracy" : "4\/5 story retells"
+  },
+  {
+    "notes" : "given faded visul and verbal cues",
+    "active" : 1,
+    "goal_id" : 34,
+    "objective_description" : "use multimodal communication to answer questions",
+    "objective_id" : 7,
+    "with_accuracy" : "80% accuracy over 3 consecutive sessions"
+  },
+  {
+    "notes" : "given faded visul and verbal cues",
+    "active" : 1,
+    "goal_id" : 34,
+    "objective_description" : "use multimodal communication to describe pictures or make comments",
+    "objective_id" : 8,
+    "with_accuracy" : "80% accuracy over 3 consecutive session"
+  },
+  {
+    "notes" : "given faded visul and verbal cues",
+    "active" : 1,
+    "goal_id" : 34,
+    "objective_description" : "use multimodal communication to make requests",
+    "objective_id" : 9,
+    "with_accuracy" : "80% accuracy over 3 consecutive sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 38,
+    "objective_description" : "sequence a given passage",
+    "objective_id" : 10,
+    "with_accuracy" : "80% accuracy across 3 sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 38,
+    "objective_description" : "retell a given passage",
+    "objective_id" : 11,
+    "with_accuracy" : "80% accuracy across 3 sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 38,
+    "objective_description" : "answer how, why, prediction, and conclusion questions about a given passage",
+    "objective_id" : 12,
+    "with_accuracy" : "80% accuracy across 3 sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 18,
+    "objective_description" : "produce consonant sounds (\/th\/ and \/r\/ blends) in all positions of words in connected speech",
+    "objective_id" : 13,
+    "with_accuracy" : "80% accuracy across 3 data sessions"
+  },
+  {
+    "notes" : "given verbal and visual cues",
+    "active" : 1,
+    "goal_id" : 43,
+    "objective_description" : "give appropriate responses in different social scenarios",
+    "objective_id" : 14,
+    "with_accuracy" : "80% accuracy, over 3 consecutive sessions."
+  },
+  {
+    "notes" : "given visual prompts (i.e. social stories\/scenarios) and modeling",
+    "active" : 1,
+    "goal_id" : 43,
+    "objective_description" : "develop social awareness skills by taking the perspective of others",
+    "objective_id" : 15,
+    "with_accuracy" : "80% accuracy, over 3 consecutive sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 19,
+    "objective_description" : "use sentence-level context clues (e.g., definitions, examples, and contrast words) to determine the meaning of an unfamiliar word",
+    "objective_id" : 16,
+    "with_accuracy" : "70% accuracy across three consecutive sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 19,
+    "objective_description" : "identify a synonym or antonym for a given word using contextual support (e.g., sentence clues, word relationships)",
+    "objective_id" : 17,
+    "with_accuracy" : "70% accuracy across three consecutive sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 19,
+    "objective_description" : "explain why a selected synonym or antonym is an appropriate match for a given word, using evidence from context,",
+    "objective_id" : 18,
+    "with_accuracy" : "60% accuracy across three consecutive sessions."
+  },
+  {
+    "notes" : "given a familiar literary text with chunked paragraphs, a claim, and teacher modeling on how to identify supporting evidence",
+    "active" : 1,
+    "goal_id" : 2,
+    "objective_description" : "find three pieces of textual evidence in the text that support the given claim",
+    "objective_id" : 19,
+    "with_accuracy" : "for 3\/4 trials"
+  },
+  {
+    "notes" : "given an instructional-level literary text, a claim, and a graphic organizer, after the teacher reads aloud part of the text and models how to select relevant supporting evidence, ",
+    "active" : 1,
+    "goal_id" : 2,
+    "objective_description" : "cite three pieces of textual evidence that support the given claim",
+    "objective_id" : 20,
+    "with_accuracy" : "for 3\/4 trials"
+  },
+  {
+    "notes" : "given multiple verbal and phonemic cues and visual prompts",
+    "active" : 1,
+    "goal_id" : 21,
+    "objective_description" : "produce a 2- to 3-word phrase for a variety of communication purposes (e.g., answering a question, describing a picture, conversing with an adult or peer)",
+    "objective_id" : 21,
+    "with_accuracy" : "80% accuracy across 3 consecutive sessions."
+  },
+  {
+    "notes" : " in a variety of language-based activities",
+    "active" : 1,
+    "goal_id" : 21,
+    "objective_description" : "label common vocabulary (e.g., nouns, actions, adjectives) to describe and identify basic concepts",
+    "objective_id" : 22,
+    "with_accuracy" : "80% accuracy across 3 consecutive sessions."
+  },
+  {
+    "notes" : "using visual and\/or verbal cues",
+    "active" : 1,
+    "goal_id" : 21,
+    "objective_description" : "answer simple wh- questions (e.g., who, what, where)",
+    "objective_id" : 23,
+    "with_accuracy" : "80% accuracy across 3 consecutive sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 39,
+    "objective_description" : "respond appropriately using a 3 to 4 word sentence to questions asking 'Who'",
+    "objective_id" : 24,
+    "with_accuracy" : "80% accuracy across 3 consecutive sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 39,
+    "objective_description" : "respond appropriately using a 3 to 4 word sentence to questions asking 'What' & 'What doing'",
+    "objective_id" : 25,
+    "with_accuracy" : "80% accuracy across 3 consecutive sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 39,
+    "objective_description" : "respond appropriately using a 3 to 4 word sentence to questions asking 'When'",
+    "objective_id" : 26,
+    "with_accuracy" : "80% accuracy across 3 consecutive sessions."
+  },
+  {
+    "notes" : "provided verbal and visual  cues",
+    "active" : 1,
+    "goal_id" : 40,
+    "objective_description" : "engage in 2-4 conversational turns during a short conversation with his peers and familiar adults",
+    "objective_id" : 27,
+    "with_accuracy" : "in 4\/5 trials."
+  },
+  {
+    "notes" : "given moderate visual and verbal cuing",
+    "active" : 1,
+    "goal_id" : 40,
+    "objective_description" : "verbally refuse activities or direction",
+    "objective_id" : 28,
+    "with_accuracy" : "in 3\/5 given opportunities"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 24,
+    "objective_description" : "determine the main idea and explain how it is supported by key details",
+    "objective_id" : 29,
+    "with_accuracy" : "in 80% of opportunities"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 24,
+    "objective_description" : "formulate 3 or more grammatically correct sentences to tell a short narrative describing the picture or retell details\/events in the passage",
+    "objective_id" : 30,
+    "with_accuracy" : "in 80% of opportunities"
+  },
+  {
+    "notes" : "Given instructional-level texts (both narrative and informational), using graphic organizers as needed",
+    "active" : 1,
+    "goal_id" : 36,
+    "objective_description" : "compare and contrast characters, settings, or events",
+    "objective_id" : 31,
+    "with_accuracy" : "80% accuracy"
+  },
+  {
+    "notes" : "Given instructional-level texts (both narrative and informational), ",
+    "active" : 1,
+    "goal_id" : 36,
+    "objective_description" : "answer inferential questions and cite textual evidence to support responses",
+    "objective_id" : 32,
+    "with_accuracy" : "80% accuracy"
+  },
+  {
+    "notes" : "Given multi-paragraph non-fiction text",
+    "active" : 1,
+    "goal_id" : 36,
+    "objective_description" : "summarize the text in his own words",
+    "objective_id" : 33,
+    "with_accuracy" : "80% accuracy"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 36,
+    "objective_description" : "make relevant comments during structured therapy activities and conversations",
+    "objective_id" : 34,
+    "with_accuracy" : "80% of the time"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 41,
+    "objective_description" : "answer inferential questions related to others' feelings",
+    "objective_id" : 35,
+    "with_accuracy" : "80% accuracy over three consecutive sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 41,
+    "objective_description" : "answer inferential WH-questions and make predictions",
+    "objective_id" : 36,
+    "with_accuracy" : "80% accuracy over three consecutive sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 17,
+    "objective_description" : "communicate to answer yes\/no questions correctly",
+    "objective_id" : 37,
+    "with_accuracy" : "across 80% of opportunities for 2 consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 17,
+    "objective_description" : "communicate to answer simple questions correctly from a field of 3 options or verbal choices",
+    "objective_id" : 38,
+    "with_accuracy" : "across 80% of opportunities for 2 consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 17,
+    "objective_description" : "communicate to request help and\/or items effectively in structured activities or eating times using at least three-word utterances",
+    "objective_id" : 39,
+    "with_accuracy" : "across 80% of opportunities for 2 consecutive data collection sessions"
+  },
+  {
+    "notes" : " (e.g., sign language, gestures, pointing, verbalizations, picture communication system, AAC device, etc.)",
+    "active" : 1,
+    "goal_id" : 3,
+    "objective_description" : "use total communication to point to named items from a field of 2",
+    "objective_id" : 40,
+    "with_accuracy" : "80% accuracy over 3 consecutive data collection sessions."
+  },
+  {
+    "notes" : " (e.g., sign language, gestures, pointing, verbalizations, picture communication system, AAC device, etc.) ",
+    "active" : 1,
+    "goal_id" : 3,
+    "objective_description" : "use total communication to point to named items\/pictures from a field of 3",
+    "objective_id" : 41,
+    "with_accuracy" : "80% accuracy over 3 consecutive data collection sessions."
+  },
+  {
+    "notes" : " at least 3 times per item\/action for 5 different items\/actions",
+    "active" : 1,
+    "goal_id" : 3,
+    "objective_description" : "use total communication to request an item or action",
+    "objective_id" : 42,
+    "with_accuracy" : "over 3 consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 22,
+    "objective_description" : "summarize a situation with at least 3 key details in the appropriate sequence",
+    "objective_id" : 43,
+    "with_accuracy" : "at least 80% accuracy across three consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 22,
+    "objective_description" : "answer inferential questions and explain indirect requests",
+    "objective_id" : 44,
+    "with_accuracy" : "at least 80% accuracy across three consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 22,
+    "objective_description" : "identify feelings of characters",
+    "objective_id" : 45,
+    "with_accuracy" : "at least 80% accuracy across three consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 22,
+    "objective_description" : "explain humor",
+    "objective_id" : 46,
+    "with_accuracy" : "at least 80% accuracy across three consecutive data collection sessions"
+  },
+  {
+    "notes" : "Given verbal prompts",
+    "active" : 1,
+    "goal_id" : 37,
+    "objective_description" : "initiate use of fluency strategies at the conversational speech level",
+    "objective_id" : 47,
+    "with_accuracy" : "in 4\/5 opportunities"
+  },
+  {
+    "notes" : "Given visual cues",
+    "active" : 1,
+    "goal_id" : 37,
+    "objective_description" : "initiate use of fluency strategies at the conversational speech level",
+    "objective_id" : 48,
+    "with_accuracy" : "in 4\/5 opportunities"
+  },
+  {
+    "notes" : "independently",
+    "active" : 1,
+    "goal_id" : 37,
+    "objective_description" : "initiate use of fluency strategies at the conversational speech level",
+    "objective_id" : 49,
+    "with_accuracy" : "in 4\/5 opportunities"
+  },
+  {
+    "notes" : "Provided with a short description, given no more than one visual or verbal cue (What is red, shiny, and a fruit?)",
+    "active" : 1,
+    "goal_id" : 44,
+    "objective_description" : "identify a common object",
+    "objective_id" : 50,
+    "with_accuracy" : "80% accuracy"
+  },
+  {
+    "notes" : "Provided with pictures or labels of objects, given minimal prompting",
+    "active" : 1,
+    "goal_id" : 44,
+    "objective_description" : "provide at least 3 relevant details by identifying the category, function, appearance, etc.",
+    "objective_id" : 51,
+    "with_accuracy" : "80% accuracy."
+  },
+  {
+    "notes" : "Provided with a picture, given visual and verbal prompts",
+    "active" : 1,
+    "goal_id" : 44,
+    "objective_description" : "produce a short narrative about a picture using appropriate grammar (2-3 sentences) in order to describe the scene",
+    "objective_id" : 52,
+    "with_accuracy" : "80% accuracy."
+  },
+  {
+    "notes" : "Provided with an image or short story, given visual and verbal cues",
+    "active" : 1,
+    "goal_id" : 44,
+    "objective_description" : "make predictions or inferences",
+    "objective_id" : 53,
+    "with_accuracy" : "80% accuracy."
+  },
+  {
+    "notes" : "Given a sentence containing an unfamiliar word",
+    "active" : 1,
+    "goal_id" : 32,
+    "objective_description" : "identify and explain the meaning of the word using context clues (definition, synonym, antonym, or example)",
+    "objective_id" : 54,
+    "with_accuracy" : "80% accuracy."
+  },
+  {
+    "notes" : "After reading a short passage",
+    "active" : 1,
+    "goal_id" : 32,
+    "objective_description" : "highlight or underline words she does not know and use a vocabulary strategy (e.g., context clues, affixes, or reference tools) to determine their meanings",
+    "objective_id" : 55,
+    "with_accuracy" : "80% accuracy."
+  },
+  {
+    "notes" : "After reading a short passage",
+    "active" : 1,
+    "goal_id" : 33,
+    "objective_description" : "answer inferential questions (e.g., \"Why did the character act this way?\" or \"What might happen next?\")",
+    "objective_id" : 56,
+    "with_accuracy" : "80% accuracy."
+  },
+  {
+    "notes" : "Given a narrative or expository text",
+    "active" : 1,
+    "goal_id" : 33,
+    "objective_description" : "summarize the main idea and supporting details",
+    "objective_id" : 57,
+    "with_accuracy" : "80% accuracy."
+  },
+  {
+    "notes" : "given sentences, each containing an underlined novel vocabulary word, ",
+    "active" : 1,
+    "goal_id" : 20,
+    "objective_description" : "determine the definition of a vocabulary word using context clues",
+    "objective_id" : 58,
+    "with_accuracy" : "80% accuracy"
+  },
+  {
+    "notes" : "when provided an open book, key words highlighted, and visual aids (e.g. pictures or photos representing key events in the text)",
+    "active" : 1,
+    "goal_id" : 20,
+    "objective_description" : "respond to 5 questions using at least 1 complete sentence and including at least 1 detail per sentence (e.g. specific location, description of character, specific dialogue of a character)",
+    "objective_id" : 59,
+    "with_accuracy" : "80% accuracy."
+  },
+  {
+    "notes" : "when given instructional level or grade level informational text",
+    "active" : 1,
+    "goal_id" : 20,
+    "objective_description" : "utilize details to determine inference made",
+    "objective_id" : 60,
+    "with_accuracy" : "80% accuracy"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 35,
+    "objective_description" : "use strategies to decrease tension when speaking (e.g., cancellation, pull out, preparatory set) in words, in phrases, in sentences, in conversational speech",
+    "objective_id" : 61,
+    "with_accuracy" : "in 4 out 5 trials over 3 consecutive sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 35,
+    "objective_description" : "self-disclose to individuals selected by the student (e.g., a teacher or a friend) across all social domains",
+    "objective_id" : 62,
+    "with_accuracy" : "in 4 out 5 trials over 3 consecutive sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 28,
+    "objective_description" : "produce initial \/s\/ blends in self-created sentences",
+    "objective_id" : 63,
+    "with_accuracy" : "at least 90% accuracy over 3 consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 28,
+    "objective_description" : "produce initial \/r\/ blends in self-created sentences",
+    "objective_id" : 64,
+    "with_accuracy" : "at least 90% accuracy over 3 consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 28,
+    "objective_description" : "produce final \/s\/ sounds in self-created sentences",
+    "objective_id" : 65,
+    "with_accuracy" : "at least 90% accuracy over 3 consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 29,
+    "objective_description" : "produce grammatically correct sentences (including subject\/verb agreement and verb tense) to completely answer questions or retell information in a logical and\/or sequential order",
+    "objective_id" : 66,
+    "with_accuracy" : "at least 80% accuracy over 3 consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 29,
+    "objective_description" : "produce grammatically correct sentences (including subject\/verb agreement and verb tense) to completely answer questions or retell information in a logical and\/or sequential order",
+    "objective_id" : 67,
+    "with_accuracy" : "at least 90% accuracy over 3 consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 30,
+    "objective_description" : "identify the main idea of a text",
+    "objective_id" : 68,
+    "with_accuracy" : "at least 90% accuracy over 3 consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 30,
+    "objective_description" : "provide four supporting details about the text",
+    "objective_id" : 69,
+    "with_accuracy" : "at least 90% accuracy over 3 consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 30,
+    "objective_description" : "answer inferential questions",
+    "objective_id" : 70,
+    "with_accuracy" : "at least 90% accuracy over 3 consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 31,
+    "objective_description" : "use complete, grammatically correct sentences to answer questions",
+    "objective_id" : 71,
+    "with_accuracy" : "at least 80% accuracy"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 31,
+    "objective_description" : "use complete, grammatically correct sentences to retell the story in appropriate sequence",
+    "objective_id" : 72,
+    "with_accuracy" : "at least 80% accuracy"
+  },
+  {
+    "notes" : "independently",
+    "active" : 1,
+    "goal_id" : 6,
+    "objective_description" : "form grammatically correct compound\/complex sentences to summarize the material",
+    "objective_id" : 73,
+    "with_accuracy" : "at least 80% accuracy over three consecutive data collection sessions"
+  },
+  {
+    "notes" : "independently",
+    "active" : 1,
+    "goal_id" : 6,
+    "objective_description" : "answer inference questions",
+    "objective_id" : 74,
+    "with_accuracy" : "at least 80% accuracy over three consecutive data collection sessions"
+  },
+  {
+    "notes" : "independently",
+    "active" : 1,
+    "goal_id" : 6,
+    "objective_description" : "form grammatically correct compound\/complex sentences to answer inference questions and effectively explain his rationale",
+    "objective_id" : 75,
+    "with_accuracy" : "at least 80% accuracy over three consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 23,
+    "objective_description" : "make predictions and inferences based on textual evidence",
+    "objective_id" : 76,
+    "with_accuracy" : "80% accuracy given fading cues to independence"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 23,
+    "objective_description" : "implement comprehension strategies (e.g., graphic organizers, visualization, etc.) and verbally paraphrase the information from a curriculum passage",
+    "objective_id" : 77,
+    "with_accuracy" : "80% accuracy given fading cues to independence."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 14,
+    "objective_description" : "demonstrate fluency strategies (e.g., easy onset, light contacts, cancellations) in connected speech during conversational tasks",
+    "objective_id" : 78,
+    "with_accuracy" : "in 90% of opportunities"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 14,
+    "objective_description" : "implement learned fluency strategies across multiple school environments (e.g., classroom, lunchroom, group activities)",
+    "objective_id" : 79,
+    "with_accuracy" : "in 90% of opportunities across 3 consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 14,
+    "objective_description" : "self-monitor for dysfluencies and independently apply strategies when needed",
+    "objective_id" : 80,
+    "with_accuracy" : "achieving 90% accuracy in self-monitoring skills over 3 consecutive opportunities."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 8,
+    "objective_description" : "answer questions (no length criteria)",
+    "objective_id" : 81,
+    "with_accuracy" : "80% accuracy across 2 consecutive sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 8,
+    "objective_description" : "use at least a three-word utterance to answer questions",
+    "objective_id" : 82,
+    "with_accuracy" : "80% accuracy across 2 consecutive sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 8,
+    "objective_description" : "request help or items clearly and effectively using at least a three-word utterance",
+    "objective_id" : 83,
+    "with_accuracy" : "80% accuracy across 2 consecutive sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 4,
+    "objective_description" : "formulate 4-6 word sentences to describe a picture",
+    "objective_id" : 84,
+    "with_accuracy" : "80% accuracy"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 4,
+    "objective_description" : "answer wh-questions (When, where, and why) about a picture\/short story",
+    "objective_id" : 85,
+    "with_accuracy" : "80% accuracy"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 4,
+    "objective_description" : "use a synonym to complete a given sentence",
+    "objective_id" : 86,
+    "with_accuracy" : "80% accuracy"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 7,
+    "objective_description" : "use complete and grammatically correct 5-word sentences to make requests (e.g., asking for help or items)",
+    "objective_id" : 87,
+    "with_accuracy" : "80% accuracy across 3 consecutive data collection sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 7,
+    "objective_description" : "use complete and grammatically correct 5-word sentences to comment on a topic or ask questions to engage in discussions with staff and peers",
+    "objective_id" : 88,
+    "with_accuracy" : "80% accuracy across 3 consecutive data collection sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 7,
+    "objective_description" : "use complete and grammatically correct 5-word sentences to self-advocate (e.g., express preferences or needs) or to negate (e.g., appropriately decline or refuse)",
+    "objective_id" : 89,
+    "with_accuracy" : "80% accuracy across 3 consecutive data collection sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 16,
+    "objective_description" : "use agent + action phrases\/sentences",
+    "objective_id" : 90,
+    "with_accuracy" : "on 3 out 5 opportunities over 2 consecutive sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 16,
+    "objective_description" : "produce a 2- to 3-word phrase\/sentence to choose a preferred object or activity ",
+    "objective_id" : 91,
+    "with_accuracy" : "on 3 out 5 opportunities over 2 consecutive sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 16,
+    "objective_description" : "label an object or action to answer 'what' and 'what doing' questions ",
+    "objective_id" : 92,
+    "with_accuracy" : "on 3 out of 5 opportunities over 2 consecutive sessions."
+  },
+  {
+    "notes" : "after reading an independent-level informational text, given an excerpt with an underlined unfamiliar word",
+    "active" : 1,
+    "goal_id" : 26,
+    "objective_description" : "tell the part of speech of the underlined word ",
+    "objective_id" : 93,
+    "with_accuracy" : "for 4\/5 words"
+  },
+  {
+    "notes" : "after reading an independent-level informational text, given an excerpt with an underlined word and context clue",
+    "active" : 1,
+    "goal_id" : 26,
+    "objective_description" : "tell the type of context clue used for the underlined word",
+    "objective_id" : 94,
+    "with_accuracy" : " or 4\/5 words"
+  },
+  {
+    "notes" : "after reading an independent-level informational text, given an excerpt with an underlined word and its definition, ",
+    "active" : 1,
+    "goal_id" : 26,
+    "objective_description" : "tell the context clues that support the definition",
+    "objective_id" : 95,
+    "with_accuracy" : "for 4\/5 words"
+  },
+  {
+    "notes" : "after reading a grade-level literary or informational text and given 5 underlined words, ",
+    "active" : 1,
+    "goal_id" : 27,
+    "objective_description" : "explain underlined word by telling the definition and 1 sentence stating how the root helps determine the meaning of the word",
+    "objective_id" : 96,
+    "with_accuracy" : "for 4\/5 words"
+  },
+  {
+    "notes" : "after reading a grade-level literary or informational text and given 5 underlined words that contain common prefixes or suffixes, ",
+    "active" : 1,
+    "goal_id" : 27,
+    "objective_description" : "explain underlined word by telling the definition and 1 sentence stating how either the prefix or suffix helps determine the meaning of the word ",
+    "objective_id" : 97,
+    "with_accuracy" : "for 4\/5 words"
+  },
+  {
+    "notes" : "after reading a grade-level literary or informational text and given 5 underlined vocabulary words that have example context clues, ",
+    "active" : 1,
+    "goal_id" : 27,
+    "objective_description" : "explain the meaning of a word by writing the definition and one sentence stating how example context clues after the vocabulary word helps determine the meaning of the word",
+    "objective_id" : 98,
+    "with_accuracy" : "for 4\/5 words"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 42,
+    "objective_description" : "verbally answer questions using 1-3 words per utterance.",
+    "objective_id" : 99,
+    "with_accuracy" : "70% of opportunities"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 42,
+    "objective_description" : "use utterances of increased length when interacting socially with peers and adults.",
+    "objective_id" : 100,
+    "with_accuracy" : "70% of opportunities"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 42,
+    "objective_description" : "use a scripted conversation to ask appropriate questions and make comments while engaged in reciprocal verbal interactions with targeted adults or peers",
+    "objective_id" : 101,
+    "with_accuracy" : "70% of opportunities"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 10,
+    "objective_description" : "use complete and grammatically correct sentences of at least 5 words when answering questions",
+    "objective_id" : 105,
+    "with_accuracy" : "80% accuracy across 3 consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 10,
+    "objective_description" : "use complete and grammatically correct sentences of at least 5 words when commenting or providing a description",
+    "objective_id" : 106,
+    "with_accuracy" : "80% accuracy across 3 consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 10,
+    "objective_description" : "use complete and grammatically correct sentences of at least 5 words when making a request or asking a question",
+    "objective_id" : 107,
+    "with_accuracy" : "80% accuracy across 3 consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 9,
+    "objective_description" : "initiate conversations using at least three-word utterances with appropriate volume",
+    "objective_id" : 108,
+    "with_accuracy" : "across 80% of opportunities given no more than one prompt."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 9,
+    "objective_description" : "respond to questions using at least three-word utterances with appropriate volume",
+    "objective_id" : 109,
+    "with_accuracy" : "across 80% of opportunities given no more than one prompt."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 9,
+    "objective_description" : "request help\/items\/clarification using at least three-word utterances with appropriate volume",
+    "objective_id" : 110,
+    "with_accuracy" : "across 80% of opportunities given no more than one prompt."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 15,
+    "objective_description" : "categorize a given object",
+    "objective_id" : 111,
+    "with_accuracy" : "80% accuracy across 3 consecutive sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 15,
+    "objective_description" : "identify and label a given object based on a short description",
+    "objective_id" : 112,
+    "with_accuracy" : "80% accuracy across 3 consecutive sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 15,
+    "objective_description" : "produce a complete sentence to describe a picture using a targeted action word",
+    "objective_id" : 113,
+    "with_accuracy" : "80% accuracy across 3 consecutive sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 12,
+    "objective_description" : "answer 'who' questions when given a structured therapy task",
+    "objective_id" : 114,
+    "with_accuracy" : "in 4\/5 trials"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 12,
+    "objective_description" : "answer 'where' questions using appropriate prepositions, when given a structured therapy task",
+    "objective_id" : 115,
+    "with_accuracy" : "in 4\/5 trials"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 12,
+    "objective_description" : "answer 'when' questions when given a structured therapy task",
+    "objective_id" : 116,
+    "with_accuracy" : "in 4\/5 trials"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 11,
+    "objective_description" : "use an understandable sentence with at least 4 words to describe a picture",
+    "objective_id" : 117,
+    "with_accuracy" : "80% accuracy over 3 consecutive sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 11,
+    "objective_description" : "use an understandable sentence with at least 4 words to make a request",
+    "objective_id" : 118,
+    "with_accuracy" : "80% accuracy over 3 consecutive sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 11,
+    "objective_description" : "use an understandable sentence with at least 4 words to answer a WH question",
+    "objective_id" : 119,
+    "with_accuracy" : "80% accuracy over 3 consecutive sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 11,
+    "objective_description" : "provide personal information in response to questions",
+    "objective_id" : 120,
+    "with_accuracy" : "80% accuracy over 3 consecutive sessions"
+  },
+  {
+    "notes" : " given models and visual support",
+    "active" : 1,
+    "goal_id" : 25,
+    "objective_description" : "describe pictures targeting action words using phrases",
+    "objective_id" : 121,
+    "with_accuracy" : "70% accuracy across 3 consecutive sessions."
+  },
+  {
+    "notes" : " given models and visual support",
+    "active" : 1,
+    "goal_id" : 25,
+    "objective_description" : "label objects and pictures using familiar vocabulary related to her environment",
+    "objective_id" : 122,
+    "with_accuracy" : "70% accuracy across 3 consecutive sessions."
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 45,
+    "objective_description" : "use context clues to understand and provide a meaning for an unfamiliar vocabulary word",
+    "objective_id" : 123,
+    "with_accuracy" : "with at least 90% accuracy over three consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 45,
+    "objective_description" : "identify an antonym of a given vocabulary word",
+    "objective_id" : 124,
+    "with_accuracy" : "with at least 90% accuracy over three consecutive data collection sessions"
+  },
+  {
+    "notes" : null,
+    "active" : 1,
+    "goal_id" : 45,
+    "objective_description" : "identify a synonym of a given vocabulary word",
+    "objective_id" : 125,
+    "with_accuracy" : "with at least 90% accuracy over three consecutive data collection sessions "
+  }
+]

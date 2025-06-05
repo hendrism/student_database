@@ -1,35 +1,65 @@
 {% extends "base.html" %}
+{% block title %}Monthly Sessions Report{% endblock %}
 
 {% block content %}
-<h2>Monthly Session Tracking Report</h2>
+  <h2>Monthly Sessions Report for {{ month }}/{{ year }}</h2>
 
-{% include "_session_report_filter.html" %}
+  <form class="form-inline mb-3" method="GET" action="{{ url_for('routes.monthly_sessions_report') }}">
+    <div class="form-group mr-2">
+      <label for="monthSelect" class="mr-1">Month</label>
+      <select id="monthSelect" name="month" class="form-control">
+        {% for m in range(1,13) %}
+          <option value="{{ m }}" {% if m == month %}selected{% endif %}>{{ m }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group mr-2">
+      <label for="yearSelect" class="mr-1">Year</label>
+      <select id="yearSelect" name="year" class="form-control">
+        {% for y in range(year - 2, year + 1) %}
+          <option value="{{ y }}" {% if y == year %}selected{% endif %}>{{ y }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group mr-2">
+      <label for="sortSelect" class="mr-1">Sort By</label>
+      <select id="sortSelect" name="sort_by" class="form-control">
+        <option value="" {% if not sort_by %}selected{% endif %}>Default</option>
+        <option value="student_az" {% if sort_by=='student_az' %}selected{% endif %}>Student A→Z</option>
+        <option value="student_za" {% if sort_by=='student_za' %}selected{% endif %}>Student Z→A</option>
+        <option value="remaining_asc" {% if sort_by=='remaining_asc' %}selected{% endif %}>Least Remaining</option>
+        <option value="remaining_desc" {% if sort_by=='remaining_desc' %}selected{% endif %}>Most Remaining</option>
+        <option value="makeups_asc" {% if sort_by=='makeups_asc' %}selected{% endif %}>Least Makeups</option>
+        <option value="makeups_desc" {% if sort_by=='makeups_desc' %}selected{% endif %}>Most Makeups</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Apply</button>
+  </form>
 
-<!-- Table of Sessions -->
-<table class="table table-bordered table-sm">
-  <thead class="thead-light" style="position: sticky; top: 0; background-color: #fff; z-index: 100;">
-    <tr>
-      <th>Student</th>
-      <th>Expected Sessions</th>
-      <th>Completed + Excused</th>
-      <th>Makeup Needed (This Month)</th>
-      <th>Remaining Sessions</th>
-      <th>Total Outstanding Makeups</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for item in report_data %}
-    <tr>
-      <td>{{ item.student_name }}</td>
-      <td>{{ item.expected_sessions }}</td>
-      <td>{{ item.completed_sessions }}</td>
-      <td>{{ item.makeup_needed }}</td>
-      <td>{{ item.remaining_sessions }}</td>
-      <td>{{ item.total_makeups }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
-
-<a href="{{ url_for('routes.reports') }}" class="btn btn-secondary mt-3">Back to Reports</a>
+  <table class="table table-striped table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th>Student</th>
+        <th>Expected</th>
+        <th>Completed</th>
+        <th>Excused</th>
+        <th>Makeup Needed</th>
+        <th>Remaining</th>
+        <th>Total Makeups</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in report_data %}
+        <tr>
+          <td>{{ row.student_name }}</td>
+          <td>{{ row.expected_sessions }}</td>
+          <td>{{ row.completed_sessions }}</td>
+          <td>{{ row.excused_sessions }}</td>
+          <td>{{ row.makeup_needed }}</td>
+          <td>{{ row.remaining_sessions }}</td>
+          <td>{{ row.total_makeups }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 {% endblock %}

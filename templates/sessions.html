@@ -1,26 +1,66 @@
 {% extends "base.html" %}
+{% block title %}Sessions{% endblock %}
+
 {% block content %}
   <h2>Sessions</h2>
 
-  <!-- Optional Filter Form -->
+  <!-- Filter by date, student, and status -->
   <form method="GET" action="{{ url_for('routes.sessions') }}">
-    <div class="input-group mb-3" style="max-width: 250px;">
-      <input type="date" id="filter_date" name="filter_date" class="form-control" value="{{ request.args.get('filter_date', '') }}">
-      <div class="input-group-append">
-        <button type="button" class="btn btn-secondary" onclick="setToday('filter_date')">Today</button>
+    <div class="form-row align-items-center mb-3">
+      <div class="form-group mr-2">
+        <label for="filter_date" class="sr-only">Date</label>
+        <div class="input-group" style="max-width: 250px;">
+          <input
+            type="date"
+            id="filter_date"
+            name="filter_date"
+            class="form-control"
+            value="{{ filter_date or '' }}"
+          >
+          <div class="input-group-append">
+            <button type="button" class="btn btn-secondary" onclick="setToday('filter_date')">
+              Today
+            </button>
+          </div>
+        </div>
       </div>
+      <div class="form-group mr-2">
+        <label for="filterStudent" class="sr-only">Student</label>
+        <select id="filterStudent" name="filter_student" class="form-control">
+          <option value="">All Students</option>
+          {% for student in students %}
+            <option value="{{ student.student_id }}" {% if filter_student == student.student_id|string %}selected{% endif %}>
+              {{ student.first_name }} {{ student.last_name }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group mr-2">
+        <label for="filterStatus" class="sr-only">Status</label>
+        <select id="filterStatus" name="filter_status" class="form-control">
+          <option value="">All Statuses</option>
+          {% for status_option in ['Scheduled','Completed','Makeup Needed','Excused Absence'] %}
+            <option value="{{ status_option }}" {% if filter_status == status_option %}selected{% endif %}>
+              {{ status_option }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-secondary">Filter</button>
+      <a href="{{ url_for('routes.sessions') }}" class="btn btn-light">Clear</a>
     </div>
-    <button type="submit" class="btn btn-secondary">Filter</button>
-    <a href="{{ url_for('routes.sessions') }}" class="btn btn-light">Clear Filter</a>
   </form>
 
-  <a href="{{ url_for('routes.add_session', filter_date=request.args.get('filter_date', '')) }}" class="btn btn-success">
-    Add New Session
-  </a>
+  <!-- Launch calendar to add a new session/event -->
+  <button
+    class="btn btn-success mb-3"
+    onclick="calendar.today(); $('#eventModal').modal('show');"
+  >Add New Session</button>
+
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Student</th>
+        <th>Student(s)</th>
         <th>Date</th>
         <th>Time</th>
         <th>Status</th>
@@ -30,35 +70,76 @@
       </tr>
     </thead>
     <tbody>
-      {% for sess in sessions %}
+      {% for ev in sessions %}
       <tr>
-        <td>{{ sess.student.first_name }} {{ sess.student.last_name }}</td>
-        <td>{{ sess.date_of_session.isoformat() }}</td>
-        <td>{{ sess.time_of_session.isoformat()[:5] }}</td>
-        <td>{{ sess.status }}</td>
-        <td>{{ sess.plan_notes }}</td>
+        <!-- STUDENT(S) COLUMN -->
+        <td>{{ ev.student.first_name }} {{ ev.student.last_name }}</td>
+
+        <!-- DATE/TIME -->
+        <td>{{ ev.date_of_session.strftime('%Y-%m-%d') }}</td>
+        <td>{{ ev.time_of_start.strftime('%H:%M') }} – {{ ev.time_of_end.strftime('%H:%M') }}</td>
+
+        <!-- STATUS (per student, paired correctly) -->
+        <td>{{ ev.status }}</td>
+
+        <!-- PLAN NOTES -->
+        <td>{{ ev.plan_notes or 'N/A' }}</td>
+
+        <!-- OBJECTIVES (per student, matched same way) -->
         <td>
-          {% if sess.objectives %}
-            <ul>
-              {% for objective in sess.objectives %}
-                <li>{{ objective.objective_description }} ({{ objective.with_accuracy }})</li>
+          {% set objs = [] %}
+          {% for goal in ev.student.goals if goal.active %}
+            {% for obj in goal.objectives if obj.active %}
+              {% set _ = objs.append(obj.objective_description ~ (obj.with_accuracy and ' ('~obj.with_accuracy~')' or '')) %}
+            {% endfor %}
+          {% endfor %}
+          {% if objs %}
+            <ul class="mb-0 pl-3">
+              {% for desc in objs %}
+                <li>{{ desc }}</li>
               {% endfor %}
             </ul>
           {% else %}
-            No Objectives
+            <em>No objectives</em>
           {% endif %}
         </td>
+
+        <!-- ACTIONS -->
         <td>
-          <a href="{{ url_for('routes.edit_session', session_id=sess.session_id, filter_date=request.args.get('filter_date', '')) }}" class="btn btn-primary btn-sm">Edit</a>
-          <a href="{{ url_for('routes.session_action', session_id=sess.session_id, filter_date=request.args.get('filter_date', '')) }}" class="btn btn-warning btn-sm">Manage</a>
-          <form action="{{ url_for('routes.delete_session', session_id=sess.session_id, filter_date=request.args.get('filter_date', '')) }}" method="POST" style="display:inline;" onsubmit="return confirmDelete();">
-            <button type="submit" class="btn btn-danger">Delete</button>
+          <!-- INLINE STATUS DROPDOWN -->
+          <form class="ajax-form" method="POST"
+                action="{{ url_for('routes.update_event', event_id=ev.event_id) }}"
+                style="display:inline-block; margin-right:8px;">
+            <select name="status" class="form-control form-control-sm status-select">
+              {% for option in ['Scheduled','Completed','Makeup Needed','Excused Absence'] %}
+                <option value="{{ option }}"
+                        {% if ev.status == option %}selected{% endif %}>
+                  {{ option }}
+                </option>
+              {% endfor %}
+            </select>
           </form>
-          <!-- Archive Button with next parameter preserved -->
-          <form action="{{ url_for('routes.archive_session', session_id=sess.session_id) }}" method="POST" style="display:inline;" onsubmit="return confirmArchive();">
+
+          <!-- ARCHIVE -->
+          <form class="ajax-form" method="POST"
+                action="{{ url_for('routes.archive_event', event_id=ev.event_id) }}"
+                style="display:inline-block; margin-right:8px;"
+                onsubmit="return confirmArchive();">
             <input type="hidden" name="next" value="{{ request.url }}">
-            <button type="submit" class="btn btn-secondary">Archive</button>
+            <button class="btn btn-secondary btn-sm">Archive</button>
           </form>
+
+          <!-- DELETE -->
+          <form class="ajax-form" method="POST"
+                action="{{ url_for('routes.delete_event', event_id=ev.event_id) }}"
+                style="display:inline-block;"
+                onsubmit="return confirmDelete();">
+            <input type="hidden" name="next" value="{{ request.url }}">
+            <button class="btn btn-danger btn-sm">Delete</button>
+          </form>
+
+          <a href="{{ url_for('routes.student_sessions', student_id=ev.student.student_id) }}"
+             class="btn btn-outline-info btn-sm mt-2" target="_blank">Recent Sessions</a>
         </td>
       </tr>
       {% endfor %}

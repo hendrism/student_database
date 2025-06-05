@@ -1,6 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
+<!-- Report page for displaying missed and makeup-needed sessions using EventStudentStatus records in the Student Database app. -->
 <h2>Missed/Makeup Needed Sessions Report</h2>
+
+<form class="form-inline mb-3" method="GET" action="{{ url_for('routes.makeup_needed_report') }}">
+  <div class="form-group mr-2">
+    <label for="sortSelect" class="mr-1">Sort By</label>
+    <select id="sortSelect" name="sort_by" class="form-control">
+      <option value=""             {% if not sort_by %}selected{% endif %}>Default</option>
+      <option value="date_asc"     {% if sort_by=='date_asc' %}selected{% endif %}>Date ↑</option>
+      <option value="date_desc"    {% if sort_by=='date_desc' %}selected{% endif %}>Date ↓</option>
+      <option value="student_az"   {% if sort_by=='student_az' %}selected{% endif %}>Student A→Z</option>
+      <option value="student_za"   {% if sort_by=='student_za' %}selected{% endif %}>Student Z→A</option>
+      <option value="status_asc"   {% if sort_by=='status_asc' %}selected{% endif %}>Status ↑</option>
+      <option value="status_desc"  {% if sort_by=='status_desc' %}selected{% endif %}>Status ↓</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Apply</button>
+</form>
 
 <h3>This Month's Makeup Needed Sessions ({{ current_month }}/{{ current_year }})</h3>
 {% if this_month_makeup_needed %}
@@ -16,22 +33,17 @@
       </tr>
     </thead>
     <tbody>
-      {% for session in this_month_makeup_needed %}
+      {% for rec in this_month_makeup_needed %}
         <tr>
-          <td>{{ session.date_of_session }}</td>
-          <td>{{ session.student.first_name }} {{ session.student.last_name }}</td>
-          <td>{{ session.time_of_session or 'N/A' }}</td>
-          <td>{{ session.status }}</td>
-          <td>{{ session.plan_notes or 'N/A' }}</td>
+          <td>{{ rec.date_of_session.strftime('%Y-%m-%d') }}</td>
+          <td>{{ rec.student.first_name }} {{ rec.student.last_name }}</td>
+          <td>{{ rec.time_of_start.strftime('%H:%M') }}–{{ rec.time_of_end.strftime('%H:%M') }}</td>
+          <td>{{ rec.status }}</td>
+          <td>{{ rec.plan_notes or 'N/A' }}</td>
           <td>
-            <a href="{{ url_for('routes.edit_session', session_id=session.session_id, next=request.url) }}" class="btn btn-sm btn-primary">Edit</a>
-            <form action="{{ url_for('routes.archive_session', session_id=session.session_id) }}" method="post" style="display:inline;">
+            <form class="ajax-form" action="{{ url_for('routes.archive_event', event_id=rec.event_id) }}" method="post" style="display:inline;">
               <input type="hidden" name="next" value="{{ request.url }}">
               <button type="submit" onclick="return confirmArchive()" class="btn btn-sm btn-warning">Archive</button>
-            </form>
-            <form action="{{ url_for('routes.delete_session', session_id=session.session_id) }}" method="post" style="display:inline;">
-              <input type="hidden" name="next" value="{{ request.url }}">
-              <button type="submit" onclick="return confirmDelete()" class="btn btn-sm btn-danger">Delete</button>
             </form>
           </td>
         </tr>
@@ -56,22 +68,17 @@
       </tr>
     </thead>
     <tbody>
-      {% for session in all_makeup_needed %}
+      {% for rec in all_makeup_needed %}
         <tr>
-          <td>{{ session.date_of_session }}</td>
-          <td>{{ session.student.first_name }} {{ session.student.last_name }}</td>
-          <td>{{ session.time_of_session or 'N/A' }}</td>
-          <td>{{ session.status }}</td>
-          <td>{{ session.plan_notes or 'N/A' }}</td>
+          <td>{{ rec.date_of_session.strftime('%Y-%m-%d') }}</td>
+          <td>{{ rec.student.first_name }} {{ rec.student.last_name }}</td>
+          <td>{{ rec.time_of_start.strftime('%H:%M') }}–{{ rec.time_of_end.strftime('%H:%M') }}</td>
+          <td>{{ rec.status }}</td>
+          <td>{{ rec.plan_notes or 'N/A' }}</td>
           <td>
-            <a href="{{ url_for('routes.edit_session', session_id=session.session_id, next=request.url) }}" class="btn btn-sm btn-primary">Edit</a>
-            <form action="{{ url_for('routes.archive_session', session_id=session.session_id) }}" method="post" style="display:inline;">
+            <form class="ajax-form" action="{{ url_for('routes.archive_event', event_id=rec.event_id) }}" method="post" style="display:inline;">
               <input type="hidden" name="next" value="{{ request.url }}">
               <button type="submit" onclick="return confirmArchive()" class="btn btn-sm btn-warning">Archive</button>
-            </form>
-            <form action="{{ url_for('routes.delete_session', session_id=session.session_id) }}" method="post" style="display:inline;">
-              <input type="hidden" name="next" value="{{ request.url }}">
-              <button type="submit" onclick="return confirmDelete()" class="btn btn-sm btn-danger">Delete</button>
             </form>
           </td>
         </tr>

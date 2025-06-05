@@ -23,31 +23,28 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('routes.index') }}">Students</a>
-                </li>
+              <!-- Calendar -->
               <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('routes.student_search') }}">Student Search</a>
+                <a class="nav-link" href="{{ url_for('routes.calendar') }}">Calendar</a>
               </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('routes.add_student') }}">Add Student</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('routes.sessions') }}">Sessions</a>
-                </li>
+
+              <!-- Today’s Sessions -->
+              <li class="nav-item">
+                <a class="nav-link"
+                   href="{{ url_for('routes.sessions', filter_date=current_date) }}">
+                  Today’s Sessions
+                </a>
+              </li>
+
+              <!-- Trial Log -->
               <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('routes.trial_log') }}">Trial Log</a>
               </li>
+
+              <!-- SOAP Note -->
               <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('routes.soap_note') }}">SOAP Note</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('routes.reports') }}">Reports</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('routes.quarterly_report') }}">Progress Reports</a>
-              </li>
-
             </ul>
         </div>
     </nav>
@@ -82,10 +79,50 @@
         let today = new Date().toISOString().split('T')[0];  // Get YYYY-MM-DD format
         document.getElementById(inputId).value = today;
       }
+      
       function confirmDelete() {
         return confirm("Are you sure you want to delete this session? This action cannot be undone.");
       }
     </script>
-
+    
+    {% block scripts %}
+    <script>
+      console.log("AJAX scripts loaded from base.html");
+      document.addEventListener('DOMContentLoaded', function() {
+        // AJAX form submit
+        document.querySelectorAll('form.ajax-form').forEach(function(form) {
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            fetch(form.action, {
+              method: form.method,
+              body: new FormData(form)
+            })
+            .then(function(response) {
+              if (!response.ok) throw new Error('Update failed');
+              // highlight the changed select
+              var sel = form.querySelector('select');
+              if (sel) {
+                sel.classList.add('border-success');
+                setTimeout(function() {
+                  sel.classList.remove('border-success');
+                }, 800);
+              }
+            })
+            .catch(function(err) {
+              console.error(err);
+              alert('There was an error saving your change.');
+            });
+          });
+        });
+        // Auto-submit AJAX form on status dropdown change
+        document.querySelectorAll('select.status-select').forEach(function(sel) {
+          sel.addEventListener('change', function() {
+            var frm = sel.closest('form');
+            if (frm) frm.dispatchEvent(new Event('submit', {cancelable: true}));
+          });
+        });
+      });
+    </script>
+    {% endblock %}
   </body>
 </html>

@@ -1,0 +1,506 @@
+[
+  {
+    "objective_id" : 68,
+    "session_id" : 3
+  },
+  {
+    "objective_id" : 70,
+    "session_id" : 3
+  },
+  {
+    "objective_id" : 29,
+    "session_id" : 4
+  },
+  {
+    "objective_id" : 3,
+    "session_id" : 1
+  },
+  {
+    "objective_id" : 90,
+    "session_id" : 2
+  },
+  {
+    "objective_id" : 23,
+    "session_id" : 12
+  },
+  {
+    "objective_id" : 56,
+    "session_id" : 14
+  },
+  {
+    "objective_id" : 51,
+    "session_id" : 13
+  },
+  {
+    "objective_id" : 60,
+    "session_id" : 15
+  },
+  {
+    "objective_id" : 29,
+    "session_id" : 18
+  },
+  {
+    "objective_id" : 13,
+    "session_id" : 20
+  },
+  {
+    "objective_id" : 3,
+    "session_id" : 21
+  },
+  {
+    "objective_id" : 122,
+    "session_id" : 22
+  },
+  {
+    "objective_id" : 114,
+    "session_id" : 23
+  },
+  {
+    "objective_id" : 115,
+    "session_id" : 23
+  },
+  {
+    "objective_id" : 24,
+    "session_id" : 24
+  },
+  {
+    "objective_id" : 25,
+    "session_id" : 24
+  },
+  {
+    "objective_id" : 71,
+    "session_id" : 25
+  },
+  {
+    "objective_id" : 76,
+    "session_id" : 27
+  },
+  {
+    "objective_id" : 6,
+    "session_id" : 28
+  },
+  {
+    "objective_id" : 2,
+    "session_id" : 29
+  },
+  {
+    "objective_id" : 109,
+    "session_id" : 31
+  },
+  {
+    "objective_id" : 14,
+    "session_id" : 32
+  },
+  {
+    "objective_id" : 77,
+    "session_id" : 97
+  },
+  {
+    "objective_id" : 3,
+    "session_id" : 98
+  },
+  {
+    "objective_id" : 90,
+    "session_id" : 99
+  },
+  {
+    "objective_id" : 37,
+    "session_id" : 100
+  },
+  {
+    "objective_id" : 99,
+    "session_id" : 101
+  },
+  {
+    "objective_id" : 54,
+    "session_id" : 102
+  },
+  {
+    "objective_id" : 58,
+    "session_id" : 103
+  },
+  {
+    "objective_id" : 12,
+    "session_id" : 104
+  },
+  {
+    "objective_id" : 76,
+    "session_id" : 105
+  },
+  {
+    "objective_id" : 1,
+    "session_id" : 106
+  },
+  {
+    "objective_id" : 47,
+    "session_id" : 107
+  },
+  {
+    "objective_id" : 61,
+    "session_id" : 108
+  },
+  {
+    "objective_id" : 7,
+    "session_id" : 109
+  },
+  {
+    "objective_id" : 117,
+    "session_id" : 110
+  },
+  {
+    "objective_id" : 51,
+    "session_id" : 112
+  },
+  {
+    "objective_id" : 22,
+    "session_id" : 113
+  },
+  {
+    "objective_id" : 45,
+    "session_id" : 111
+  },
+  {
+    "objective_id" : 76,
+    "session_id" : 116
+  },
+  {
+    "objective_id" : 74,
+    "session_id" : 115
+  },
+  {
+    "objective_id" : 124,
+    "session_id" : 117
+  },
+  {
+    "objective_id" : 3,
+    "session_id" : 119
+  },
+  {
+    "objective_id" : 35,
+    "session_id" : 120
+  },
+  {
+    "objective_id" : 26,
+    "session_id" : 121
+  },
+  {
+    "objective_id" : 27,
+    "session_id" : 121
+  },
+  {
+    "objective_id" : 115,
+    "session_id" : 122
+  },
+  {
+    "objective_id" : 116,
+    "session_id" : 122
+  },
+  {
+    "objective_id" : 32,
+    "session_id" : 118
+  },
+  {
+    "objective_id" : 71,
+    "session_id" : 114
+  },
+  {
+    "objective_id" : 70,
+    "session_id" : 209
+  },
+  {
+    "objective_id" : 16,
+    "session_id" : 210
+  },
+  {
+    "objective_id" : 111,
+    "session_id" : 211
+  },
+  {
+    "objective_id" : 121,
+    "session_id" : 212
+  },
+  {
+    "objective_id" : 85,
+    "session_id" : 213
+  },
+  {
+    "objective_id" : 41,
+    "session_id" : 214
+  },
+  {
+    "objective_id" : 82,
+    "session_id" : 215
+  },
+  {
+    "objective_id" : 48,
+    "session_id" : 230
+  },
+  {
+    "objective_id" : 61,
+    "session_id" : 231
+  },
+  {
+    "objective_id" : 29,
+    "session_id" : 232
+  },
+  {
+    "objective_id" : 93,
+    "session_id" : 233
+  },
+  {
+    "objective_id" : 96,
+    "session_id" : 233
+  },
+  {
+    "objective_id" : 88,
+    "session_id" : 234
+  },
+  {
+    "objective_id" : 105,
+    "session_id" : 235
+  },
+  {
+    "objective_id" : 1,
+    "session_id" : 236
+  },
+  {
+    "objective_id" : 90,
+    "session_id" : 237
+  },
+  {
+    "objective_id" : 86,
+    "session_id" : 238
+  },
+  {
+    "objective_id" : 25,
+    "session_id" : 239
+  },
+  {
+    "objective_id" : 26,
+    "session_id" : 239
+  },
+  {
+    "objective_id" : 99,
+    "session_id" : 240
+  },
+  {
+    "objective_id" : 38,
+    "session_id" : 241
+  },
+  {
+    "objective_id" : 76,
+    "session_id" : 242
+  },
+  {
+    "objective_id" : 21,
+    "session_id" : 243
+  },
+  {
+    "objective_id" : 53,
+    "session_id" : 244
+  },
+  {
+    "objective_id" : 60,
+    "session_id" : 245
+  },
+  {
+    "objective_id" : 56,
+    "session_id" : 246
+  },
+  {
+    "objective_id" : 12,
+    "session_id" : 247
+  },
+  {
+    "objective_id" : 70,
+    "session_id" : 248
+  },
+  {
+    "objective_id" : 93,
+    "session_id" : 249
+  },
+  {
+    "objective_id" : 30,
+    "session_id" : 250
+  },
+  {
+    "objective_id" : 78,
+    "session_id" : 251
+  },
+  {
+    "objective_id" : 4,
+    "session_id" : 252
+  },
+  {
+    "objective_id" : 71,
+    "session_id" : 253
+  },
+  {
+    "objective_id" : 124,
+    "session_id" : 254
+  },
+  {
+    "objective_id" : 8,
+    "session_id" : 256
+  },
+  {
+    "objective_id" : 120,
+    "session_id" : 257
+  },
+  {
+    "objective_id" : 31,
+    "session_id" : 258
+  },
+  {
+    "objective_id" : 3,
+    "session_id" : 259
+  },
+  {
+    "objective_id" : 122,
+    "session_id" : 260
+  },
+  {
+    "objective_id" : 82,
+    "session_id" : 261
+  },
+  {
+    "objective_id" : 41,
+    "session_id" : 262
+  },
+  {
+    "objective_id" : 11,
+    "session_id" : 263
+  },
+  {
+    "objective_id" : 58,
+    "session_id" : 264
+  },
+  {
+    "objective_id" : 54,
+    "session_id" : 265
+  },
+  {
+    "objective_id" : 120,
+    "session_id" : 266
+  },
+  {
+    "objective_id" : 8,
+    "session_id" : 267
+  },
+  {
+    "objective_id" : 31,
+    "session_id" : 268
+  },
+  {
+    "objective_id" : 73,
+    "session_id" : 269
+  },
+  {
+    "objective_id" : 21,
+    "session_id" : 270
+  },
+  {
+    "objective_id" : 51,
+    "session_id" : 271
+  },
+  {
+    "objective_id" : 71,
+    "session_id" : 272
+  },
+  {
+    "objective_id" : 125,
+    "session_id" : 273
+  },
+  {
+    "objective_id" : 5,
+    "session_id" : 274
+  },
+  {
+    "objective_id" : 76,
+    "session_id" : 275
+  },
+  {
+    "objective_id" : 3,
+    "session_id" : 276
+  },
+  {
+    "objective_id" : 90,
+    "session_id" : 277
+  },
+  {
+    "objective_id" : 37,
+    "session_id" : 278
+  },
+  {
+    "objective_id" : 99,
+    "session_id" : 279
+  },
+  {
+    "objective_id" : 56,
+    "session_id" : 280
+  },
+  {
+    "objective_id" : 60,
+    "session_id" : 281
+  },
+  {
+    "objective_id" : 11,
+    "session_id" : 282
+  },
+  {
+    "objective_id" : 48,
+    "session_id" : 283
+  },
+  {
+    "objective_id" : 61,
+    "session_id" : 284
+  },
+  {
+    "objective_id" : 78,
+    "session_id" : 285
+  },
+  {
+    "objective_id" : 117,
+    "session_id" : 286
+  },
+  {
+    "objective_id" : 120,
+    "session_id" : 286
+  },
+  {
+    "objective_id" : 43,
+    "session_id" : 287
+  },
+  {
+    "objective_id" : 45,
+    "session_id" : 287
+  },
+  {
+    "objective_id" : 21,
+    "session_id" : 288
+  },
+  {
+    "objective_id" : 51,
+    "session_id" : 289
+  },
+  {
+    "objective_id" : 114,
+    "session_id" : 290
+  },
+  {
+    "objective_id" : 115,
+    "session_id" : 290
+  },
+  {
+    "objective_id" : 116,
+    "session_id" : 290
+  },
+  {
+    "objective_id" : 25,
+    "session_id" : 291
+  },
+  {
+    "objective_id" : 27,
+    "session_id" : 291
+  }
+]

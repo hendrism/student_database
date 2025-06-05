@@ -3,6 +3,56 @@
 {% block content %}
 <h2>Trial Logs for {{ student.first_name }} {{ student.last_name }}</h2>
 
+<h3>New System Trial Logs</h3>
+{% set new_logs = trial_logs | selectattr('uses_new_system') | list %}
+{% if new_logs %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Objective</th>
+            <th>Total Trials</th>
+            <th>% Independent</th>
+            <th>% ≤ Minimal</th>
+            <th>% ≤ Moderate</th>
+            <th>% ≤ Maximal</th>
+            <th>System</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for log in new_logs %}
+        <tr>
+            <td>{{ log.date_of_session.strftime('%Y-%m-%d') }}</td>
+            <td>{{ log.objective.objective_description if log.objective else 'N/A' }}</td>
+            <td>{{ log.total_trials_new() }}</td>
+            <td>{{ log.percent_independent() }}%</td>
+            <td>{{ log.percent_correct_up_to('minimal_support') }}%</td>
+            <td>{{ log.percent_correct_up_to('moderate_support') }}%</td>
+            <td>{{ log.percent_correct_up_to('maximal_support') }}%</td>
+            <td>New</td>
+            <td>{{ log.notes or '' }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{ log.percent_independent() }}%</td>
+            <td>{{ log.percent_minimal_support() }}%</td>
+            <td>{{ log.percent_moderate_support() }}%</td>
+            <td>{{ log.percent_maximal_support() }}%</td>
+            <td></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No new system trial logs available.</p>
+{% endif %}
+
+<h3>Legacy System Trial Logs</h3>
+{% set legacy_logs = trial_logs | selectattr('uses_legacy_system') | list %}
+{% if legacy_logs %}
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -11,26 +61,31 @@
             <th>Total Trials</th>
             <th>% No Support</th>
             <th>% With 1 Cue</th>
-            <th>% Visual + Verbal Cues</th>
+            <th>% Visual/Verbal Cues</th>
             <th>% With Modeling</th>
+            <th>System</th>
             <th>Notes</th>
         </tr>
     </thead>
     <tbody>
-        {% for log in trial_logs %}
+        {% for log in legacy_logs %}
         <tr>
             <td>{{ log.date_of_session.strftime('%Y-%m-%d') }}</td>
             <td>{{ log.objective.objective_description if log.objective else 'N/A' }}</td>
             <td>{{ log.total_trials() }}</td>
-            <td>{{ log.percent_no_support() }}%</td>
-            <td>{{ log.percent_with_1_cue() }}%</td>
-            <td>{{ log.percent_visual_verbal_cues() }}%</td>
-            <td>{{ log.percent_with_modeling() }}%</td>
+            <td>{{ log.legacy_percent_no_support() }}%</td>
+            <td>{{ log.legacy_percent_with_1_cue() }}%</td>
+            <td>{{ log.legacy_percent_visual_verbal_cues() }}%</td>
+            <td>{{ log.legacy_percent_with_modeling() }}%</td>
+            <td>Legacy</td>
             <td>{{ log.notes or '' }}</td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
+{% else %}
+<p>No legacy system trial logs available.</p>
+{% endif %}
 
-<a href="{{ url_for('routes.student_info', student_id=student.student_id) }}" class="btn btn-secondary">Back to Profile</a>
+<a href="{{ url_for('routes.students') }}" class="btn btn-secondary">Back to Students</a>
 {% endblock %}

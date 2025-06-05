@@ -1,3 +1,4 @@
+<!-- Student search page allowing users to search for students by name and view details. -->
 {% extends "base.html" %}
 
 {% block content %}
@@ -16,7 +17,7 @@
         <ul>
         {% for student in students %}
             <li>
-                <a href="{{ url_for('routes.student_info', student_id=student.student_id) }}">
+                <a href="{{ url_for('routes.student_trial_logs', student_id=student.student_id) }}">
                     {{ student.first_name }} {{ student.last_name }} - Grade: {{ student.grade }}
                 </a>
             </li>

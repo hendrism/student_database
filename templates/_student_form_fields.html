@@ -1,31 +1,45 @@
-<!-- _student_form_fields.html -->
+<!-- Student form fields partial -->
 <div class="form-group">
-  <label for="first_name">First Name:</label>
-  <input type="text" class="form-control" id="first_name" name="first_name" value="{{ student.first_name if student is defined else '' }}" required>
-</div>
-
-<div class="form-group">
-  <label for="last_name">Last Name:</label>
-  <input type="text" class="form-control" id="last_name" name="last_name" value="{{ student.last_name if student is defined else '' }}" required>
-</div>
-
-<div class="form-group">
-  <label for="grade_level">Grade Level:</label>
-  <input type="text" class="form-control" id="grade_level" name="grade_level" value="{{ student.grade if student is defined else '' }}">
-</div>
-
-<div class="form-group">
-  <label for="pronoun" class="form-label">Pronouns:</label>
-  <select class="form-control" name="pronoun" id="pronoun" required>
-    <option value="">Select Pronouns</option>
-    <option value="he/him" {% if student is defined and student.pronouns == 'he/him' %}selected{% endif %}>He/Him</option>
-    <option value="she/her" {% if student is defined and student.pronouns == 'she/her' %}selected{% endif %}>She/Her</option>
-    <option value="they/them" {% if student is defined and student.pronouns == 'they/them' %}selected{% endif %}>They/Them</option>
-    <option value="other" {% if student is defined and student.pronouns == 'other' %}selected{% endif %}>Other (use preferred name)</option>
-  </select>
-</div>
-
-<div class="form-group">
-  <label for="monthly_services">Monthly Services (e.g., 4 per month):</label>
-  <input type="text" class="form-control" id="monthly_services" name="monthly_services" value="{{ student.monthly_services if student is defined else '' }}">
-</div>
+    <label for="first_name">First Name</label>
+    <input type="text" class="form-control" id="first_name" name="first_name"
+           value="{{ student.first_name if student is defined else '' }}" required>
+  </div>
+  <div class="form-group">
+    <label for="last_name">Last Name</label>
+    <input type="text" class="form-control" id="last_name" name="last_name"
+           value="{{ student.last_name if student is defined else '' }}" required>
+  </div>
+  <div class="form-group">
+    <label for="grade_level">Grade Level</label>
+    <select class="form-control" id="grade_level" name="grade_level" required>
+      <option value="" {% if student is not defined or not student.grade %}selected{% endif %}>Select grade</option>
+      <option value="Kindergarten" {% if student is defined and student.grade == 'Kindergarten' %}selected{% endif %}>Kindergarten</option>
+      <option value="Grade 1" {% if student is defined and student.grade == 'Grade 1' %}selected{% endif %}>Grade 1</option>
+      <option value="Grade 2" {% if student is defined and student.grade == 'Grade 2' %}selected{% endif %}>Grade 2</option>
+      <option value="Grade 3" {% if student is defined and student.grade == 'Grade 3' %}selected{% endif %}>Grade 3</option>
+      <option value="Grade 4" {% if student is defined and student.grade == 'Grade 4' %}selected{% endif %}>Grade 4</option>
+      <option value="Grade 5" {% if student is defined and student.grade == 'Grade 5' %}selected{% endif %}>Grade 5</option>
+      <option value="Grade 6" {% if student is defined and student.grade == 'Grade 6' %}selected{% endif %}>Grade 6</option>
+      <option value="Grade 7" {% if student is defined and student.grade == 'Grade 7' %}selected{% endif %}>Grade 7</option>
+      <option value="Grade 8" {% if student is defined and student.grade == 'Grade 8' %}selected{% endif %}>Grade 8</option>
+      <option value="Grade 9" {% if student is defined and student.grade == 'Grade 9' %}selected{% endif %}>Grade 9</option>
+      <option value="Grade 10" {% if student is defined and student.grade == 'Grade 10' %}selected{% endif %}>Grade 10</option>
+      <option value="Grade 11" {% if student is defined and student.grade == 'Grade 11' %}selected{% endif %}>Grade 11</option>
+      <option value="Grade 12" {% if student is defined and student.grade == 'Grade 12' %}selected{% endif %}>Grade 12</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="preferred_name">Preferred Name</label>
+    <input type="text" class="form-control" id="preferred_name" name="preferred_name"
+           value="{{ student.preferred_name if student is defined else '' }}">
+  </div>
+  <div class="form-group">
+    <label for="pronoun">Pronouns</label>
+    <input type="text" class="form-control" id="pronoun" name="pronoun"
+           value="{{ student.pronouns if student is defined else '' }}">
+  </div>
+  <div class="form-group">
+    <label for="monthly_services">Monthly Services</label>
+    <input type="text" class="form-control" id="monthly_services" name="monthly_services"
+           value="{{ student.monthly_services if student is defined else '' }}">
+  </div>
