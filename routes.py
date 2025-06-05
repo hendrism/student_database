@@ -1152,7 +1152,7 @@ def quarterly_report():
     quarters = ['Q1', 'Q2', 'Q3', 'Q4']
     overall_progress_options = ["Significant Progress", "Steady Progress", "Minimal Progress", "Other"]
     closing_sentence_options = [
-        "Have a great summer!",
+        "Great work this year! Have a great summer!",
         "Keep up the great work!",
         "We will continue to focus on these skills in the next quarter.",
         "Progress is steady; adjustments will be made next quarter.",
@@ -1249,17 +1249,21 @@ def quarterly_report():
                 if visual_cues:
                     if len(visual_cues) == 1:
                         vc_text = visual_cues[0]
+                    elif len(visual_cues) == 2:
+                        vc_text = f"{visual_cues[0]} and {visual_cues[1]}"
                     else:
-                        vc_text = ", ".join(visual_cues[:-1]) + " and " + visual_cues[-1]
-                    paragraph_lines.append(f"They benefited from visual cues, including {vc_text}.")
+                        vc_text = ", ".join(visual_cues[:-1]) + ", and " + visual_cues[-1]
+                    paragraph_lines.append(f"{subject_pronoun.capitalize()} benefited from visual cues, including {vc_text}.")
 
                 # Append verbal cues sentence if any were selected
                 if verbal_cues:
                     if len(verbal_cues) == 1:
                         vb_text = verbal_cues[0]
+                    elif len(verbal_cues) == 2:
+                        vb_text = f"{verbal_cues[0]} and {verbal_cues[1]}"
                     else:
-                        vb_text = ", ".join(verbal_cues[:-1]) + " and " + verbal_cues[-1]
-                    paragraph_lines.append(f"They benefited from verbal cues, including {vb_text}.")
+                        vb_text = ", ".join(verbal_cues[:-1]) + ", and " + verbal_cues[-1]
+                    paragraph_lines.append(f"{subject_pronoun.capitalize()} benefited from verbal cues, including {vb_text}.")
 
                 paragraph_lines.append(closing_sentence)
                 # Join the lines into one paragraph (space-separated, no line breaks).
@@ -1456,7 +1460,7 @@ def save_quarterly_report():
     db.session.commit()
 
     flash('Quarterly report saved successfully.', 'success')
-    return redirect(url_for('routes.student_info', student_id=student_id))
+    return redirect(url_for('routes.quarterly_report'))
 
 
 # --------- Activity CRUD Routes ---------
@@ -1511,24 +1515,37 @@ def delete_activity(activity_id):
 @routes_bp.route('/quarterly_report_history', methods=['GET'])
 def quarterly_report_history():
     """
-    Display a dropdown to select a student and show their saved quarterly reports.
+    Display filters to select a student and/or quarter and show matching quarterly reports.
     """
+    # Fetch all active students for the dropdown
     students = Student.query.filter_by(active=True).order_by(Student.first_name).all()
+    # Fetch distinct quarter values from existing reports
+    quarters = [q[0] for q in db.session.query(QuarterlyReport.quarter).distinct().order_by(QuarterlyReport.quarter).all()]
+
+    # Read optional filters from query parameters
     student_id = request.args.get('student_id', type=int)
+    selected_quarter = request.args.get('quarter', type=str)
     selected_student = None
-    reports = []
+
+    # Build base query
+    query = QuarterlyReport.query
 
     if student_id:
         selected_student = Student.query.get_or_404(student_id)
-        reports = QuarterlyReport.query\
-                    .filter_by(student_id=student_id)\
-                    .order_by(QuarterlyReport.quarter)\
-                    .all()
+        query = query.filter_by(student_id=student_id)
+
+    if selected_quarter:
+        query = query.filter_by(quarter=selected_quarter)
+
+    # Execute query, ordering by quarter and creation date
+    reports = query.order_by(QuarterlyReport.quarter, QuarterlyReport.date_created).all()
 
     return render_template(
         'quarterly_report_history.html',
         students=students,
+        quarters=quarters,
         selected_student=selected_student,
+        selected_quarter=selected_quarter,
         reports=reports
     )
 
