@@ -1152,6 +1152,7 @@ def quarterly_report():
     quarters = ['Q1', 'Q2', 'Q3', 'Q4']
     overall_progress_options = ["Significant Progress", "Steady Progress", "Minimal Progress", "Other"]
     closing_sentence_options = [
+        "Have a great summer!",
         "Keep up the great work!",
         "We will continue to focus on these skills in the next quarter.",
         "Progress is steady; adjustments will be made next quarter.",
@@ -1239,14 +1240,39 @@ def quarterly_report():
                             f"{subject_pronoun} was able to {obj.objective_description} {performance_text}."
                         )
                         paragraph_lines.append(sentence)
+
+                # Retrieve selected visual and verbal cues for this goal
+                visual_cues = request.form.getlist(f"visual_{goal.goal_id}")
+                verbal_cues = request.form.getlist(f"verbal_{goal.goal_id}")
+
+                # Append visual cues sentence if any were selected
+                if visual_cues:
+                    if len(visual_cues) == 1:
+                        vc_text = visual_cues[0]
+                    else:
+                        vc_text = ", ".join(visual_cues[:-1]) + " and " + visual_cues[-1]
+                    paragraph_lines.append(f"They benefited from visual cues, including {vc_text}.")
+
+                # Append verbal cues sentence if any were selected
+                if verbal_cues:
+                    if len(verbal_cues) == 1:
+                        vb_text = verbal_cues[0]
+                    else:
+                        vb_text = ", ".join(verbal_cues[:-1]) + " and " + verbal_cues[-1]
+                    paragraph_lines.append(f"They benefited from verbal cues, including {vb_text}.")
+
                 paragraph_lines.append(closing_sentence)
                 # Join the lines into one paragraph (space-separated, no line breaks).
                 report_paragraphs.append(" ".join(paragraph_lines))
 
             # Instead of joining report_paragraphs into one string, pass the list directly:
-            return render_template('quarterly_report_result.html',
-                        report_paragraphs=report_paragraphs,
-                        selected_student=selected_student)
+            return render_template(
+                'quarterly_report_result.html',
+                report_paragraphs=report_paragraphs,
+                selected_student=selected_student,
+                student_id=selected_student.student_id,
+                quarter=quarter
+            )
 
     # GET request: show only the student selection form.
     return render_template('quarterly_report.html', students=students)
@@ -1416,12 +1442,15 @@ def save_quarterly_report():
     paragraphs = request.form.getlist('paragraphs')
     # Combine into one text block with double line breaks
     report_text = "\n\n".join(paragraphs)
+    # Append signature to saved report
+    signature = "\n\n- Sean Hendricks, MA CCC-SLP MD License #07304"
+    report_text_with_signature = report_text + signature
 
     # Create and save the QuarterlyReport record
     new_report = QuarterlyReport(
         student_id=student_id,
         quarter=quarter,
-        report_text=report_text
+        report_text=report_text_with_signature
     )
     db.session.add(new_report)
     db.session.commit()

@@ -3,14 +3,11 @@
 {% block content %}
 <h2>Generated Quarterly Report</h2>
 <form method="POST" action="{{ url_for('routes.save_quarterly_report') }}">
-  <input type="hidden" name="student_id" value="{{ selected_student_id if selected_student_id is defined else '' }}">
-  <input type="hidden" name="quarter" value="{{ selected_quarter if selected_quarter is defined else '' }}">
+  <input type="hidden" name="student_id" value="{{ student_id }}">
+  <input type="hidden" name="quarter" value="{{ quarter }}">
   {% for paragraph in report_paragraphs %}
     <div class="goal-report mb-3">
       <textarea id="reportTextarea{{ loop.index }}" name="paragraphs" class="form-control mb-2" rows="5">{{ paragraph }}</textarea>
-      <div class="signature mt-2">
-        <p> - Sean Hendricks, MA CCC-SLP MD License #07304</p>
-      </div>
       <button class="btn btn-secondary btn-sm" type="button" onclick="copyParagraph({{ loop.index }})">Copy Goal {{ loop.index }}</button>
     </div>
   {% endfor %}
