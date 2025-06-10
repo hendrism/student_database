@@ -204,6 +204,27 @@ def trial_log():
         incorrect = request.form.get('incorrect', type=int, default=0)
         notes = request.form.get('notes', '')
 
+        # Gather support checkboxes
+        visual_cues = request.form.getlist('visual_cues')
+        visual_cues_other = request.form.get('visual_cues_other', '').strip()
+        if visual_cues_other:
+            visual_cues.append(visual_cues_other)
+        verbal_cues = request.form.getlist('verbal_cues')
+        verbal_cues_other = request.form.get('verbal_cues_other', '').strip()
+        if verbal_cues_other:
+            verbal_cues.append(verbal_cues_other)
+
+        # Format support text
+        support_text_parts = []
+        if visual_cues:
+            support_text_parts.append('Visual: ' + ', '.join(visual_cues))
+        if verbal_cues:
+            support_text_parts.append('Verbal: ' + ', '.join(verbal_cues))
+        support_text = 'Supports provided: ' + '; '.join(support_text_parts) + '.'
+
+        # Combine supports with original notes
+        full_notes = f"{support_text} {notes}".strip()
+
         # New support-level fields (2024-06)
         independent = request.form.get('independent', type=int, default=0)
         minimal_support = request.form.get('minimal_support', type=int, default=0)
@@ -223,7 +244,7 @@ def trial_log():
                 correct_visual_verbal_cue=correct_visual_verbal_cue,
                 correct_modeling=correct_modeling,
                 incorrect=incorrect,
-                notes=notes,
+                notes=full_notes,
                 # New support-level fields (2024-06)
                 independent=independent,
                 minimal_support=minimal_support,

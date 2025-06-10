@@ -67,6 +67,55 @@
         <input type="number" name="incorrect_new" class="form-control" min="0" value="0">
       </div>
 
+      <!-- Visual Cues -->
+      <div class="form-group">
+        <label>Visual Cues (Select all that apply):</label><br>
+        {% for cue in [
+          'graphic organizer',
+          'written answer choices',
+          'written clues',
+          'picture choices',
+          'sentence starters',
+          'sentence starters with pictures',
+          'pictures for each word in sentence',
+          'written instructions',
+          'visual to support instructions',
+          'word bank',
+          'highlighted text excerpts',
+          'color-coded text',
+          'step-by-step diagrams',
+          'flowcharts',
+          'video demonstrations',
+          'timers/visual timers',
+          'manipulatives'
+        ] %}
+          <input type="checkbox" name="visual_cues" value="{{ cue }}"> {{ cue }}<br>
+        {% endfor %}
+        <input type="text" name="visual_cues_other" class="form-control mt-2" placeholder="Other (if applicable)">
+      </div>
+
+      <!-- Verbal Cues -->
+      <div class="form-group">
+        <label>Verbal Cues (Select all that apply):</label><br>
+        {% for cue in [
+          'leading questions',
+          'verbal hints',
+          'verbally presented choices',
+          'verbally presented instructions',
+          'verbal reminders',
+          'repetition of text/excerpt from text',
+          'modeling',
+          'echo modeling',
+          'peer modeling',
+          'intonation emphasis',
+          'self-monitoring prompts',
+          'cloze prompts'
+        ] %}
+          <input type="checkbox" name="verbal_cues" value="{{ cue }}"> {{ cue }}<br>
+        {% endfor %}
+        <input type="text" name="verbal_cues_other" class="form-control mt-2" placeholder="Other (if applicable)">
+      </div>
+
       <!-- Notes -->
       <div class="form-group">
         <label>Session Notes (optional):</label>
