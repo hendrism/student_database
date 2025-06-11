@@ -4,12 +4,10 @@ from flask import Flask, request
 from routes import routes_bp
 from models import db
 from flask_migrate import Migrate
+from config import Config
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/Sean-Work/Databases/student_database/database.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = 'your_secret_key'
-app.config['DEBUG'] = True
+app.config.from_object(Config)
 
 db.init_app(app)
 migrate = Migrate(app, db)
