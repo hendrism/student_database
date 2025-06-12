@@ -216,6 +216,8 @@ def quarterly_report():
             else:
                 flash('Please select a student.', 'danger')
                 return render_template('quarterly_report.html', students=students)
+            # Only include active goals for the selected student
+            goals = [g for g in selected_student.goals if getattr(g, 'active', True)]
             return render_template(
                 'quarterly_report.html',
                 students=students,
@@ -223,6 +225,7 @@ def quarterly_report():
                 quarters=quarters,
                 overall_progress_options=overall_progress_options,
                 closing_sentence_options=closing_sentence_options,
+                goals=goals
             )
         elif form_stage == 'generate':
             student_id = request.form.get('student_id')
