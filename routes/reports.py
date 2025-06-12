@@ -254,8 +254,10 @@ def quarterly_report():
             overall_progress_text = overall_progress.lower()
             quarter_text = quarter_map.get(quarter, quarter)
 
+            # Only include active goals
+            goals = [g for g in selected_student.goals if getattr(g, 'active', True)]
             report_paragraphs = []
-            for goal in selected_student.goals:
+            for goal in goals:
                 paragraph_lines = []
                 intro_sentence = f"{first_name} demonstrated {overall_progress_text} in {quarter_text}."
                 paragraph_lines.append(intro_sentence)
