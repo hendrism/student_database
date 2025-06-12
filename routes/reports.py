@@ -2,7 +2,7 @@ from datetime import datetime, date, timedelta
 from collections import defaultdict
 from calendar import monthrange
 
-from flask import request, render_template, flash
+from flask import request, render_template, flash, redirect, url_for
 from sqlalchemy import extract
 
 from . import routes_bp
@@ -367,7 +367,7 @@ def save_quarterly_report():
     db.session.commit()
 
     flash('Quarterly report saved successfully.', 'success')
-    return render_template('quarterly_report.html')
+    return redirect(url_for('routes.quarterly_report'))
 
 
 @routes_bp.route('/quarterly_report_history', methods=['GET'])
