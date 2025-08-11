@@ -49,10 +49,10 @@ def trial_log():
         maximal_support = request.form.get('maximal_support', type=int, default=0)
         incorrect_new = request.form.get('incorrect_new', type=int, default=0)
 
-        for objective_id in objective_ids:
-            trial_log = TrialLog(
+        trial_logs = [
+            TrialLog(
                 student_id=student_id,
-                objective_id=objective_id,
+                objective_id=obj_id,
                 date_of_session=datetime.strptime(date_of_session, '%Y-%m-%d').date(),
                 correct_no_support=correct_no_support,
                 correct_visual_cue=correct_visual_cue,
@@ -67,8 +67,9 @@ def trial_log():
                 maximal_support=maximal_support,
                 incorrect_new=incorrect_new,
             )
-            db.session.add(trial_log)
-
+            for obj_id in objective_ids
+        ]
+        db.session.bulk_save_objects(trial_logs)
         db.session.commit()
         flash('Trial log(s) submitted successfully!', 'success')
         return redirect(url_for('routes.trial_log'))

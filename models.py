@@ -67,10 +67,18 @@ class TrialLog(db.Model):
     maximal_support = db.Column(db.Integer, default=0)
     incorrect_new = db.Column(db.Integer, default=0)
     notes = db.Column(db.Text)
-    
+
     student = db.relationship('Student', back_populates='trial_logs')
     objective = db.relationship('Objective', back_populates='trial_logs')
-    
+
+    # Ordered support levels reused by multiple percentage helpers
+    SUPPORT_LEVELS = (
+        'independent',
+        'minimal_support',
+        'moderate_support',
+        'maximal_support',
+    )
+
     # Methods for total trials and percentage calculations
     
     def total_trials(self):
@@ -170,17 +178,11 @@ class TrialLog(db.Model):
         Return percent correct at or below the specified support level.
         support_level: str, one of 'independent', 'minimal_support', 'moderate_support', 'maximal_support'
         """
-        level_order = [
-            'independent',
-            'minimal_support',
-            'moderate_support',
-            'maximal_support'
-        ]
         total = self.total_trials_new()
-        if total == 0 or support_level not in level_order:
+        if total == 0 or support_level not in self.SUPPORT_LEVELS:
             return 0.0
-        idx = level_order.index(support_level) + 1
-        correct_sum = sum((getattr(self, lvl) or 0) for lvl in level_order[:idx])
+        idx = self.SUPPORT_LEVELS.index(support_level) + 1
+        correct_sum = sum((getattr(self, lvl) or 0) for lvl in self.SUPPORT_LEVELS[:idx])
         return round((correct_sum / total) * 100, 1)
     
 
