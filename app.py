@@ -5,7 +5,7 @@ import logging
 from datetime import datetime
 from pathlib import Path
 
-from flask import Flask, request, session, g
+from flask import Flask, request, session, g, render_template
 from flask_migrate import Migrate
 
 from routes import routes_bp
