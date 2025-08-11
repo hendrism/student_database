@@ -1,128 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Student Database{% endblock %}</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-      /* ✅ Style for making input boxes smaller */
-      .small-input {
-        width: 150px;  /* Adjust as needed */
-        display: inline-block;  /* Keeps the calendar/time icon next to the field */
-        margin-right: 10px;  /* Adds space before the button */
+      /* Custom styling for better appearance */
+      body {
+        background-color: #f8f9fa;
       }
+      
+      .navbar {
+        box-shadow: 0 2px 4px rgba(0,0,0,.1);
+      }
+      
+      .card {
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        border: 1px solid rgba(0, 0, 0, 0.125);
+      }
+      
+      .table {
+        background-color: white;
+      }
+      
+      .small-input {
+        width: 150px;
+        display: inline-block;
+        margin-right: 10px;
+      }
+      
+      /* Status badges */
+      .status-scheduled { background-color: #17a2b8; }
+      .status-completed { background-color: #28a745; }
+      .status-makeup { background-color: #ffc107; color: #212529; }
+      .status-excused { background-color: #6c757d; }
     </style>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{ url_for('routes.index') }}">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <!-- Calendar -->
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('routes.calendar') }}">Calendar</a>
-              </li>
-
-              <!-- Today’s Sessions -->
-              <li class="nav-item">
-                <a class="nav-link"
-                   href="{{ url_for('routes.sessions', filter_date=current_date) }}">
-                  Today’s Sessions
-                </a>
-              </li>
-
-              <!-- Trial Log -->
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('routes.trial_log') }}">Trial Log</a>
-              </li>
-
-              <!-- SOAP Note -->
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('routes.soap_note') }}">SOAP Note</a>
-              </li>
-            </ul>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('routes.index') }}">
+                <i class="fas fa-user-graduate me-2"></i>Student Database
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('routes.calendar') }}">
+                            <i class="fas fa-calendar-alt me-1"></i>Calendar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('routes.sessions', filter_date=current_date) }}">
+                            <i class="fas fa-clock me-1"></i>Today's Sessions
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('routes.trial_log') }}">
+                            <i class="fas fa-clipboard-list me-1"></i>Trial Log
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('routes.soap_note') }}">
+                            <i class="fas fa-file-medical me-1"></i>SOAP Note
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Quick actions -->
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-plus me-1"></i>Quick Add
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ url_for('routes.add_student') }}">Add Student</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('routes.calendar') }}">Schedule Session</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('routes.bulk_sessions') }}">Bulk Sessions</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
+    <!-- Main content -->
     <div class="container mt-4">
+        <!-- Flash messages -->
         {% with messages = get_flashed_messages(with_categories=true) %}
           {% if messages %}
             {% for category, message in messages %}
-              <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+              <div class="alert alert-{{ 'danger' if category == 'error' else category }} alert-dismissible fade show" role="alert">
+                {% if category == 'success' %}
+                  <i class="fas fa-check-circle me-2"></i>
+                {% elif category == 'warning' %}
+                  <i class="fas fa-exclamation-triangle me-2"></i>
+                {% elif category == 'error' or category == 'danger' %}
+                  <i class="fas fa-exclamation-circle me-2"></i>
+                {% else %}
+                  <i class="fas fa-info-circle me-2"></i>
+                {% endif %}
                 {{ message }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
               </div>
             {% endfor %}
           {% endif %}
         {% endwith %}
 
+        <!-- Page content -->
         {% block content %}{% endblock %}
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Footer -->
+    <footer class="bg-light text-center text-muted py-3 mt-5">
+        <div class="container">
+            <small>&copy; {{ current_date[:4] }} Student Database - Local Instance</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     
+    <!-- Custom JavaScript -->
     <script>
+      // Utility functions
       function confirmArchive() {
-        return confirm("Are you sure you want to archive this session? This action cannot be undone.");
-      }
-      
-      function setToday(inputId) {
-        let today = new Date().toISOString().split('T')[0];  // Get YYYY-MM-DD format
-        document.getElementById(inputId).value = today;
+        return confirm("Are you sure you want to archive this item? This action cannot be undone.");
       }
       
       function confirmDelete() {
-        return confirm("Are you sure you want to delete this session? This action cannot be undone.");
+        return confirm("Are you sure you want to delete this item? This action cannot be undone.");
       }
+      
+      function setToday(inputId) {
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById(inputId).value = today;
+      }
+      
+      // Auto-dismiss alerts after 5 seconds
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          const alerts = document.querySelectorAll('.alert');
+          alerts.forEach(alert => {
+            const bsAlert = new bootstrap.Alert(alert);
+            bsAlert.close();
+          });
+        }, 5000);
+      });
     </script>
     
     {% block scripts %}
+    <!-- AJAX form handling -->
     <script>
-      console.log("AJAX scripts loaded from base.html");
       document.addEventListener('DOMContentLoaded', function() {
-        // AJAX form submit
+        // AJAX form submit for status updates
         document.querySelectorAll('form.ajax-form').forEach(function(form) {
           form.addEventListener('submit', function(e) {
             e.preventDefault();
+            
             fetch(form.action, {
               method: form.method,
               body: new FormData(form)
             })
             .then(function(response) {
               if (!response.ok) throw new Error('Update failed');
-              // highlight the changed select
-              var sel = form.querySelector('select');
-              if (sel) {
-                sel.classList.add('border-success');
-                setTimeout(function() {
-                  sel.classList.remove('border-success');
-                }, 800);
+              
+              // Visual feedback
+              const select = form.querySelector('select');
+              if (select) {
+                select.classList.add('border-success');
+                setTimeout(() => select.classList.remove('border-success'), 1000);
               }
+              
+              // Show success message
+              showToast('Changes saved successfully!', 'success');
             })
             .catch(function(err) {
               console.error(err);
-              alert('There was an error saving your change.');
+              showToast('Error saving changes', 'danger');
             });
           });
         });
-        // Auto-submit AJAX form on status dropdown change
-        document.querySelectorAll('select.status-select').forEach(function(sel) {
-          sel.addEventListener('change', function() {
-            var frm = sel.closest('form');
-            if (frm) frm.dispatchEvent(new Event('submit', {cancelable: true}));
+        
+        // Auto-submit on dropdown change
+        document.querySelectorAll('select.status-select').forEach(function(select) {
+          select.addEventListener('change', function() {
+            const form = select.closest('form');
+            if (form && form.classList.contains('ajax-form')) {
+              form.dispatchEvent(new Event('submit', {cancelable: true}));
+            }
           });
         });
       });
+      
+      // Toast notification function
+      function showToast(message, type = 'info') {
+        const toastContainer = document.getElementById('toast-container') || createToastContainer();
+        const toast = document.createElement('div');
+        toast.className = `toast align-items-center text-white bg-${type} border-0`;
+        toast.setAttribute('role', 'alert');
+        toast.innerHTML = `
+          <div class="d-flex">
+            <div class="toast-body">${message}</div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+          </div>
+        `;
+        
+        toastContainer.appendChild(toast);
+        const bsToast = new bootstrap.Toast(toast);
+        bsToast.show();
+        
+        // Remove toast element after it's hidden
+        toast.addEventListener('hidden.bs.toast', () => toast.remove());
+      }
+      
+      function createToastContainer() {
+        const container = document.createElement('div');
+        container.id = 'toast-container';
+        container.className = 'toast-container position-fixed bottom-0 end-0 p-3';
+        document.body.appendChild(container);
+        return container;
+      }
     </script>
     {% endblock %}
-  </body>
+</body>
 </html>
