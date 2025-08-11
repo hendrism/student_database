@@ -39,45 +39,23 @@ def monthly_sessions_report():
             except (TypeError, ValueError):
                 expected_sessions = 0
 
-        completed_sessions = (
-            Event.query
+        status_counts = dict(
+            db.session.query(Event.status, db.func.count())
             .filter(
                 Event.student_id == student.student_id,
                 Event.event_type == 'Session',
-                Event.status == 'Completed',
+                Event.active.is_(True),
                 Event.is_makeup.is_(False),
-                Event.active.is_(True),
                 extract('month', Event.date_of_session) == month,
                 extract('year', Event.date_of_session) == year,
             )
-            .count()
+            .group_by(Event.status)
+            .all()
         )
 
-        excused_sessions = (
-            Event.query
-            .filter(
-                Event.student_id == student.student_id,
-                Event.event_type == 'Session',
-                Event.status == 'Excused Absence',
-                Event.active.is_(True),
-                extract('month', Event.date_of_session) == month,
-                extract('year', Event.date_of_session) == year,
-            )
-            .count()
-        )
-
-        makeup_needed = (
-            Event.query
-            .filter(
-                Event.student_id == student.student_id,
-                Event.event_type == 'Session',
-                Event.status == 'Makeup Needed',
-                Event.active.is_(True),
-                extract('month', Event.date_of_session) == month,
-                extract('year', Event.date_of_session) == year,
-            )
-            .count()
-        )
+        completed_sessions = status_counts.get('Completed', 0)
+        excused_sessions = status_counts.get('Excused Absence', 0)
+        makeup_needed = status_counts.get('Makeup Needed', 0)
 
         total_makeups = (
             Event.query

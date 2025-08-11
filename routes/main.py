@@ -1,6 +1,7 @@
 from datetime import datetime, date, timedelta
 
 from flask import request, render_template, jsonify, redirect, url_for, flash
+from sqlalchemy.orm import joinedload
 
 from . import routes_bp
 from models import (
@@ -16,7 +17,7 @@ def index():
 
     today = date.today()
     upcoming_sessions = (
-        Event.query
+        Event.query.options(joinedload(Event.student))
         .filter(
             Event.active.is_(True),
             Event.event_type == 'Session',
@@ -48,7 +49,7 @@ def calendar():
 @routes_bp.route('/api/events')
 def api_events():
     """Return JSON list of all active events for the calendar."""
-    events = Event.query.filter_by(active=True).all()
+    events = Event.query.options(joinedload(Event.student)).filter_by(active=True).all()
     data = []
     for e in events:
         start_dt = datetime.combine(e.date_of_session, e.time_of_start)
