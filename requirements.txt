@@ -1,0 +1,24 @@
+# Core Flask dependencies
+Flask==3.0.0
+Flask-SQLAlchemy==3.1.1
+Flask-Migrate==4.0.5
+
+# Database
+SQLAlchemy==2.0.23
+alembic==1.13.1
+
+# Production server (optional)
+gunicorn==21.2.0
+
+# Development tools
+python-dotenv==1.0.0
+
+# Security
+cryptography>=42.0.0
+werkzeug==3.0.1
+
+# Date/time utilities
+python-dateutil==2.8.2
+
+# For potential future features
+click==8.1.7  # CLI commands
